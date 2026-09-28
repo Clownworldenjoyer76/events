@@ -1,0 +1,2530 @@
+{
+  "_embedded": {
+    "events": [
+      {
+        "name": "Monster Jam",
+        "type": "event",
+        "id": "1AeZZ_8GknByeMg",
+        "test": false,
+        "url": "https://www.ticketmaster.com/monster-jam-birmingham-alabama-04-03-2027/event/2000650ABAE42DF5",
+        "locale": "en-us",
+        "images": [
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RETINA_PORTRAIT_16_9.jpg",
+            "width": 640,
+            "height": 360,
+            "fallback": false
+          },
+          {
+            "ratio": "3_2",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RETINA_PORTRAIT_3_2.jpg",
+            "width": 640,
+            "height": 427,
+            "fallback": false
+          },
+          {
+            "ratio": "3_2",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_TABLET_LANDSCAPE_3_2.jpg",
+            "width": 1024,
+            "height": 683,
+            "fallback": false
+          },
+          {
+            "ratio": "4_3",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_CUSTOM.jpg",
+            "width": 305,
+            "height": 225,
+            "fallback": false
+          },
+          {
+            "ratio": "3_2",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_ARTIST_PAGE_3_2.jpg",
+            "width": 305,
+            "height": 203,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RETINA_LANDSCAPE_16_9.jpg",
+            "width": 1136,
+            "height": 639,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_TABLET_LANDSCAPE_16_9.jpg",
+            "width": 1024,
+            "height": 576,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RECOMENDATION_16_9.jpg",
+            "width": 100,
+            "height": 56,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+            "width": 2048,
+            "height": 1152,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_EVENT_DETAIL_PAGE_16_9.jpg",
+            "width": 205,
+            "height": 115,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_SOURCE",
+            "width": 2426,
+            "height": 1365,
+            "fallback": false
+          }
+        ],
+        "sales": {
+          "public": {
+            "startDateTime": "2026-09-22T15:00:00Z",
+            "startTBD": false,
+            "startTBA": false,
+            "endDateTime": "2027-04-03T22:00:00Z"
+          },
+          "presales": [
+            {
+              "startDateTime": "2026-09-15T15:00:00Z",
+              "endDateTime": "2026-09-22T04:59:00Z",
+              "name": "Feld Preferred Presale"
+            },
+            {
+              "startDateTime": "2026-09-17T15:00:00Z",
+              "endDateTime": "2026-09-22T04:59:00Z",
+              "name": "TM/Venue Presale"
+            },
+            {
+              "startDateTime": "2026-09-15T15:00:00Z",
+              "endDateTime": "2026-09-22T04:59:00Z",
+              "name": "VIP Package Presale"
+            },
+            {
+              "startDateTime": "2026-09-22T15:00:00Z",
+              "endDateTime": "2027-04-03T21:00:00Z",
+              "name": "VIP Package Onsale"
+            }
+          ]
+        },
+        "dates": {
+          "start": {
+            "localDate": "2027-04-03",
+            "localTime": "17:00:00",
+            "dateTime": "2027-04-03T22:00:00Z",
+            "dateTBD": false,
+            "dateTBA": false,
+            "timeTBA": false,
+            "noSpecificTime": false
+          },
+          "timezone": "America/Chicago",
+          "status": {
+            "code": "onsale"
+          },
+          "spanMultipleDays": false
+        },
+        "classifications": [
+          {
+            "primary": true,
+            "segment": {
+              "id": "KZFzniwnSyZfZ7v7nE",
+              "name": "Sports"
+            },
+            "genre": {
+              "id": "KnvZfZ7vA7k",
+              "name": "Motorsports/Racing"
+            },
+            "subGenre": {
+              "id": "KZazBEonSMnZfZ7vFt7",
+              "name": "Motorsports/Racing"
+            },
+            "type": {
+              "id": "KZAyXgnZfZ7v7nI",
+              "name": "Undefined"
+            },
+            "subType": {
+              "id": "KZFzBErXgnZfZ7v7lJ",
+              "name": "Undefined"
+            },
+            "family": false
+          }
+        ],
+        "promoter": {
+          "id": "2515",
+          "name": "FELD MOTORSPORTS",
+          "description": "FELD MOTORSPORTS / NTL / USA"
+        },
+        "promoters": [
+          {
+            "id": "2515",
+            "name": "FELD MOTORSPORTS",
+            "description": "FELD MOTORSPORTS / NTL / USA"
+          }
+        ],
+        "info": "Get ready for the ultimate family day out! With awesome trucks, amazing stunts, big air and action-packed excitement, Monster Jam is the definition of fun for everyone! Watch as 12,000lb trucks stand on two wheels and fly through the air. See the world's most popular trucks like Grave Digger, El Toro Loco, Sparkle Smash and more only at Monster Jam. Be loud, cheer hard and watch these Monster Jam trucks do the impossible. It's too fun to miss!",
+        "pleaseNote": "-All guests age 2 & older are required to have a ticket. -No costumes for guests 14 & older. -Please monitor the venue website for venue policies, including health and safety protocols, which are subject to change. -All tickets are subject to availability. -Prices & Competitors are subject to change. -Monster Jam Trackside begins approximately one hour before the event start time and features: o Competition Preview o Driver Interviews o Behind the Scenes with the Pit Crew o Judges Zone Overview o Opening Ceremonies o Giveaways o Power Rush Truck Introductions There's no better way to get ready for the action, so get to your seats early to experience all the family fun. -Visit MonsterJam.com for more event info and Ticket Terms and Conditions.",
+        "products": [
+          {
+            "name": "Monster Jam Pit Party Early Access Pass: Early Entry 11:30AM-12:30PM",
+            "id": "1AOZkfoGkdOG3tS",
+            "url": "https://www.ticketmaster.com/monster-jam-pit-party-early-access-birmingham-alabama-04-03-2027/event/20006511E0312A73",
+            "type": "Special Entry",
+            "classifications": [
+              {
+                "primary": true,
+                "segment": {
+                  "id": "KZFzniwnSyZfZ7v7n1",
+                  "name": "Miscellaneous"
+                },
+                "genre": {
+                  "id": "KnvZfZ7v7ll",
+                  "name": "Undefined"
+                },
+                "subGenre": {
+                  "id": "KZazBEonSMnZfZ7vAv1",
+                  "name": "Undefined"
+                },
+                "type": {
+                  "id": "KZAyXgnZfZ7v7nJ",
+                  "name": "Upsell"
+                },
+                "subType": {
+                  "id": "KZFzBErXgnZfZ7v7lv",
+                  "name": "Special Entry"
+                },
+                "family": false
+              }
+            ]
+          },
+          {
+            "name": "Monster Jam Pit Pass: Preshow Party From 12:30pm - 3:30pm",
+            "id": "1AOZkfoGkdfwwqf",
+            "url": "https://www.ticketmaster.com/monster-jam-pit-pass-preshow-party-birmingham-alabama-04-03-2027/event/20006511D4CB2754",
+            "type": "Special Entry",
+            "classifications": [
+              {
+                "primary": true,
+                "segment": {
+                  "id": "KZFzniwnSyZfZ7v7n1",
+                  "name": "Miscellaneous"
+                },
+                "genre": {
+                  "id": "KnvZfZ7v7ll",
+                  "name": "Undefined"
+                },
+                "subGenre": {
+                  "id": "KZazBEonSMnZfZ7vAv1",
+                  "name": "Undefined"
+                },
+                "type": {
+                  "id": "KZAyXgnZfZ7v7nJ",
+                  "name": "Upsell"
+                },
+                "subType": {
+                  "id": "KZFzBErXgnZfZ7v7lv",
+                  "name": "Special Entry"
+                },
+                "family": false
+              }
+            ]
+          },
+          {
+            "name": "Fleece Blanket Monster Jam",
+            "id": "1AeZZ_8Gkl-QNw1",
+            "url": "https://www.ticketmaster.com/fleece-blanket-monster-jam-birmingham-alabama-04-03-2027/event/2000650AE16A3C8A",
+            "type": "Upsell",
+            "classifications": [
+              {
+                "primary": true,
+                "segment": {
+                  "id": "KZFzniwnSyZfZ7v7n1",
+                  "name": "Miscellaneous"
+                },
+                "genre": {
+                  "id": "KnvZfZ7v7ll",
+                  "name": "Undefined"
+                },
+                "subGenre": {
+                  "id": "KZazBEonSMnZfZ7vAv1",
+                  "name": "Undefined"
+                },
+                "type": {
+                  "id": "KZAyXgnZfZ7v7nJ",
+                  "name": "Upsell"
+                },
+                "subType": {
+                  "id": "KZFzBErXgnZfZ7vAke",
+                  "name": "Merchandise Voucher"
+                },
+                "family": false
+              }
+            ]
+          },
+          {
+            "name": "Ear Muffs - Sound Activated",
+            "id": "1AeZZ_8GklpkdxA",
+            "url": "https://www.ticketmaster.com/ear-muffs-sound-activated-birmingham-alabama-04-03-2027/event/2000650AD6183885",
+            "type": "Upsell",
+            "classifications": [
+              {
+                "primary": true,
+                "segment": {
+                  "id": "KZFzniwnSyZfZ7v7n1",
+                  "name": "Miscellaneous"
+                },
+                "genre": {
+                  "id": "KnvZfZ7v7ll",
+                  "name": "Undefined"
+                },
+                "subGenre": {
+                  "id": "KZazBEonSMnZfZ7vAv1",
+                  "name": "Undefined"
+                },
+                "type": {
+                  "id": "KZAyXgnZfZ7v7nJ",
+                  "name": "Upsell"
+                },
+                "subType": {
+                  "id": "KZFzBErXgnZfZ7vAke",
+                  "name": "Merchandise Voucher"
+                },
+                "family": false
+              }
+            ]
+          },
+          {
+            "name": "Grave Digger Light Up Bubble Wand",
+            "id": "1AeZZ_8GkmSO3Tb",
+            "url": "https://www.ticketmaster.com/grave-digger-light-up-bubble-wand-birmingham-alabama-04-03-2027/event/2000650BB3812FD8",
+            "type": "Upsell",
+            "classifications": [
+              {
+                "primary": true,
+                "segment": {
+                  "id": "KZFzniwnSyZfZ7v7n1",
+                  "name": "Miscellaneous"
+                },
+                "genre": {
+                  "id": "KnvZfZ7v7ll",
+                  "name": "Undefined"
+                },
+                "subGenre": {
+                  "id": "KZazBEonSMnZfZ7vAv1",
+                  "name": "Undefined"
+                },
+                "type": {
+                  "id": "KZAyXgnZfZ7v7nJ",
+                  "name": "Upsell"
+                },
+                "subType": {
+                  "id": "KZFzBErXgnZfZ7vAke",
+                  "name": "Merchandise Voucher"
+                },
+                "family": false
+              }
+            ]
+          },
+          {
+            "name": "Lighted Monster Jam Sword",
+            "id": "1AeZZ_8Gkmg2KvP",
+            "url": "https://www.ticketmaster.com/lighted-monster-jam-sword-birmingham-alabama-04-03-2027/event/2000650BB53D3065",
+            "type": "Upsell",
+            "classifications": [
+              {
+                "primary": true,
+                "segment": {
+                  "id": "KZFzniwnSyZfZ7v7n1",
+                  "name": "Miscellaneous"
+                },
+                "genre": {
+                  "id": "KnvZfZ7v7ll",
+                  "name": "Undefined"
+                },
+                "subGenre": {
+                  "id": "KZazBEonSMnZfZ7vAv1",
+                  "name": "Undefined"
+                },
+                "type": {
+                  "id": "KZAyXgnZfZ7v7nJ",
+                  "name": "Upsell"
+                },
+                "subType": {
+                  "id": "KZFzBErXgnZfZ7vAke",
+                  "name": "Merchandise Voucher"
+                },
+                "family": false
+              }
+            ]
+          }
+        ],
+        "seatmap": {
+          "staticUrl": "https://mapsapi.tmol.io/maps/geometry/3/event/2000650ABAE42DF5/staticImage?type=png&systemId=HOST"
+        },
+        "accessibility": {
+          "ticketLimit": 4
+        },
+        "ticketLimit": {
+          "info": "Please note: There is a ticket limit of 8 tickets per person and per credit card on this event."
+        },
+        "ageRestrictions": {
+          "legalAgeEnforced": false
+        },
+        "doorsTimes": {
+          "localDate": "2027-04-03",
+          "localTime": "15:00:00",
+          "dateTime": "2027-04-03T20:00:00Z"
+        },
+        "ticketing": {
+          "safeTix": {
+            "enabled": true
+          },
+          "allInclusivePricing": {
+            "enabled": true
+          }
+        },
+        "nameOrigin": "custom",
+        "ticketTextLines": {
+          "en-us": {
+            "line6": "  SAT APR 3 2027 5:00 PM  ",
+            "line5": "OPENING CEREMONIES 4:50PM ",
+            "line4": "    PROTECTIVE STADIUM    ",
+            "line3": "   ***RAIN OR SHINE***    ",
+            "line2": "       MONSTER JAM        ",
+            "line1": "          ******          "
+          }
+        },
+        "_links": {
+          "self": {
+            "href": "/discovery/v2/events/1AeZZ_8GknByeMg?locale=en-us"
+          },
+          "attractions": [
+            {
+              "href": "/discovery/v2/attractions/K8vZ917uyff?locale=en-us"
+            }
+          ],
+          "venues": [
+            {
+              "href": "/discovery/v2/venues/KovZ917APWk?locale=en-us"
+            }
+          ]
+        },
+        "_embedded": {
+          "venues": [
+            {
+              "name": "Protective Stadium",
+              "type": "venue",
+              "id": "KovZ917APWk",
+              "test": false,
+              "url": "https://www.ticketmaster.com/protective-stadium-tickets-birmingham/venue/263230",
+              "locale": "en-us",
+              "postalCode": "35203",
+              "timezone": "America/Chicago",
+              "city": {
+                "name": "Birmingham"
+              },
+              "state": {
+                "name": "Alabama",
+                "stateCode": "AL"
+              },
+              "country": {
+                "name": "United States Of America",
+                "countryCode": "US"
+              },
+              "address": {
+                "line1": "1020 24TH Street North"
+              },
+              "location": {
+                "longitude": "-86.80729000",
+                "latitude": "33.52736000"
+              },
+              "markets": [
+                {
+                  "name": "Birmingham and More",
+                  "id": "1"
+                }
+              ],
+              "dmas": [
+                {
+                  "id": 232
+                },
+                {
+                  "id": 257
+                },
+                {
+                  "id": 301
+                },
+                {
+                  "id": 342
+                }
+              ],
+              "boxOfficeInfo": {
+                "openHoursDetail": "The BJCC Central Ticket Office is open Monday through Friday 9:00am to 4:00pm CT. The Central Ticket Office is located at Legacy Arena, Entry A 1898 9th Ave North, Birmingham, AL 35203. The Protective Stadium Box Offices located at the South Gate and Northeast Gate are only open the day of the event. Hours vary based on the event. To inquire about the hours for a specific event, please contact cto@bjcc.org.",
+                "willCallDetail": "Will Call is only available the day of the event at the Protective Stadium Box Office located at the South Gate. Hours vary based on the event. To inquire about the hours for a specific event, please contact cto@bjcc.org. When using Will Call, please bring a picture ID, the actual credit card used to purchase the tickets, and your order number."
+              },
+              "parkingDetail": "Visit https://protectivestadium.com/directions-and-parking/ for a printable map and to pre-purchase parking. Parking prices vary by event and date. We aim to make navigating the BJCC campus simple using clear directions. With various parking options for events, conventions, and meetings, planning ahead ensures a smoother arrival. Since multiple events often occur simultaneously, arrive early to avoid long parking and entry lines.",
+              "accessibleSeatingDetail": "Accessible seating is available throughout the venue and can be purchased on Ticketmaster.com. Guests requiring accessible seating are guaranteed the ability to purchase at least one (1) companion seat. If contiguous seats have already been sold, seats as close as possible to the wheelchair seat and adjacent companion seat will be offered. If you purchased a ticket in the fixed seating area but require an accessible seat, the Ticket Office may be able to assist you by relocating your ticket to an accessible seat. Please contact the Ticket Office at CTO@bjcc.org if you have any questions or require assistance purchasing tickets. Tickets are subject to availability.",
+              "generalInfo": {
+                "generalRule": "Prohibited items include, but are not limited to laser pointers, weapons, glass containers, cans, chains, outside food or beverage, professional recording devices for photography, video or audio, stools or folder chairs. See a full list of prohibited items at https://protectivestadium.com/bag-policy-and-prohibited-items/ Bags must be CLEAR plastic, vinyl or PVC and not exceed 12\"x6\"x12\". Bags cannot be tinted with color or include oversized content that prevents visibility into the clear bag. Only non-clear bags smaller than 5\"x7\" will be permitted entry. The venue reserves the right to search all guests entering the arena and to refuse entry at the discretion of management. Smoking is prohibited inside Protective Stadium and only allowed in designated smoking areas outside of the building.",
+                "childRule": "For most events, children who have celebrated their 2nd birthday are required to have a ticket. For show specific age restrictions that may supersede our standard policy, visit www.bjcc.org/events"
+              },
+              "upcomingEvents": {
+                "tmr": 1,
+                "ticketmaster": 15,
+                "_total": 16,
+                "_filtered": 0
+              },
+              "_links": {
+                "self": {
+                  "href": "/discovery/v2/venues/KovZ917APWk?locale=en-us"
+                }
+              }
+            }
+          ],
+          "attractions": [
+            {
+              "name": "Monster Jam",
+              "type": "attraction",
+              "id": "K8vZ917uyff",
+              "test": false,
+              "url": "https://www.ticketmaster.com/monster-jam-tickets/artist/1542376",
+              "locale": "en-us",
+              "externalLinks": {
+                "youtube": [
+                  {
+                    "url": "https://www.youtube.com/MonsterJam/"
+                  }
+                ],
+                "twitter": [
+                  {
+                    "url": "https://twitter.com/monsterjam/"
+                  }
+                ],
+                "facebook": [
+                  {
+                    "url": "https://www.facebook.com/MonsterJam/"
+                  }
+                ],
+                "instagram": [
+                  {
+                    "url": "https://www.instagram.com/MonsterJam/"
+                  }
+                ],
+                "homepage": [
+                  {
+                    "url": "https://www.monsterjam.com/"
+                  }
+                ]
+              },
+              "aliases": [
+                "monster jam",
+                "Monster Truck",
+                "Monster Trucks"
+              ],
+              "images": [
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RETINA_PORTRAIT_16_9.jpg",
+                  "width": 640,
+                  "height": 360,
+                  "fallback": false
+                },
+                {
+                  "ratio": "3_2",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RETINA_PORTRAIT_3_2.jpg",
+                  "width": 640,
+                  "height": 427,
+                  "fallback": false
+                },
+                {
+                  "ratio": "3_2",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_TABLET_LANDSCAPE_3_2.jpg",
+                  "width": 1024,
+                  "height": 683,
+                  "fallback": false
+                },
+                {
+                  "ratio": "4_3",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_CUSTOM.jpg",
+                  "width": 305,
+                  "height": 225,
+                  "fallback": false
+                },
+                {
+                  "ratio": "3_2",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_ARTIST_PAGE_3_2.jpg",
+                  "width": 305,
+                  "height": 203,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RETINA_LANDSCAPE_16_9.jpg",
+                  "width": 1136,
+                  "height": 639,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_TABLET_LANDSCAPE_16_9.jpg",
+                  "width": 1024,
+                  "height": 576,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RECOMENDATION_16_9.jpg",
+                  "width": 100,
+                  "height": 56,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+                  "width": 2048,
+                  "height": 1152,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_EVENT_DETAIL_PAGE_16_9.jpg",
+                  "width": 205,
+                  "height": 115,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_SOURCE",
+                  "width": 2426,
+                  "height": 1365,
+                  "fallback": false
+                }
+              ],
+              "classifications": [
+                {
+                  "primary": true,
+                  "segment": {
+                    "id": "KZFzniwnSyZfZ7v7nE",
+                    "name": "Sports"
+                  },
+                  "genre": {
+                    "id": "KnvZfZ7vA7k",
+                    "name": "Motorsports/Racing"
+                  },
+                  "subGenre": {
+                    "id": "KZazBEonSMnZfZ7vFt7",
+                    "name": "Motorsports/Racing"
+                  },
+                  "type": {
+                    "id": "KZAyXgnZfZ7v7lt",
+                    "name": "Event Style"
+                  },
+                  "subType": {
+                    "id": "KZFzBErXgnZfZ7vAAv",
+                    "name": "Undefined"
+                  },
+                  "family": false
+                }
+              ],
+              "upcomingEvents": {
+                "mfx-se": 5,
+                "mfx-be": 3,
+                "tmr": 35,
+                "ticketmaster": 180,
+                "_total": 223,
+                "_filtered": 0
+              },
+              "_links": {
+                "self": {
+                  "href": "/discovery/v2/attractions/K8vZ917uyff?locale=en-us"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "Monster Jam",
+        "type": "event",
+        "id": "1AeZZ_8GknBB3MX",
+        "test": false,
+        "url": "https://www.ticketmaster.com/monster-jam-birmingham-alabama-04-04-2027/event/2000650ABAE92DFE",
+        "locale": "en-us",
+        "images": [
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RETINA_PORTRAIT_16_9.jpg",
+            "width": 640,
+            "height": 360,
+            "fallback": false
+          },
+          {
+            "ratio": "3_2",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RETINA_PORTRAIT_3_2.jpg",
+            "width": 640,
+            "height": 427,
+            "fallback": false
+          },
+          {
+            "ratio": "3_2",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_TABLET_LANDSCAPE_3_2.jpg",
+            "width": 1024,
+            "height": 683,
+            "fallback": false
+          },
+          {
+            "ratio": "4_3",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_CUSTOM.jpg",
+            "width": 305,
+            "height": 225,
+            "fallback": false
+          },
+          {
+            "ratio": "3_2",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_ARTIST_PAGE_3_2.jpg",
+            "width": 305,
+            "height": 203,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RETINA_LANDSCAPE_16_9.jpg",
+            "width": 1136,
+            "height": 639,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_TABLET_LANDSCAPE_16_9.jpg",
+            "width": 1024,
+            "height": 576,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RECOMENDATION_16_9.jpg",
+            "width": 100,
+            "height": 56,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+            "width": 2048,
+            "height": 1152,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_EVENT_DETAIL_PAGE_16_9.jpg",
+            "width": 205,
+            "height": 115,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_SOURCE",
+            "width": 2426,
+            "height": 1365,
+            "fallback": false
+          }
+        ],
+        "sales": {
+          "public": {
+            "startDateTime": "2026-09-22T15:00:00Z",
+            "startTBD": false,
+            "startTBA": false,
+            "endDateTime": "2027-04-04T20:00:00Z"
+          },
+          "presales": [
+            {
+              "startDateTime": "2026-09-15T15:00:00Z",
+              "endDateTime": "2026-09-22T04:59:00Z",
+              "name": "Feld Preferred Presale"
+            },
+            {
+              "startDateTime": "2026-09-17T15:00:00Z",
+              "endDateTime": "2026-09-22T04:59:00Z",
+              "name": "TM/Venue Presale"
+            },
+            {
+              "startDateTime": "2026-09-15T15:00:00Z",
+              "endDateTime": "2026-09-22T04:59:00Z",
+              "name": "VIP Package Presale"
+            },
+            {
+              "startDateTime": "2026-09-22T15:00:00Z",
+              "endDateTime": "2027-04-04T19:00:00Z",
+              "name": "VIP Package Onsale"
+            }
+          ]
+        },
+        "dates": {
+          "start": {
+            "localDate": "2027-04-04",
+            "localTime": "15:00:00",
+            "dateTime": "2027-04-04T20:00:00Z",
+            "dateTBD": false,
+            "dateTBA": false,
+            "timeTBA": false,
+            "noSpecificTime": false
+          },
+          "timezone": "America/Chicago",
+          "status": {
+            "code": "onsale"
+          },
+          "spanMultipleDays": false
+        },
+        "classifications": [
+          {
+            "primary": true,
+            "segment": {
+              "id": "KZFzniwnSyZfZ7v7nE",
+              "name": "Sports"
+            },
+            "genre": {
+              "id": "KnvZfZ7vA7k",
+              "name": "Motorsports/Racing"
+            },
+            "subGenre": {
+              "id": "KZazBEonSMnZfZ7vFt7",
+              "name": "Motorsports/Racing"
+            },
+            "type": {
+              "id": "KZAyXgnZfZ7v7nI",
+              "name": "Undefined"
+            },
+            "subType": {
+              "id": "KZFzBErXgnZfZ7v7lJ",
+              "name": "Undefined"
+            },
+            "family": false
+          }
+        ],
+        "promoter": {
+          "id": "2515",
+          "name": "FELD MOTORSPORTS",
+          "description": "FELD MOTORSPORTS / NTL / USA"
+        },
+        "promoters": [
+          {
+            "id": "2515",
+            "name": "FELD MOTORSPORTS",
+            "description": "FELD MOTORSPORTS / NTL / USA"
+          }
+        ],
+        "info": "Get ready for the ultimate family day out! With awesome trucks, amazing stunts, big air and action-packed excitement, Monster Jam is the definition of fun for everyone! Watch as 12,000lb trucks stand on two wheels and fly through the air. See the world's most popular trucks like Grave Digger, El Toro Loco, Sparkle Smash and more only at Monster Jam. Be loud, cheer hard and watch these Monster Jam trucks do the impossible. It's too fun to miss!",
+        "pleaseNote": "-All guests age 2 & older are required to have a ticket. -No costumes for guests 14 & older. -Please monitor the venue website for venue policies, including health and safety protocols, which are subject to change. -All tickets are subject to availability. -Prices & Competitors are subject to change. -Monster Jam Trackside begins approximately one hour before the event start time and features: o Competition Preview o Driver Interviews o Behind the Scenes with the Pit Crew o Judges Zone Overview o Opening Ceremonies o Giveaways o Power Rush Truck Introductions There's no better way to get ready for the action, so get to your seats early to experience all the family fun. -Visit MonsterJam.com for more event info and Ticket Terms and Conditions.",
+        "products": [
+          {
+            "name": "Monster Jam Pit Pass: Preshow Party From 10:30am - 1:30pm",
+            "id": "1AOZkfoGkd9h3L5",
+            "url": "https://www.ticketmaster.com/monster-jam-pit-pass-preshow-party-birmingham-alabama-04-04-2027/event/20006511D76D27CB",
+            "type": "Special Entry",
+            "classifications": [
+              {
+                "primary": true,
+                "segment": {
+                  "id": "KZFzniwnSyZfZ7v7n1",
+                  "name": "Miscellaneous"
+                },
+                "genre": {
+                  "id": "KnvZfZ7v7ll",
+                  "name": "Undefined"
+                },
+                "subGenre": {
+                  "id": "KZazBEonSMnZfZ7vAv1",
+                  "name": "Undefined"
+                },
+                "type": {
+                  "id": "KZAyXgnZfZ7v7nJ",
+                  "name": "Upsell"
+                },
+                "subType": {
+                  "id": "KZFzBErXgnZfZ7v7lv",
+                  "name": "Special Entry"
+                },
+                "family": false
+              }
+            ]
+          },
+          {
+            "name": "Ear Muffs - Sound Activated",
+            "id": "1AeZZ_8Gkl_8SJD",
+            "url": "https://www.ticketmaster.com/ear-muffs-sound-activated-birmingham-alabama-04-04-2027/event/2000650AD94339BB",
+            "type": "Upsell",
+            "classifications": [
+              {
+                "primary": true,
+                "segment": {
+                  "id": "KZFzniwnSyZfZ7v7n1",
+                  "name": "Miscellaneous"
+                },
+                "genre": {
+                  "id": "KnvZfZ7v7ll",
+                  "name": "Undefined"
+                },
+                "subGenre": {
+                  "id": "KZazBEonSMnZfZ7vAv1",
+                  "name": "Undefined"
+                },
+                "type": {
+                  "id": "KZAyXgnZfZ7v7nJ",
+                  "name": "Upsell"
+                },
+                "subType": {
+                  "id": "KZFzBErXgnZfZ7vAke",
+                  "name": "Merchandise Voucher"
+                },
+                "family": false
+              }
+            ]
+          },
+          {
+            "name": "Lighted Monster Jam Sword",
+            "id": "1AeZZ_8GkmUeNeD",
+            "url": "https://www.ticketmaster.com/lighted-monster-jam-sword-birmingham-alabama-04-04-2027/event/2000650BB60A30BB",
+            "type": "Upsell",
+            "classifications": [
+              {
+                "primary": true,
+                "segment": {
+                  "id": "KZFzniwnSyZfZ7v7n1",
+                  "name": "Miscellaneous"
+                },
+                "genre": {
+                  "id": "KnvZfZ7v7ll",
+                  "name": "Undefined"
+                },
+                "subGenre": {
+                  "id": "KZazBEonSMnZfZ7vAv1",
+                  "name": "Undefined"
+                },
+                "type": {
+                  "id": "KZAyXgnZfZ7v7nJ",
+                  "name": "Upsell"
+                },
+                "subType": {
+                  "id": "KZFzBErXgnZfZ7vAke",
+                  "name": "Merchandise Voucher"
+                },
+                "family": false
+              }
+            ]
+          },
+          {
+            "name": "Grave Digger Light Up Bubble Wand",
+            "id": "1AeZZ_8GkmV9NZz",
+            "url": "https://www.ticketmaster.com/grave-digger-light-up-bubble-wand-birmingham-alabama-04-04-2027/event/2000650BB45E3038",
+            "type": "Upsell",
+            "classifications": [
+              {
+                "primary": true,
+                "segment": {
+                  "id": "KZFzniwnSyZfZ7v7n1",
+                  "name": "Miscellaneous"
+                },
+                "genre": {
+                  "id": "KnvZfZ7v7ll",
+                  "name": "Undefined"
+                },
+                "subGenre": {
+                  "id": "KZazBEonSMnZfZ7vAv1",
+                  "name": "Undefined"
+                },
+                "type": {
+                  "id": "KZAyXgnZfZ7v7nJ",
+                  "name": "Upsell"
+                },
+                "subType": {
+                  "id": "KZFzBErXgnZfZ7vAke",
+                  "name": "Merchandise Voucher"
+                },
+                "family": false
+              }
+            ]
+          },
+          {
+            "name": "Fleece Blanket Monster Jam",
+            "id": "1AeZZ_8GkmwJwWo",
+            "url": "https://www.ticketmaster.com/fleece-blanket-monster-jam-birmingham-alabama-04-04-2027/event/2000650BB29B2F51",
+            "type": "Upsell",
+            "classifications": [
+              {
+                "primary": true,
+                "segment": {
+                  "id": "KZFzniwnSyZfZ7v7n1",
+                  "name": "Miscellaneous"
+                },
+                "genre": {
+                  "id": "KnvZfZ7v7ll",
+                  "name": "Undefined"
+                },
+                "subGenre": {
+                  "id": "KZazBEonSMnZfZ7vAv1",
+                  "name": "Undefined"
+                },
+                "type": {
+                  "id": "KZAyXgnZfZ7v7nJ",
+                  "name": "Upsell"
+                },
+                "subType": {
+                  "id": "KZFzBErXgnZfZ7vAke",
+                  "name": "Merchandise Voucher"
+                },
+                "family": false
+              }
+            ]
+          }
+        ],
+        "seatmap": {
+          "staticUrl": "https://mapsapi.tmol.io/maps/geometry/3/event/2000650ABAE92DFE/staticImage?type=png&systemId=HOST"
+        },
+        "accessibility": {
+          "ticketLimit": 4
+        },
+        "ticketLimit": {
+          "info": "Please note: There is a ticket limit of 8 tickets per person and per credit card on this event."
+        },
+        "ageRestrictions": {
+          "legalAgeEnforced": false
+        },
+        "doorsTimes": {
+          "localDate": "2027-04-04",
+          "localTime": "13:00:00",
+          "dateTime": "2027-04-04T18:00:00Z"
+        },
+        "ticketing": {
+          "safeTix": {
+            "enabled": true
+          },
+          "allInclusivePricing": {
+            "enabled": true
+          }
+        },
+        "nameOrigin": "custom",
+        "ticketTextLines": {
+          "en-us": {
+            "line6": "  SUN APR 4 2027 3:00 PM  ",
+            "line5": "OPENING CEREMONIES 4:50PM ",
+            "line4": "    PROTECTIVE STADIUM    ",
+            "line3": "   ***RAIN OR SHINE***    ",
+            "line2": "       MONSTER JAM        ",
+            "line1": "          ******          "
+          }
+        },
+        "_links": {
+          "self": {
+            "href": "/discovery/v2/events/1AeZZ_8GknBB3MX?locale=en-us"
+          },
+          "attractions": [
+            {
+              "href": "/discovery/v2/attractions/K8vZ917uyff?locale=en-us"
+            }
+          ],
+          "venues": [
+            {
+              "href": "/discovery/v2/venues/KovZ917APWk?locale=en-us"
+            }
+          ]
+        },
+        "_embedded": {
+          "venues": [
+            {
+              "name": "Protective Stadium",
+              "type": "venue",
+              "id": "KovZ917APWk",
+              "test": false,
+              "url": "https://www.ticketmaster.com/protective-stadium-tickets-birmingham/venue/263230",
+              "locale": "en-us",
+              "postalCode": "35203",
+              "timezone": "America/Chicago",
+              "city": {
+                "name": "Birmingham"
+              },
+              "state": {
+                "name": "Alabama",
+                "stateCode": "AL"
+              },
+              "country": {
+                "name": "United States Of America",
+                "countryCode": "US"
+              },
+              "address": {
+                "line1": "1020 24TH Street North"
+              },
+              "location": {
+                "longitude": "-86.80729000",
+                "latitude": "33.52736000"
+              },
+              "markets": [
+                {
+                  "name": "Birmingham and More",
+                  "id": "1"
+                }
+              ],
+              "dmas": [
+                {
+                  "id": 232
+                },
+                {
+                  "id": 257
+                },
+                {
+                  "id": 301
+                },
+                {
+                  "id": 342
+                }
+              ],
+              "boxOfficeInfo": {
+                "openHoursDetail": "The BJCC Central Ticket Office is open Monday through Friday 9:00am to 4:00pm CT. The Central Ticket Office is located at Legacy Arena, Entry A 1898 9th Ave North, Birmingham, AL 35203. The Protective Stadium Box Offices located at the South Gate and Northeast Gate are only open the day of the event. Hours vary based on the event. To inquire about the hours for a specific event, please contact cto@bjcc.org.",
+                "willCallDetail": "Will Call is only available the day of the event at the Protective Stadium Box Office located at the South Gate. Hours vary based on the event. To inquire about the hours for a specific event, please contact cto@bjcc.org. When using Will Call, please bring a picture ID, the actual credit card used to purchase the tickets, and your order number."
+              },
+              "parkingDetail": "Visit https://protectivestadium.com/directions-and-parking/ for a printable map and to pre-purchase parking. Parking prices vary by event and date. We aim to make navigating the BJCC campus simple using clear directions. With various parking options for events, conventions, and meetings, planning ahead ensures a smoother arrival. Since multiple events often occur simultaneously, arrive early to avoid long parking and entry lines.",
+              "accessibleSeatingDetail": "Accessible seating is available throughout the venue and can be purchased on Ticketmaster.com. Guests requiring accessible seating are guaranteed the ability to purchase at least one (1) companion seat. If contiguous seats have already been sold, seats as close as possible to the wheelchair seat and adjacent companion seat will be offered. If you purchased a ticket in the fixed seating area but require an accessible seat, the Ticket Office may be able to assist you by relocating your ticket to an accessible seat. Please contact the Ticket Office at CTO@bjcc.org if you have any questions or require assistance purchasing tickets. Tickets are subject to availability.",
+              "generalInfo": {
+                "generalRule": "Prohibited items include, but are not limited to laser pointers, weapons, glass containers, cans, chains, outside food or beverage, professional recording devices for photography, video or audio, stools or folder chairs. See a full list of prohibited items at https://protectivestadium.com/bag-policy-and-prohibited-items/ Bags must be CLEAR plastic, vinyl or PVC and not exceed 12\"x6\"x12\". Bags cannot be tinted with color or include oversized content that prevents visibility into the clear bag. Only non-clear bags smaller than 5\"x7\" will be permitted entry. The venue reserves the right to search all guests entering the arena and to refuse entry at the discretion of management. Smoking is prohibited inside Protective Stadium and only allowed in designated smoking areas outside of the building.",
+                "childRule": "For most events, children who have celebrated their 2nd birthday are required to have a ticket. For show specific age restrictions that may supersede our standard policy, visit www.bjcc.org/events"
+              },
+              "upcomingEvents": {
+                "tmr": 1,
+                "ticketmaster": 15,
+                "_total": 16,
+                "_filtered": 0
+              },
+              "_links": {
+                "self": {
+                  "href": "/discovery/v2/venues/KovZ917APWk?locale=en-us"
+                }
+              }
+            }
+          ],
+          "attractions": [
+            {
+              "name": "Monster Jam",
+              "type": "attraction",
+              "id": "K8vZ917uyff",
+              "test": false,
+              "url": "https://www.ticketmaster.com/monster-jam-tickets/artist/1542376",
+              "locale": "en-us",
+              "externalLinks": {
+                "youtube": [
+                  {
+                    "url": "https://www.youtube.com/MonsterJam/"
+                  }
+                ],
+                "twitter": [
+                  {
+                    "url": "https://twitter.com/monsterjam/"
+                  }
+                ],
+                "facebook": [
+                  {
+                    "url": "https://www.facebook.com/MonsterJam/"
+                  }
+                ],
+                "instagram": [
+                  {
+                    "url": "https://www.instagram.com/MonsterJam/"
+                  }
+                ],
+                "homepage": [
+                  {
+                    "url": "https://www.monsterjam.com/"
+                  }
+                ]
+              },
+              "aliases": [
+                "monster jam",
+                "Monster Truck",
+                "Monster Trucks"
+              ],
+              "images": [
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RETINA_PORTRAIT_16_9.jpg",
+                  "width": 640,
+                  "height": 360,
+                  "fallback": false
+                },
+                {
+                  "ratio": "3_2",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RETINA_PORTRAIT_3_2.jpg",
+                  "width": 640,
+                  "height": 427,
+                  "fallback": false
+                },
+                {
+                  "ratio": "3_2",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_TABLET_LANDSCAPE_3_2.jpg",
+                  "width": 1024,
+                  "height": 683,
+                  "fallback": false
+                },
+                {
+                  "ratio": "4_3",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_CUSTOM.jpg",
+                  "width": 305,
+                  "height": 225,
+                  "fallback": false
+                },
+                {
+                  "ratio": "3_2",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_ARTIST_PAGE_3_2.jpg",
+                  "width": 305,
+                  "height": 203,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RETINA_LANDSCAPE_16_9.jpg",
+                  "width": 1136,
+                  "height": 639,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_TABLET_LANDSCAPE_16_9.jpg",
+                  "width": 1024,
+                  "height": 576,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RECOMENDATION_16_9.jpg",
+                  "width": 100,
+                  "height": 56,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+                  "width": 2048,
+                  "height": 1152,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_EVENT_DETAIL_PAGE_16_9.jpg",
+                  "width": 205,
+                  "height": 115,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_SOURCE",
+                  "width": 2426,
+                  "height": 1365,
+                  "fallback": false
+                }
+              ],
+              "classifications": [
+                {
+                  "primary": true,
+                  "segment": {
+                    "id": "KZFzniwnSyZfZ7v7nE",
+                    "name": "Sports"
+                  },
+                  "genre": {
+                    "id": "KnvZfZ7vA7k",
+                    "name": "Motorsports/Racing"
+                  },
+                  "subGenre": {
+                    "id": "KZazBEonSMnZfZ7vFt7",
+                    "name": "Motorsports/Racing"
+                  },
+                  "type": {
+                    "id": "KZAyXgnZfZ7v7lt",
+                    "name": "Event Style"
+                  },
+                  "subType": {
+                    "id": "KZFzBErXgnZfZ7vAAv",
+                    "name": "Undefined"
+                  },
+                  "family": false
+                }
+              ],
+              "upcomingEvents": {
+                "mfx-se": 5,
+                "mfx-be": 3,
+                "tmr": 35,
+                "ticketmaster": 180,
+                "_total": 223,
+                "_filtered": 0
+              },
+              "_links": {
+                "self": {
+                  "href": "/discovery/v2/attractions/K8vZ917uyff?locale=en-us"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "Monster Jam | Official BJCC Ticket + Hotel Packages",
+        "type": "event",
+        "id": "16OZkfzqNZACeaC6",
+        "test": false,
+        "url": "https://travel.ticketmaster.com/en-US/event/181930521/pf?_uid=2ff4b393-0909-49f3-b839-0afafdc190bc&utm_source=BJCC&utm_medium=TM_ADP_MonsterJam0403",
+        "locale": "en-us",
+        "images": [
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RETINA_PORTRAIT_16_9.jpg",
+            "width": 640,
+            "height": 360,
+            "fallback": false
+          },
+          {
+            "ratio": "3_2",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RETINA_PORTRAIT_3_2.jpg",
+            "width": 640,
+            "height": 427,
+            "fallback": false
+          },
+          {
+            "ratio": "3_2",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_TABLET_LANDSCAPE_3_2.jpg",
+            "width": 1024,
+            "height": 683,
+            "fallback": false
+          },
+          {
+            "ratio": "4_3",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_CUSTOM.jpg",
+            "width": 305,
+            "height": 225,
+            "fallback": false
+          },
+          {
+            "ratio": "3_2",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_ARTIST_PAGE_3_2.jpg",
+            "width": 305,
+            "height": 203,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RETINA_LANDSCAPE_16_9.jpg",
+            "width": 1136,
+            "height": 639,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_TABLET_LANDSCAPE_16_9.jpg",
+            "width": 1024,
+            "height": 576,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RECOMENDATION_16_9.jpg",
+            "width": 100,
+            "height": 56,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+            "width": 2048,
+            "height": 1152,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_EVENT_DETAIL_PAGE_16_9.jpg",
+            "width": 205,
+            "height": 115,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_SOURCE",
+            "width": 2426,
+            "height": 1365,
+            "fallback": false
+          }
+        ],
+        "sales": {
+          "public": {
+            "startDateTime": "2026-09-22T15:00:00Z",
+            "startTBD": false,
+            "startTBA": false,
+            "endDateTime": "2027-04-03T22:00:00Z"
+          }
+        },
+        "dates": {
+          "start": {
+            "localDate": "2027-04-03",
+            "localTime": "17:00:00",
+            "dateTime": "2027-04-03T22:00:00Z",
+            "dateTBD": false,
+            "dateTBA": false,
+            "timeTBA": false,
+            "noSpecificTime": false
+          },
+          "timezone": "America/Chicago",
+          "status": {
+            "code": "onsale"
+          },
+          "spanMultipleDays": false
+        },
+        "classifications": [
+          {
+            "primary": true,
+            "segment": {
+              "id": "KZFzniwnSyZfZ7v7nE",
+              "name": "Sports"
+            },
+            "genre": {
+              "id": "KnvZfZ7vA7k",
+              "name": "Motorsports/Racing"
+            },
+            "subGenre": {
+              "id": "KZazBEonSMnZfZ7vFt7",
+              "name": "Motorsports/Racing"
+            },
+            "type": {
+              "id": "KZAyXgnZfZ7v7nI",
+              "name": "Undefined"
+            },
+            "subType": {
+              "id": "KZFzBErXgnZfZ7v7lJ",
+              "name": "Undefined"
+            },
+            "family": false
+          }
+        ],
+        "promoter": {
+          "id": "494",
+          "name": "PROMOTED BY VENUE",
+          "description": "PROMOTED BY VENUE / NTL / USA"
+        },
+        "promoters": [
+          {
+            "id": "494",
+            "name": "PROMOTED BY VENUE",
+            "description": "PROMOTED BY VENUE / NTL / USA"
+          }
+        ],
+        "ageRestrictions": {
+          "legalAgeEnforced": false
+        },
+        "ticketing": {
+          "safeTix": {
+            "enabled": false
+          },
+          "allInclusivePricing": {
+            "enabled": false
+          }
+        },
+        "nameOrigin": "custom",
+        "ticketTextLines": {
+          "en-us": {
+            "line6": "   EVENT LISTING CHART    ",
+            "line5": "                          ",
+            "line4": "                          ",
+            "line3": "                          ",
+            "line2": "           NONE           ",
+            "line1": "                          "
+          }
+        },
+        "_links": {
+          "self": {
+            "href": "/discovery/v2/events/16OZkfzqNZACeaC6?locale=en-us"
+          },
+          "attractions": [
+            {
+              "href": "/discovery/v2/attractions/K8vZ917uyff?locale=en-us"
+            }
+          ],
+          "venues": [
+            {
+              "href": "/discovery/v2/venues/KovZ917APWk?locale=en-us"
+            }
+          ]
+        },
+        "_embedded": {
+          "venues": [
+            {
+              "name": "Protective Stadium",
+              "type": "venue",
+              "id": "KovZ917APWk",
+              "test": false,
+              "url": "https://www.ticketmaster.com/protective-stadium-tickets-birmingham/venue/263230",
+              "locale": "en-us",
+              "postalCode": "35203",
+              "timezone": "America/Chicago",
+              "city": {
+                "name": "Birmingham"
+              },
+              "state": {
+                "name": "Alabama",
+                "stateCode": "AL"
+              },
+              "country": {
+                "name": "United States Of America",
+                "countryCode": "US"
+              },
+              "address": {
+                "line1": "1020 24TH Street North"
+              },
+              "location": {
+                "longitude": "-86.80729000",
+                "latitude": "33.52736000"
+              },
+              "markets": [
+                {
+                  "name": "Birmingham and More",
+                  "id": "1"
+                }
+              ],
+              "dmas": [
+                {
+                  "id": 232
+                },
+                {
+                  "id": 257
+                },
+                {
+                  "id": 301
+                },
+                {
+                  "id": 342
+                }
+              ],
+              "boxOfficeInfo": {
+                "openHoursDetail": "The BJCC Central Ticket Office is open Monday through Friday 9:00am to 4:00pm CT. The Central Ticket Office is located at Legacy Arena, Entry A 1898 9th Ave North, Birmingham, AL 35203. The Protective Stadium Box Offices located at the South Gate and Northeast Gate are only open the day of the event. Hours vary based on the event. To inquire about the hours for a specific event, please contact cto@bjcc.org.",
+                "willCallDetail": "Will Call is only available the day of the event at the Protective Stadium Box Office located at the South Gate. Hours vary based on the event. To inquire about the hours for a specific event, please contact cto@bjcc.org. When using Will Call, please bring a picture ID, the actual credit card used to purchase the tickets, and your order number."
+              },
+              "parkingDetail": "Visit https://protectivestadium.com/directions-and-parking/ for a printable map and to pre-purchase parking. Parking prices vary by event and date. We aim to make navigating the BJCC campus simple using clear directions. With various parking options for events, conventions, and meetings, planning ahead ensures a smoother arrival. Since multiple events often occur simultaneously, arrive early to avoid long parking and entry lines.",
+              "accessibleSeatingDetail": "Accessible seating is available throughout the venue and can be purchased on Ticketmaster.com. Guests requiring accessible seating are guaranteed the ability to purchase at least one (1) companion seat. If contiguous seats have already been sold, seats as close as possible to the wheelchair seat and adjacent companion seat will be offered. If you purchased a ticket in the fixed seating area but require an accessible seat, the Ticket Office may be able to assist you by relocating your ticket to an accessible seat. Please contact the Ticket Office at CTO@bjcc.org if you have any questions or require assistance purchasing tickets. Tickets are subject to availability.",
+              "generalInfo": {
+                "generalRule": "Prohibited items include, but are not limited to laser pointers, weapons, glass containers, cans, chains, outside food or beverage, professional recording devices for photography, video or audio, stools or folder chairs. See a full list of prohibited items at https://protectivestadium.com/bag-policy-and-prohibited-items/ Bags must be CLEAR plastic, vinyl or PVC and not exceed 12\"x6\"x12\". Bags cannot be tinted with color or include oversized content that prevents visibility into the clear bag. Only non-clear bags smaller than 5\"x7\" will be permitted entry. The venue reserves the right to search all guests entering the arena and to refuse entry at the discretion of management. Smoking is prohibited inside Protective Stadium and only allowed in designated smoking areas outside of the building.",
+                "childRule": "For most events, children who have celebrated their 2nd birthday are required to have a ticket. For show specific age restrictions that may supersede our standard policy, visit www.bjcc.org/events"
+              },
+              "upcomingEvents": {
+                "tmr": 1,
+                "ticketmaster": 15,
+                "_total": 16,
+                "_filtered": 0
+              },
+              "_links": {
+                "self": {
+                  "href": "/discovery/v2/venues/KovZ917APWk?locale=en-us"
+                }
+              }
+            }
+          ],
+          "attractions": [
+            {
+              "name": "Monster Jam",
+              "type": "attraction",
+              "id": "K8vZ917uyff",
+              "test": false,
+              "url": "https://www.ticketmaster.com/monster-jam-tickets/artist/1542376",
+              "locale": "en-us",
+              "externalLinks": {
+                "youtube": [
+                  {
+                    "url": "https://www.youtube.com/MonsterJam/"
+                  }
+                ],
+                "twitter": [
+                  {
+                    "url": "https://twitter.com/monsterjam/"
+                  }
+                ],
+                "facebook": [
+                  {
+                    "url": "https://www.facebook.com/MonsterJam/"
+                  }
+                ],
+                "instagram": [
+                  {
+                    "url": "https://www.instagram.com/MonsterJam/"
+                  }
+                ],
+                "homepage": [
+                  {
+                    "url": "https://www.monsterjam.com/"
+                  }
+                ]
+              },
+              "aliases": [
+                "monster jam",
+                "Monster Truck",
+                "Monster Trucks"
+              ],
+              "images": [
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RETINA_PORTRAIT_16_9.jpg",
+                  "width": 640,
+                  "height": 360,
+                  "fallback": false
+                },
+                {
+                  "ratio": "3_2",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RETINA_PORTRAIT_3_2.jpg",
+                  "width": 640,
+                  "height": 427,
+                  "fallback": false
+                },
+                {
+                  "ratio": "3_2",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_TABLET_LANDSCAPE_3_2.jpg",
+                  "width": 1024,
+                  "height": 683,
+                  "fallback": false
+                },
+                {
+                  "ratio": "4_3",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_CUSTOM.jpg",
+                  "width": 305,
+                  "height": 225,
+                  "fallback": false
+                },
+                {
+                  "ratio": "3_2",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_ARTIST_PAGE_3_2.jpg",
+                  "width": 305,
+                  "height": 203,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RETINA_LANDSCAPE_16_9.jpg",
+                  "width": 1136,
+                  "height": 639,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_TABLET_LANDSCAPE_16_9.jpg",
+                  "width": 1024,
+                  "height": 576,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RECOMENDATION_16_9.jpg",
+                  "width": 100,
+                  "height": 56,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+                  "width": 2048,
+                  "height": 1152,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_EVENT_DETAIL_PAGE_16_9.jpg",
+                  "width": 205,
+                  "height": 115,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_SOURCE",
+                  "width": 2426,
+                  "height": 1365,
+                  "fallback": false
+                }
+              ],
+              "classifications": [
+                {
+                  "primary": true,
+                  "segment": {
+                    "id": "KZFzniwnSyZfZ7v7nE",
+                    "name": "Sports"
+                  },
+                  "genre": {
+                    "id": "KnvZfZ7vA7k",
+                    "name": "Motorsports/Racing"
+                  },
+                  "subGenre": {
+                    "id": "KZazBEonSMnZfZ7vFt7",
+                    "name": "Motorsports/Racing"
+                  },
+                  "type": {
+                    "id": "KZAyXgnZfZ7v7lt",
+                    "name": "Event Style"
+                  },
+                  "subType": {
+                    "id": "KZFzBErXgnZfZ7vAAv",
+                    "name": "Undefined"
+                  },
+                  "family": false
+                }
+              ],
+              "upcomingEvents": {
+                "mfx-se": 5,
+                "mfx-be": 3,
+                "tmr": 35,
+                "ticketmaster": 180,
+                "_total": 223,
+                "_filtered": 0
+              },
+              "_links": {
+                "self": {
+                  "href": "/discovery/v2/attractions/K8vZ917uyff?locale=en-us"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "Monster Jam | Official BJCC Ticket + Hotel Packages",
+        "type": "event",
+        "id": "16OZkfzqNZA8eaC5",
+        "test": false,
+        "url": "https://travel.ticketmaster.com/en-US/event/181929736/pf?_uid=2ff4b393-0909-49f3-b839-0afafdc190bc&utm_source=BJCC&utm_medium=TM_ADP_MonsterJam0404",
+        "locale": "en-us",
+        "images": [
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RETINA_PORTRAIT_16_9.jpg",
+            "width": 640,
+            "height": 360,
+            "fallback": false
+          },
+          {
+            "ratio": "3_2",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RETINA_PORTRAIT_3_2.jpg",
+            "width": 640,
+            "height": 427,
+            "fallback": false
+          },
+          {
+            "ratio": "3_2",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_TABLET_LANDSCAPE_3_2.jpg",
+            "width": 1024,
+            "height": 683,
+            "fallback": false
+          },
+          {
+            "ratio": "4_3",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_CUSTOM.jpg",
+            "width": 305,
+            "height": 225,
+            "fallback": false
+          },
+          {
+            "ratio": "3_2",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_ARTIST_PAGE_3_2.jpg",
+            "width": 305,
+            "height": 203,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RETINA_LANDSCAPE_16_9.jpg",
+            "width": 1136,
+            "height": 639,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_TABLET_LANDSCAPE_16_9.jpg",
+            "width": 1024,
+            "height": 576,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RECOMENDATION_16_9.jpg",
+            "width": 100,
+            "height": 56,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+            "width": 2048,
+            "height": 1152,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_EVENT_DETAIL_PAGE_16_9.jpg",
+            "width": 205,
+            "height": 115,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_SOURCE",
+            "width": 2426,
+            "height": 1365,
+            "fallback": false
+          }
+        ],
+        "sales": {
+          "public": {
+            "startDateTime": "2026-09-22T15:00:00Z",
+            "startTBD": false,
+            "startTBA": false,
+            "endDateTime": "2027-04-04T20:00:00Z"
+          }
+        },
+        "dates": {
+          "start": {
+            "localDate": "2027-04-04",
+            "localTime": "15:00:00",
+            "dateTime": "2027-04-04T20:00:00Z",
+            "dateTBD": false,
+            "dateTBA": false,
+            "timeTBA": false,
+            "noSpecificTime": false
+          },
+          "timezone": "America/Chicago",
+          "status": {
+            "code": "onsale"
+          },
+          "spanMultipleDays": false
+        },
+        "classifications": [
+          {
+            "primary": true,
+            "segment": {
+              "id": "KZFzniwnSyZfZ7v7nE",
+              "name": "Sports"
+            },
+            "genre": {
+              "id": "KnvZfZ7vA7k",
+              "name": "Motorsports/Racing"
+            },
+            "subGenre": {
+              "id": "KZazBEonSMnZfZ7vFt7",
+              "name": "Motorsports/Racing"
+            },
+            "type": {
+              "id": "KZAyXgnZfZ7v7nI",
+              "name": "Undefined"
+            },
+            "subType": {
+              "id": "KZFzBErXgnZfZ7v7lJ",
+              "name": "Undefined"
+            },
+            "family": false
+          }
+        ],
+        "promoter": {
+          "id": "494",
+          "name": "PROMOTED BY VENUE",
+          "description": "PROMOTED BY VENUE / NTL / USA"
+        },
+        "promoters": [
+          {
+            "id": "494",
+            "name": "PROMOTED BY VENUE",
+            "description": "PROMOTED BY VENUE / NTL / USA"
+          }
+        ],
+        "ageRestrictions": {
+          "legalAgeEnforced": false
+        },
+        "ticketing": {
+          "safeTix": {
+            "enabled": false
+          },
+          "allInclusivePricing": {
+            "enabled": false
+          }
+        },
+        "nameOrigin": "custom",
+        "ticketTextLines": {
+          "en-us": {
+            "line6": "   EVENT LISTING CHART    ",
+            "line5": "                          ",
+            "line4": "                          ",
+            "line3": "                          ",
+            "line2": "           NONE           ",
+            "line1": "                          "
+          }
+        },
+        "_links": {
+          "self": {
+            "href": "/discovery/v2/events/16OZkfzqNZA8eaC5?locale=en-us"
+          },
+          "attractions": [
+            {
+              "href": "/discovery/v2/attractions/K8vZ917uyff?locale=en-us"
+            }
+          ],
+          "venues": [
+            {
+              "href": "/discovery/v2/venues/KovZ917APWk?locale=en-us"
+            }
+          ]
+        },
+        "_embedded": {
+          "venues": [
+            {
+              "name": "Protective Stadium",
+              "type": "venue",
+              "id": "KovZ917APWk",
+              "test": false,
+              "url": "https://www.ticketmaster.com/protective-stadium-tickets-birmingham/venue/263230",
+              "locale": "en-us",
+              "postalCode": "35203",
+              "timezone": "America/Chicago",
+              "city": {
+                "name": "Birmingham"
+              },
+              "state": {
+                "name": "Alabama",
+                "stateCode": "AL"
+              },
+              "country": {
+                "name": "United States Of America",
+                "countryCode": "US"
+              },
+              "address": {
+                "line1": "1020 24TH Street North"
+              },
+              "location": {
+                "longitude": "-86.80729000",
+                "latitude": "33.52736000"
+              },
+              "markets": [
+                {
+                  "name": "Birmingham and More",
+                  "id": "1"
+                }
+              ],
+              "dmas": [
+                {
+                  "id": 232
+                },
+                {
+                  "id": 257
+                },
+                {
+                  "id": 301
+                },
+                {
+                  "id": 342
+                }
+              ],
+              "boxOfficeInfo": {
+                "openHoursDetail": "The BJCC Central Ticket Office is open Monday through Friday 9:00am to 4:00pm CT. The Central Ticket Office is located at Legacy Arena, Entry A 1898 9th Ave North, Birmingham, AL 35203. The Protective Stadium Box Offices located at the South Gate and Northeast Gate are only open the day of the event. Hours vary based on the event. To inquire about the hours for a specific event, please contact cto@bjcc.org.",
+                "willCallDetail": "Will Call is only available the day of the event at the Protective Stadium Box Office located at the South Gate. Hours vary based on the event. To inquire about the hours for a specific event, please contact cto@bjcc.org. When using Will Call, please bring a picture ID, the actual credit card used to purchase the tickets, and your order number."
+              },
+              "parkingDetail": "Visit https://protectivestadium.com/directions-and-parking/ for a printable map and to pre-purchase parking. Parking prices vary by event and date. We aim to make navigating the BJCC campus simple using clear directions. With various parking options for events, conventions, and meetings, planning ahead ensures a smoother arrival. Since multiple events often occur simultaneously, arrive early to avoid long parking and entry lines.",
+              "accessibleSeatingDetail": "Accessible seating is available throughout the venue and can be purchased on Ticketmaster.com. Guests requiring accessible seating are guaranteed the ability to purchase at least one (1) companion seat. If contiguous seats have already been sold, seats as close as possible to the wheelchair seat and adjacent companion seat will be offered. If you purchased a ticket in the fixed seating area but require an accessible seat, the Ticket Office may be able to assist you by relocating your ticket to an accessible seat. Please contact the Ticket Office at CTO@bjcc.org if you have any questions or require assistance purchasing tickets. Tickets are subject to availability.",
+              "generalInfo": {
+                "generalRule": "Prohibited items include, but are not limited to laser pointers, weapons, glass containers, cans, chains, outside food or beverage, professional recording devices for photography, video or audio, stools or folder chairs. See a full list of prohibited items at https://protectivestadium.com/bag-policy-and-prohibited-items/ Bags must be CLEAR plastic, vinyl or PVC and not exceed 12\"x6\"x12\". Bags cannot be tinted with color or include oversized content that prevents visibility into the clear bag. Only non-clear bags smaller than 5\"x7\" will be permitted entry. The venue reserves the right to search all guests entering the arena and to refuse entry at the discretion of management. Smoking is prohibited inside Protective Stadium and only allowed in designated smoking areas outside of the building.",
+                "childRule": "For most events, children who have celebrated their 2nd birthday are required to have a ticket. For show specific age restrictions that may supersede our standard policy, visit www.bjcc.org/events"
+              },
+              "upcomingEvents": {
+                "tmr": 1,
+                "ticketmaster": 15,
+                "_total": 16,
+                "_filtered": 0
+              },
+              "_links": {
+                "self": {
+                  "href": "/discovery/v2/venues/KovZ917APWk?locale=en-us"
+                }
+              }
+            }
+          ],
+          "attractions": [
+            {
+              "name": "Monster Jam",
+              "type": "attraction",
+              "id": "K8vZ917uyff",
+              "test": false,
+              "url": "https://www.ticketmaster.com/monster-jam-tickets/artist/1542376",
+              "locale": "en-us",
+              "externalLinks": {
+                "youtube": [
+                  {
+                    "url": "https://www.youtube.com/MonsterJam/"
+                  }
+                ],
+                "twitter": [
+                  {
+                    "url": "https://twitter.com/monsterjam/"
+                  }
+                ],
+                "facebook": [
+                  {
+                    "url": "https://www.facebook.com/MonsterJam/"
+                  }
+                ],
+                "instagram": [
+                  {
+                    "url": "https://www.instagram.com/MonsterJam/"
+                  }
+                ],
+                "homepage": [
+                  {
+                    "url": "https://www.monsterjam.com/"
+                  }
+                ]
+              },
+              "aliases": [
+                "monster jam",
+                "Monster Truck",
+                "Monster Trucks"
+              ],
+              "images": [
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RETINA_PORTRAIT_16_9.jpg",
+                  "width": 640,
+                  "height": 360,
+                  "fallback": false
+                },
+                {
+                  "ratio": "3_2",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RETINA_PORTRAIT_3_2.jpg",
+                  "width": 640,
+                  "height": 427,
+                  "fallback": false
+                },
+                {
+                  "ratio": "3_2",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_TABLET_LANDSCAPE_3_2.jpg",
+                  "width": 1024,
+                  "height": 683,
+                  "fallback": false
+                },
+                {
+                  "ratio": "4_3",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_CUSTOM.jpg",
+                  "width": 305,
+                  "height": 225,
+                  "fallback": false
+                },
+                {
+                  "ratio": "3_2",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_ARTIST_PAGE_3_2.jpg",
+                  "width": 305,
+                  "height": 203,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RETINA_LANDSCAPE_16_9.jpg",
+                  "width": 1136,
+                  "height": 639,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_TABLET_LANDSCAPE_16_9.jpg",
+                  "width": 1024,
+                  "height": 576,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_RECOMENDATION_16_9.jpg",
+                  "width": 100,
+                  "height": 56,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+                  "width": 2048,
+                  "height": 1152,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_EVENT_DETAIL_PAGE_16_9.jpg",
+                  "width": 205,
+                  "height": 115,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/648/bee96ceb-7d32-4b5d-bb15-6a8615501648_SOURCE",
+                  "width": 2426,
+                  "height": 1365,
+                  "fallback": false
+                }
+              ],
+              "classifications": [
+                {
+                  "primary": true,
+                  "segment": {
+                    "id": "KZFzniwnSyZfZ7v7nE",
+                    "name": "Sports"
+                  },
+                  "genre": {
+                    "id": "KnvZfZ7vA7k",
+                    "name": "Motorsports/Racing"
+                  },
+                  "subGenre": {
+                    "id": "KZazBEonSMnZfZ7vFt7",
+                    "name": "Motorsports/Racing"
+                  },
+                  "type": {
+                    "id": "KZAyXgnZfZ7v7lt",
+                    "name": "Event Style"
+                  },
+                  "subType": {
+                    "id": "KZFzBErXgnZfZ7vAAv",
+                    "name": "Undefined"
+                  },
+                  "family": false
+                }
+              ],
+              "upcomingEvents": {
+                "mfx-se": 5,
+                "mfx-be": 3,
+                "tmr": 35,
+                "ticketmaster": 180,
+                "_total": 223,
+                "_filtered": 0
+              },
+              "_links": {
+                "self": {
+                  "href": "/discovery/v2/attractions/K8vZ917uyff?locale=en-us"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "Hamilton | Official BJCC Ticket + Hotel Packages",
+        "type": "event",
+        "id": "1AOZkf4GkdfTSBr",
+        "test": false,
+        "url": "https://travel.ticketmaster.com/en-US/attraction/120?cityName=Birmingham&countryCode=US&stateCode=AL&_uid=2ff4b393-0909-49f3-b839-0afafdc190bc&utm_source=BJCC&utm_medium=TM_ADP_Hamilton",
+        "locale": "en-us",
+        "images": [
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/d7a/6ffed4d3-61d3-44c3-8e63-cc776582fd7a_RECOMENDATION_16_9.jpg",
+            "width": 100,
+            "height": 56,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/d7a/6ffed4d3-61d3-44c3-8e63-cc776582fd7a_SOURCE",
+            "width": 2426,
+            "height": 1365,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/d7a/6ffed4d3-61d3-44c3-8e63-cc776582fd7a_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+            "width": 2048,
+            "height": 1152,
+            "fallback": false
+          },
+          {
+            "ratio": "3_2",
+            "url": "https://s1.ticketm.net/dam/a/d7a/6ffed4d3-61d3-44c3-8e63-cc776582fd7a_RETINA_PORTRAIT_3_2.jpg",
+            "width": 640,
+            "height": 427,
+            "fallback": false
+          },
+          {
+            "ratio": "3_2",
+            "url": "https://s1.ticketm.net/dam/a/d7a/6ffed4d3-61d3-44c3-8e63-cc776582fd7a_ARTIST_PAGE_3_2.jpg",
+            "width": 305,
+            "height": 203,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/d7a/6ffed4d3-61d3-44c3-8e63-cc776582fd7a_EVENT_DETAIL_PAGE_16_9.jpg",
+            "width": 205,
+            "height": 115,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/d7a/6ffed4d3-61d3-44c3-8e63-cc776582fd7a_RETINA_PORTRAIT_16_9.jpg",
+            "width": 640,
+            "height": 360,
+            "fallback": false
+          },
+          {
+            "ratio": "4_3",
+            "url": "https://s1.ticketm.net/dam/a/d7a/6ffed4d3-61d3-44c3-8e63-cc776582fd7a_CUSTOM.jpg",
+            "width": 305,
+            "height": 225,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/d7a/6ffed4d3-61d3-44c3-8e63-cc776582fd7a_RETINA_LANDSCAPE_16_9.jpg",
+            "width": 1136,
+            "height": 639,
+            "fallback": false
+          },
+          {
+            "ratio": "16_9",
+            "url": "https://s1.ticketm.net/dam/a/d7a/6ffed4d3-61d3-44c3-8e63-cc776582fd7a_TABLET_LANDSCAPE_16_9.jpg",
+            "width": 1024,
+            "height": 576,
+            "fallback": false
+          },
+          {
+            "ratio": "3_2",
+            "url": "https://s1.ticketm.net/dam/a/d7a/6ffed4d3-61d3-44c3-8e63-cc776582fd7a_TABLET_LANDSCAPE_3_2.jpg",
+            "width": 1024,
+            "height": 683,
+            "fallback": false
+          }
+        ],
+        "sales": {
+          "public": {
+            "startDateTime": "2026-08-21T20:00:00Z",
+            "startTBD": false,
+            "startTBA": false,
+            "endDateTime": "2026-10-01T20:00:00Z"
+          }
+        },
+        "dates": {
+          "start": {
+            "localDate": "2026-08-21",
+            "localTime": "16:15:00",
+            "dateTime": "2026-08-21T21:15:00Z",
+            "dateTBD": false,
+            "dateTBA": false,
+            "timeTBA": false,
+            "noSpecificTime": false
+          },
+          "timezone": "America/Chicago",
+          "status": {
+            "code": "onsale"
+          },
+          "spanMultipleDays": true
+        },
+        "classifications": [
+          {
+            "primary": true,
+            "segment": {
+              "id": "KZFzniwnSyZfZ7v7na",
+              "name": "Arts & Theatre"
+            },
+            "genre": {
+              "id": "KnvZfZ7v7l1",
+              "name": "Theatre"
+            },
+            "subGenre": {
+              "id": "KZazBEonSMnZfZ7vAve",
+              "name": "Musical"
+            },
+            "type": {
+              "id": "KZAyXgnZfZ7v7nI",
+              "name": "Undefined"
+            },
+            "subType": {
+              "id": "KZFzBErXgnZfZ7v7lJ",
+              "name": "Undefined"
+            },
+            "family": false
+          }
+        ],
+        "promoter": {
+          "id": "494",
+          "name": "PROMOTED BY VENUE",
+          "description": "PROMOTED BY VENUE / NTL / USA"
+        },
+        "promoters": [
+          {
+            "id": "494",
+            "name": "PROMOTED BY VENUE",
+            "description": "PROMOTED BY VENUE / NTL / USA"
+          }
+        ],
+        "ageRestrictions": {
+          "legalAgeEnforced": false
+        },
+        "ticketing": {
+          "safeTix": {
+            "enabled": false
+          },
+          "allInclusivePricing": {
+            "enabled": false
+          }
+        },
+        "nameOrigin": "custom",
+        "ticketTextLines": {
+          "en-us": {
+            "line6": "   EVENT LISTING CHART    ",
+            "line5": "                          ",
+            "line4": "                          ",
+            "line3": "                          ",
+            "line2": "           NONE           ",
+            "line1": "                          "
+          }
+        },
+        "_links": {
+          "self": {
+            "href": "/discovery/v2/events/1AOZkf4GkdfTSBr?locale=en-us"
+          },
+          "attractions": [
+            {
+              "href": "/discovery/v2/attractions/K8vZ9174wRf?locale=en-us"
+            }
+          ],
+          "venues": [
+            {
+              "href": "/discovery/v2/venues/KovZpZAdEEIA?locale=en-us"
+            }
+          ]
+        },
+        "_embedded": {
+          "venues": [
+            {
+              "name": "BJCC Concert Hall",
+              "type": "venue",
+              "id": "KovZpZAdEEIA",
+              "test": false,
+              "url": "https://www.ticketmaster.com/bjcc-concert-hall-tickets-birmingham/venue/262204",
+              "locale": "en-us",
+              "images": [
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dbimages/23386v.jpg",
+                  "width": 640,
+                  "height": 360,
+                  "fallback": false
+                }
+              ],
+              "postalCode": "35203",
+              "timezone": "America/Chicago",
+              "city": {
+                "name": "Birmingham"
+              },
+              "state": {
+                "name": "Alabama",
+                "stateCode": "AL"
+              },
+              "country": {
+                "name": "United States Of America",
+                "countryCode": "US"
+              },
+              "address": {
+                "line1": "2100 Richard Arrington Boulevard"
+              },
+              "location": {
+                "longitude": "-86.81011000",
+                "latitude": "33.52372700"
+              },
+              "markets": [
+                {
+                  "name": "Birmingham and More",
+                  "id": "1"
+                }
+              ],
+              "dmas": [
+                {
+                  "id": 232
+                },
+                {
+                  "id": 257
+                },
+                {
+                  "id": 301
+                },
+                {
+                  "id": 342
+                }
+              ],
+              "boxOfficeInfo": {
+                "phoneNumberDetail": "BJCC Box Office: (205) 458-8400 or cto@bjcc.org",
+                "openHoursDetail": "The BJCC Central Ticket Office is open Monday through Friday 9:00am to 4:00pm CT. The Central Ticket Office is located at Legacy Arena, Entry A, 1898 9th Ave North, Birmingham, AL 35203. The Concert Hall and Theatre Box Office opens two hours before scheduled start time for most events. Hours may vary for some events.",
+                "acceptedPaymentDetail": "MC, VISA, AMX, DISCOVER and Cash.",
+                "willCallDetail": "Will Call is only available the day of the event at the Concert Hall/Theatre Box Office. For most events, will call opens two hours before the scheduled start time. Hours may vary for some events. Please bring a picture ID, the actual credit card used to purchase the tickets, and your order number."
+              },
+              "parkingDetail": "Visit www.BJCC.org/plan-your-visit/directions-and-parking for a printable map and to pre-purchase parking. Parking prices vary by event and date. We aim to make navigating the BJCC campus simple using clear directions. With various parking options for events, conventions, and meetings, planning ahead ensures a smoother arrival. Since multiple events often occur simultaneously, arrive early to avoid long parking and entry lines.",
+              "accessibleSeatingDetail": "Accessible seating is available throughout the venue and can be purchased on Ticketmaster.com. Guests requiring accessible seating are guaranteed the ability to purchase at least one (1) companion seat. Subject to availability, guests requiring wheelchair seating may purchase up to a total of three (3) companion seats in the same row and contiguous with the wheelchair seat. If contiguous seats have already been sold, seats as close as possible to the wheelchair seat and adjacent companion seat will be offered. If you purchased a ticket in the fixed seating area but require an accessible seat, the Ticket Office may be able to assist you by relocating your ticket to an accessible seat. Please contact the Ticket Office at CTO@bjcc.org if you have any questions or require assistance purchasing tickets. Tickets are subject to availability.",
+              "generalInfo": {
+                "generalRule": "The following items are not permitted to be brought into the Complex at any time: laser pointers, food or beverages, glass containers, weapons, cameras, audio or video recorders. The BJCC reserves the right to search all guests entering the Complex and refuse entry at the discretion of management. This is a Smoke Free Facility smoking allowed in designated areas only.",
+                "childRule": "For most events, children who have celebrated their 2nd birthday are required to have a ticket. For show specific age restrictions that may supersede our standard policy, visit www.bjcc.org/events"
+              },
+              "upcomingEvents": {
+                "ticketmaster": 71,
+                "_total": 71,
+                "_filtered": 0
+              },
+              "_links": {
+                "self": {
+                  "href": "/discovery/v2/venues/KovZpZAdEEIA?locale=en-us"
+                }
+              }
+            }
+          ],
+          "attractions": [
+            {
+              "name": "Hamilton (Touring)",
+              "type": "attraction",
+              "id": "K8vZ9174wRf",
+              "test": false,
+              "url": "https://www.ticketmaster.com/hamilton-touring-tickets/artist/2336213",
+              "locale": "en-us",
+              "images": [
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/d7a/6ffed4d3-61d3-44c3-8e63-cc776582fd7a_RECOMENDATION_16_9.jpg",
+                  "width": 100,
+                  "height": 56,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/d7a/6ffed4d3-61d3-44c3-8e63-cc776582fd7a_SOURCE",
+                  "width": 2426,
+                  "height": 1365,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/d7a/6ffed4d3-61d3-44c3-8e63-cc776582fd7a_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+                  "width": 2048,
+                  "height": 1152,
+                  "fallback": false
+                },
+                {
+                  "ratio": "3_2",
+                  "url": "https://s1.ticketm.net/dam/a/d7a/6ffed4d3-61d3-44c3-8e63-cc776582fd7a_RETINA_PORTRAIT_3_2.jpg",
+                  "width": 640,
+                  "height": 427,
+                  "fallback": false
+                },
+                {
+                  "ratio": "3_2",
+                  "url": "https://s1.ticketm.net/dam/a/d7a/6ffed4d3-61d3-44c3-8e63-cc776582fd7a_ARTIST_PAGE_3_2.jpg",
+                  "width": 305,
+                  "height": 203,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/d7a/6ffed4d3-61d3-44c3-8e63-cc776582fd7a_EVENT_DETAIL_PAGE_16_9.jpg",
+                  "width": 205,
+                  "height": 115,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/d7a/6ffed4d3-61d3-44c3-8e63-cc776582fd7a_RETINA_PORTRAIT_16_9.jpg",
+                  "width": 640,
+                  "height": 360,
+                  "fallback": false
+                },
+                {
+                  "ratio": "4_3",
+                  "url": "https://s1.ticketm.net/dam/a/d7a/6ffed4d3-61d3-44c3-8e63-cc776582fd7a_CUSTOM.jpg",
+                  "width": 305,
+                  "height": 225,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/d7a/6ffed4d3-61d3-44c3-8e63-cc776582fd7a_RETINA_LANDSCAPE_16_9.jpg",
+                  "width": 1136,
+                  "height": 639,
+                  "fallback": false
+                },
+                {
+                  "ratio": "16_9",
+                  "url": "https://s1.ticketm.net/dam/a/d7a/6ffed4d3-61d3-44c3-8e63-cc776582fd7a_TABLET_LANDSCAPE_16_9.jpg",
+                  "width": 1024,
+                  "height": 576,
+                  "fallback": false
+                },
+                {
+                  "ratio": "3_2",
+                  "url": "https://s1.ticketm.net/dam/a/d7a/6ffed4d3-61d3-44c3-8e63-cc776582fd7a_TABLET_LANDSCAPE_3_2.jpg",
+                  "width": 1024,
+                  "height": 683,
+                  "fallback": false
+                }
+              ],
+              "classifications": [
+                {
+                  "primary": true,
+                  "segment": {
+                    "id": "KZFzniwnSyZfZ7v7na",
+                    "name": "Arts & Theatre"
+                  },
+                  "genre": {
+                    "id": "KnvZfZ7v7l1",
+                    "name": "Theatre"
+                  },
+                  "subGenre": {
+                    "id": "KZazBEonSMnZfZ7vAve",
+                    "name": "Musical"
+                  },
+                  "type": {
+                    "id": "KZAyXgnZfZ7v7lt",
+                    "name": "Event Style"
+                  },
+                  "subType": {
+                    "id": "KZFzBErXgnZfZ7vAAt",
+                    "name": "Touring Show/Production"
+                  },
+                  "family": false
+                }
+              ],
+              "upcomingEvents": {
+                "tmr": 88,
+                "ticketmaster": 73,
+                "tmc": 64,
+                "_total": 225,
+                "_filtered": 0
+              },
+              "_links": {
+                "self": {
+                  "href": "/discovery/v2/attractions/K8vZ9174wRf?locale=en-us"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "_links": {
+    "first": {
+      "href": "/discovery/v2/events.json?city=Birmingham&countryCode=US&stateCode=AL&page=0&size=5"
+    },
+    "self": {
+      "href": "/discovery/v2/events.json?size=5&city=Birmingham&countryCode=US&stateCode=AL"
+    },
+    "next": {
+      "href": "/discovery/v2/events.json?city=Birmingham&countryCode=US&stateCode=AL&page=1&size=5"
+    },
+    "last": {
+      "href": "/discovery/v2/events.json?city=Birmingham&countryCode=US&stateCode=AL&page=79&size=5"
+    }
+  },
+  "page": {
+    "size": 5,
+    "totalElements": 398,
+    "totalPages": 80,
+    "number": 0
+  }
+}
