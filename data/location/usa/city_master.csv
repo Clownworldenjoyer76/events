@@ -1,179 +1,179 @@
-﻿state,city,country,latitude,longitude,radius_miles,timezone,region,metro_population_2025,selection_rule
-Alabama,Birmingham,USA,33.527174,-86.797036,100,America/Chicago,South,,
-Alabama,Huntsville,USA,34.69772,-86.67667,100,America/Chicago,South,556444,2025 metro population >= 500000
-Alabama,Tuscaloosa,USA,33.234404,-87.5283,100,America/Chicago,South,,Reviewed R100 hub>=50K
-Alaska,Anchorage,USA,61.17425,-149.284329,100,America/Anchorage,West,,
-Alaska,Fairbanks,USA,64.836531,-147.651745,100,America/Anchorage,West,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
-Alaska,Juneau,USA,58.37291,-134.178445,100,America/Juneau,West,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
-Arizona,Flagstaff,USA,35.185212,-111.620698,100,America/Phoenix,West,,Reviewed R100 hub>=50K
-Arizona,Lake Havasu City,USA,34.499809,-114.310943,100,America/Phoenix,West,,Reviewed R100 hub>=50K
-Arizona,Phoenix,USA,33.572154,-112.090132,100,America/Phoenix,West,,
-Arizona,Tucson,USA,32.153036,-110.870773,100,America/Phoenix,West,1074685,2025 metro population >= 500000
-Arizona,Yuma,USA,32.516286,-114.521782,100,America/Phoenix,West,,Reviewed R100 hub>=50K
-Arkansas,Fayetteville,USA,36.071455,-94.166564,100,America/Chicago,South,622177,2025 metro population >= 500000
-Arkansas,Little Rock,USA,34.725393,-92.358556,100,America/Chicago,South,,
-California,Bakersfield,USA,35.353171,-119.037919,100,America/Los_Angeles,West,927068,2025 metro population >= 500000
-California,Fresno,USA,36.782684,-119.793359,100,America/Los_Angeles,West,1203383,2025 metro population >= 500000
-California,Los Angeles,USA,34.019394,-118.410825,100,America/Los_Angeles,West,,
-California,Modesto,USA,37.637533,-121.003049,100,America/Los_Angeles,West,557719,2025 metro population >= 500000
-California,Oxnard,USA,34.199436,-119.207515,100,America/Los_Angeles,West,830851,2025 metro population >= 500000
-California,Redding,USA,40.570277,-122.366766,100,America/Los_Angeles,West,,Reviewed R100 hub>=50K
-California,Riverside,USA,33.938143,-117.393168,100,America/Los_Angeles,West,4769007,2025 metro population >= 500000
-California,Sacramento,USA,38.567694,-121.468161,100,America/Los_Angeles,West,2477274,2025 metro population >= 500000
-California,San Diego,USA,32.830391,-117.120923,100,America/Los_Angeles,West,3282248,2025 metro population >= 500000
-California,San Francisco,USA,37.727239,-123.032229,100,America/Los_Angeles,West,4630041,2025 metro population >= 500000
-California,San Jose,USA,37.296011,-121.814552,100,America/Los_Angeles,West,1984473,2025 metro population >= 500000
-California,Stockton,USA,37.976553,-121.308598,100,America/Los_Angeles,West,823815,2025 metro population >= 500000
-Colorado,Colorado Springs,USA,38.867255,-104.760749,100,America/Denver,West,781796,2025 metro population >= 500000
-Colorado,Denver,USA,39.76185,-104.881105,100,America/Denver,West,,
-Colorado,Grand Junction,USA,39.089062,-108.567452,100,America/Denver,West,,Reviewed R100 hub>=50K
-Connecticut,Bridgeport,USA,41.187393,-73.195757,100,America/New_York,Northeast,978179,2025 metro population >= 500000
-Connecticut,Hartford,USA,41.765933,-72.681579,100,America/New_York,Northeast,,
-Connecticut,New Haven,USA,41.310809,-72.924953,100,America/New_York,Northeast,578741,2025 metro population >= 500000
-Delaware,Wilmington,USA,39.735651,-75.532104,100,America/New_York,South,,
-District of Columbia,Washington,USA,38.904243,-77.016524,100,America/New_York,South,6465724,2025 metro population >= 500000
-Florida,Cape Coral,USA,26.643192,-81.997364,100,America/New_York,South,875607,2025 metro population >= 500000
-Florida,Deltona,USA,28.905121,-81.210978,100,America/New_York,South,746933,2025 metro population >= 500000
-Florida,Jacksonville,USA,30.336864,-81.661603,100,America/New_York,South,1785500,2025 metro population >= 500000
-Florida,Key West,USA,24.565063,-81.775539,100,America/New_York,South,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
-Florida,Lakeland,USA,28.055496,-81.954772,100,America/New_York,South,874790,2025 metro population >= 500000
-Florida,Miami,USA,25.775163,-80.208615,100,America/New_York,South,,
-Florida,North Port,USA,27.058166,-82.198044,100,America/New_York,South,948158,2025 metro population >= 500000
-Florida,Orlando,USA,28.472818,-81.320242,100,America/New_York,South,2957672,2025 metro population >= 500000
-Florida,Palm Bay,USA,27.954802,-80.664962,100,America/New_York,South,663982,2025 metro population >= 500000
-Florida,Pensacola,USA,30.440989,-87.191242,100,America/Chicago,South,544949,2025 metro population >= 500000
-Florida,Port St. Lucie,USA,27.280554,-80.388261,100,America/New_York,South,568721,2025 metro population >= 500000
-Florida,Tallahassee,USA,30.453529,-84.252272,100,America/New_York,South,,Reviewed R100 hub>=50K
-Florida,Tampa,USA,27.970086,-82.479673,100,America/New_York,South,3418895,2025 metro population >= 500000
-Georgia,Atlanta,USA,33.762909,-84.422675,100,America/New_York,South,,
-Georgia,Augusta,USA,33.365531,-82.073422,100,America/New_York,South,641231,2025 metro population >= 500000
-Georgia,Columbus,USA,32.510191,-84.874946,100,America/New_York,South,,Reviewed R100 hub>=50K
-Georgia,Savannah,USA,32.012457,-81.194157,100,America/New_York,South,,Reviewed R100 hub>=50K
-Hawaii,Honolulu,USA,21.324347,-157.84764,100,Pacific/Honolulu,West,,
-Idaho,Boise,USA,43.59805,-116.231596,100,America/Boise,West,,
-Idaho,Idaho Falls,USA,43.489616,-112.03534,100,America/Boise,West,,Reviewed R100 hub>=50K
-Idaho,Twin Falls,USA,42.563807,-114.460597,100,America/Boise,West,,Reviewed R100 hub>=50K
-Illinois,Chicago,USA,41.837045,-87.684939,100,America/Chicago,Midwest,,
-Illinois,Peoria,USA,40.751641,-89.617198,100,America/Chicago,Midwest,,Reviewed R100 hub>=50K
-Indiana,Indianapolis,USA,39.776664,-86.145935,100,America/Indiana/Indianapolis,Midwest,,
-Iowa,Cedar Rapids,USA,41.96419,-91.67917,100,America/Chicago,Midwest,,Reviewed R100 hub>=50K; substituted for better regional event hub
-Iowa,Des Moines,USA,41.57259,-93.610243,100,America/Chicago,Midwest,,
-Kansas,Dodge City,USA,37.76067,-100.017863,100,America/Chicago,Midwest,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
-Kansas,Manhattan,USA,39.188307,-96.605864,100,America/Chicago,Midwest,,Reviewed R100 hub>=50K; substituted for better regional event hub
-Kansas,Wichita,USA,37.690638,-97.345836,100,America/Chicago,Midwest,,
-Kentucky,Lexington,USA,38.040678,-84.458272,100,America/New_York,South,535174,2025 metro population >= 500000
-Kentucky,Louisville,USA,38.224728,-85.740614,100,America/Kentucky/Louisville,South,,
-Louisiana,Baton Rouge,USA,30.442174,-91.130894,100,America/Chicago,South,888699,2025 metro population >= 500000
-Louisiana,Bossier City,USA,32.523674,-93.655426,100,America/Chicago,South,,Reviewed R100 hub>=50K
-Louisiana,New Orleans,USA,30.05342,-89.934502,100,America/Chicago,South,,
-Maine,Bangor,USA,44.829625,-68.788767,100,America/New_York,Northeast,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
-Maine,Portland,USA,43.633157,-70.185305,100,America/New_York,Northeast,,
-Maryland,Baltimore,USA,39.300032,-76.610476,100,America/New_York,South,,
-Massachusetts,Boston,USA,42.338551,-71.018253,100,America/New_York,Northeast,,
-Massachusetts,Worcester,USA,42.269478,-71.807783,100,America/New_York,Northeast,888502,2025 metro population >= 500000
-Michigan,Detroit,USA,42.383037,-83.102237,100,America/Detroit,Midwest,,
-Michigan,Grand Rapids,USA,42.961156,-85.65557,100,America/Detroit,Midwest,1183645,2025 metro population >= 500000
-Michigan,Marquette,USA,46.550698,-87.395833,100,America/Detroit,Midwest,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
-Minnesota,Duluth,USA,46.774458,-92.134135,100,America/Chicago,Midwest,,Reviewed R100 hub>=50K
-Minnesota,Minneapolis,USA,44.963324,-93.26832,100,America/Chicago,Midwest,,
-Minnesota,Rochester,USA,44.014299,-92.478592,100,America/Chicago,Midwest,,Reviewed R100 hub>=50K
-Mississippi,Jackson,USA,32.315834,-90.21285,100,America/Chicago,South,,
-Missouri,Columbia,USA,38.94729,-92.326387,100,America/Chicago,Midwest,,Reviewed R100 hub>=50K
-Missouri,Kansas City,USA,39.125155,-94.550313,100,America/Chicago,Midwest,2270682,2025 metro population >= 500000
-Missouri,Springfield,USA,37.194157,-93.292642,100,America/Chicago,Midwest,500694,2025 metro population >= 500000
-Missouri,St. Louis,USA,38.635699,-90.244582,100,America/Chicago,Midwest,,
-Montana,Billings,USA,45.788538,-108.552475,100,America/Denver,West,,
-Montana,Bozeman,USA,45.683155,-111.053782,100,America/Denver,West,,Reviewed R100 hub>=50K
-Montana,Great Falls,USA,47.502518,-111.29997,100,America/Denver,West,,Reviewed R100 hub>=50K
-Montana,Missoula,USA,46.874359,-114.026136,100,America/Denver,West,,Reviewed R100 hub>=50K
-Nebraska,Grand Island,USA,40.921352,-98.358559,100,America/Chicago,Midwest,,Reviewed R100 hub>=50K
-Nebraska,North Platte,USA,41.12496,-100.750359,100,America/Chicago,Midwest,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
-Nebraska,Omaha,USA,41.262705,-96.053475,100,America/Chicago,Midwest,,
-Nevada,Elko,USA,40.838111,-115.767809,100,America/Los_Angeles,West,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
-Nevada,Las Vegas,USA,36.233499,-115.264037,100,America/Los_Angeles,West,,
-Nevada,Reno,USA,39.549097,-119.849907,100,America/Los_Angeles,West,578734,2025 metro population >= 500000
-New Hampshire,Manchester,USA,42.984941,-71.444131,100,America/New_York,Northeast,,
-New Jersey,Newark,USA,40.72422,-74.172574,100,America/New_York,Northeast,,
-New Mexico,Albuquerque,USA,35.10478,-106.646809,100,America/Denver,West,,
-New Mexico,Farmington,USA,36.753833,-108.18053,100,America/Denver,West,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
-New Mexico,Roswell,USA,33.373442,-104.529393,100,America/Denver,West,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
-New York,Albany,USA,42.665745,-73.798353,100,America/New_York,Northeast,915835,2025 metro population >= 500000
-New York,Buffalo,USA,42.892492,-78.859686,100,America/New_York,Northeast,1155653,2025 metro population >= 500000
-New York,Kiryas Joel,USA,41.340667,-74.167274,100,America/New_York,Northeast,718377,2025 metro population >= 500000
-New York,New York City,USA,40.662712,-73.938677,100,America/New_York,Northeast,,
-New York,Rochester,USA,43.169927,-77.616891,100,America/New_York,Northeast,1056149,2025 metro population >= 500000
-New York,Syracuse,USA,43.040998,-76.143554,100,America/New_York,Northeast,652273,2025 metro population >= 500000
-North Carolina,Asheville,USA,35.570972,-82.552725,100,America/New_York,South,,Reviewed R100 hub>=50K
-North Carolina,Charlotte,USA,35.209045,-80.83099,100,America/New_York,South,,
-North Carolina,Durham,USA,35.977928,-78.898109,100,America/New_York,South,625485,2025 metro population >= 500000
-North Carolina,Greensboro,USA,36.09485,-79.823624,100,America/New_York,South,805945,2025 metro population >= 500000
-North Carolina,Raleigh,USA,35.831868,-78.641042,100,America/New_York,South,1595720,2025 metro population >= 500000
-North Carolina,Wilmington,USA,34.209225,-77.885767,100,America/New_York,South,,Reviewed R100 hub>=50K
-North Carolina,Winston-Salem,USA,36.102863,-80.260829,100,America/New_York,South,712206,2025 metro population >= 500000
-North Dakota,Bismarck,USA,46.814572,-100.768568,100,America/Chicago,Midwest,,Reviewed R100 hub>=50K
-North Dakota,Fargo,USA,46.8647,-96.82908,100,America/Chicago,Midwest,,
-North Dakota,Minot,USA,48.236125,-101.277533,100,America/Chicago,Midwest,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
-North Dakota,Williston,USA,48.189496,-103.649117,100,America/Chicago,Midwest,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
-Ohio,Akron,USA,41.080456,-81.521429,100,America/New_York,Midwest,701780,2025 metro population >= 500000
-Ohio,Cincinnati,USA,39.140183,-84.505829,100,America/New_York,Midwest,2312858,2025 metro population >= 500000
-Ohio,Cleveland,USA,41.478462,-81.679435,100,America/New_York,Midwest,2165775,2025 metro population >= 500000
-Ohio,Columbus,USA,39.985531,-82.985594,100,America/New_York,Midwest,,
-Ohio,Dayton,USA,39.784743,-84.199632,100,America/New_York,Midwest,826554,2025 metro population >= 500000
-Ohio,Toledo,USA,41.664071,-83.581861,100,America/New_York,Midwest,599376,2025 metro population >= 500000
-Oklahoma,Oklahoma City,USA,35.467079,-97.513657,100,America/Chicago,South,,
-Oklahoma,Tulsa,USA,36.127949,-95.902316,100,America/Chicago,South,1069273,2025 metro population >= 500000
-Oregon,Eugene,USA,44.056848,-123.119019,100,America/Los_Angeles,West,,Reviewed R100 hub>=50K
-Oregon,Medford,USA,42.336006,-122.851762,100,America/Los_Angeles,West,,Reviewed R100 hub>=50K
-Oregon,Portland,USA,45.536951,-122.649971,100,America/Los_Angeles,West,,
-Pennsylvania,Allentown,USA,40.593648,-75.478393,100,America/New_York,Northeast,887615,2025 metro population >= 500000
-Pennsylvania,Harrisburg,USA,40.275891,-76.88502,100,America/New_York,Northeast,617427,2025 metro population >= 500000
-Pennsylvania,Lancaster,USA,40.042061,-76.30099,100,America/New_York,Northeast,563159,2025 metro population >= 500000
-Pennsylvania,Philadelphia,USA,40.009376,-75.133346,100,America/New_York,Northeast,,
-Pennsylvania,Pittsburgh,USA,40.439936,-79.975676,100,America/New_York,Northeast,2421992,2025 metro population >= 500000
-Pennsylvania,Scranton,USA,41.404178,-75.665908,100,America/New_York,Northeast,574418,2025 metro population >= 500000
-Rhode Island,Providence,USA,41.823056,-71.418784,100,America/New_York,Northeast,,
-South Carolina,Charleston,USA,32.828017,-79.972896,100,America/New_York,South,,
-South Carolina,Columbia,USA,34.040519,-80.906099,100,America/New_York,South,879918,2025 metro population >= 500000
-South Carolina,Greenville,USA,34.836902,-82.362997,100,America/New_York,South,1014101,2025 metro population >= 500000
-South Dakota,Aberdeen,USA,45.464678,-98.468104,100,America/Chicago,Midwest,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
-South Dakota,Rapid City,USA,44.071071,-103.217924,100,America/Denver,Midwest,,Reviewed R100 hub>=50K
-South Dakota,Sioux Falls,USA,43.540696,-96.731962,100,America/Chicago,Midwest,,
-Tennessee,Chattanooga,USA,35.065958,-85.248386,100,America/New_York,South,594530,2025 metro population >= 500000
-Tennessee,Clarksville,USA,36.56643,-87.345216,100,America/Chicago,South,,Reviewed R100 hub>=50K
-Tennessee,Knoxville,USA,35.97068,-83.94927,100,America/New_York,South,968137,2025 metro population >= 500000
-Tennessee,Memphis,USA,35.109164,-89.968511,100,America/Chicago,South,1341412,2025 metro population >= 500000
-Tennessee,Nashville,USA,36.1718,-86.785002,100,America/Chicago,South,,
-Texas,Abilene,USA,32.454514,-99.738147,100,America/Chicago,South,,Reviewed R100 hub>=50K
-Texas,Amarillo,USA,35.199903,-101.830194,100,America/Chicago,South,,Reviewed R100 hub>=50K
-Texas,Austin,USA,30.298622,-97.754134,100,America/Chicago,South,2620945,2025 metro population >= 500000
-Texas,Beaumont,USA,30.084912,-94.14533,100,America/Chicago,South,,Reviewed R100 hub>=50K
-Texas,Corpus Christi,USA,27.754252,-97.173385,100,America/Chicago,South,,Reviewed R100 hub>=50K
-Texas,Dallas,USA,32.793333,-96.766513,100,America/Chicago,South,,
-Texas,Del Rio,USA,29.373045,-100.881851,100,America/Chicago,South,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
-Texas,Denton,USA,33.217449,-97.141346,100,America/Chicago,South,,Reviewed R100 hub>=50K
-Texas,El Paso,USA,31.84778,-106.431106,100,America/Denver,South,881291,2025 metro population >= 500000
-Texas,Houston,USA,29.785743,-95.388806,100,America/Chicago,South,7904627,2025 metro population >= 500000
-Texas,Killeen,USA,31.077669,-97.731952,100,America/Chicago,South,511497,2025 metro population >= 500000
-Texas,Laredo,USA,27.560379,-99.489181,100,America/Chicago,South,,Reviewed R100 hub>=50K
-Texas,Lubbock,USA,33.561901,-101.888883,100,America/Chicago,South,,Reviewed R100 hub>=50K
-Texas,McAllen,USA,26.224966,-98.246083,100,America/Chicago,South,921549,2025 metro population >= 500000
-Texas,Midland,USA,32.024642,-102.113467,100,America/Chicago,South,,Reviewed R100 hub>=50K
-Texas,San Antonio,USA,29.462809,-98.524635,100,America/Chicago,South,2813140,2025 metro population >= 500000
-Utah,Ogden,USA,41.228391,-111.968147,100,America/Denver,West,672784,2025 metro population >= 500000
-Utah,Provo,USA,40.245312,-111.645057,100,America/Denver,West,773426,2025 metro population >= 500000
-Utah,Salt Lake City,USA,40.776928,-111.930991,100,America/Denver,West,,
-Utah,St. George,USA,37.077006,-113.576534,100,America/Denver,West,,Reviewed R100 hub>=50K
-Vermont,Burlington,USA,44.491927,-73.238882,100,America/New_York,Northeast,,
-Virginia,Richmond,USA,37.531399,-77.476009,100,America/New_York,South,,
-Virginia,Virginia Beach,USA,36.779525,-76.029142,100,America/New_York,South,1797213,2025 metro population >= 500000
-Washington,Kennewick,USA,46.197622,-119.175923,100,America/Los_Angeles,West,,Reviewed R100 hub>=50K
-Washington,Seattle,USA,47.619335,-122.351538,100,America/Los_Angeles,West,,
-Washington,Spokane,USA,47.666935,-117.433322,100,America/Los_Angeles,West,608012,2025 metro population >= 500000
-West Virginia,Charleston,USA,38.348692,-81.632324,100,America/New_York,South,,
-Wisconsin,Green Bay,USA,44.521542,-87.986568,100,America/Chicago,Midwest,,Reviewed R100 hub>=50K
-Wisconsin,Madison,USA,43.087815,-89.429856,100,America/Chicago,Midwest,709685,2025 metro population >= 500000
-Wisconsin,Milwaukee,USA,43.063348,-87.966695,100,America/Chicago,Midwest,,
-Wyoming,Casper,USA,42.84212,-106.321282,100,America/Denver,West,,Reviewed R100 hub>=50K
-Wyoming,Cheyenne,USA,41.128275,-104.799155,100,America/Denver,West,,
-Wyoming,Gillette,USA,44.27258,-105.498936,100,America/Denver,West,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
-Wyoming,Rock Springs,USA,41.594705,-109.220921,100,America/Denver,West,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
+"state","city","country","latitude","longitude","radius_miles","timezone","region","metro_population_2025","selection_rule"
+"Alabama","Birmingham","USA","33.527174","-86.797036","","America/Chicago","South","",""
+"Alabama","Huntsville","USA","34.69772","-86.67667","","America/Chicago","South","556444","2025 metro population >= 500000"
+"Alabama","Tuscaloosa","USA","33.234404","-87.5283","","America/Chicago","South","","Reviewed R100 hub>=50K"
+"Alaska","Anchorage","USA","61.17425","-149.284329","","America/Anchorage","West","",""
+"Alaska","Fairbanks","USA","64.836531","-147.651745","","America/Anchorage","West","","Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles"
+"Alaska","Juneau","USA","58.37291","-134.178445","","America/Juneau","West","","Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles"
+"Arizona","Flagstaff","USA","35.185212","-111.620698","","America/Phoenix","West","","Reviewed R100 hub>=50K"
+"Arizona","Lake Havasu City","USA","34.499809","-114.310943","","America/Phoenix","West","","Reviewed R100 hub>=50K"
+"Arizona","Phoenix","USA","33.572154","-112.090132","","America/Phoenix","West","",""
+"Arizona","Tucson","USA","32.153036","-110.870773","","America/Phoenix","West","1074685","2025 metro population >= 500000"
+"Arizona","Yuma","USA","32.516286","-114.521782","","America/Phoenix","West","","Reviewed R100 hub>=50K"
+"Arkansas","Fayetteville","USA","36.071455","-94.166564","","America/Chicago","South","622177","2025 metro population >= 500000"
+"Arkansas","Little Rock","USA","34.725393","-92.358556","","America/Chicago","South","",""
+"California","Bakersfield","USA","35.353171","-119.037919","","America/Los_Angeles","West","927068","2025 metro population >= 500000"
+"California","Fresno","USA","36.782684","-119.793359","","America/Los_Angeles","West","1203383","2025 metro population >= 500000"
+"California","Los Angeles","USA","34.019394","-118.410825","","America/Los_Angeles","West","",""
+"California","Modesto","USA","37.637533","-121.003049","","America/Los_Angeles","West","557719","2025 metro population >= 500000"
+"California","Oxnard","USA","34.199436","-119.207515","","America/Los_Angeles","West","830851","2025 metro population >= 500000"
+"California","Redding","USA","40.570277","-122.366766","","America/Los_Angeles","West","","Reviewed R100 hub>=50K"
+"California","Riverside","USA","33.938143","-117.393168","","America/Los_Angeles","West","4769007","2025 metro population >= 500000"
+"California","Sacramento","USA","38.567694","-121.468161","","America/Los_Angeles","West","2477274","2025 metro population >= 500000"
+"California","San Diego","USA","32.830391","-117.120923","","America/Los_Angeles","West","3282248","2025 metro population >= 500000"
+"California","San Francisco","USA","37.727239","-123.032229","","America/Los_Angeles","West","4630041","2025 metro population >= 500000"
+"California","San Jose","USA","37.296011","-121.814552","","America/Los_Angeles","West","1984473","2025 metro population >= 500000"
+"California","Stockton","USA","37.976553","-121.308598","","America/Los_Angeles","West","823815","2025 metro population >= 500000"
+"Colorado","Colorado Springs","USA","38.867255","-104.760749","","America/Denver","West","781796","2025 metro population >= 500000"
+"Colorado","Denver","USA","39.76185","-104.881105","","America/Denver","West","",""
+"Colorado","Grand Junction","USA","39.089062","-108.567452","","America/Denver","West","","Reviewed R100 hub>=50K"
+"Connecticut","Bridgeport","USA","41.187393","-73.195757","","America/New_York","Northeast","978179","2025 metro population >= 500000"
+"Connecticut","Hartford","USA","41.765933","-72.681579","","America/New_York","Northeast","",""
+"Connecticut","New Haven","USA","41.310809","-72.924953","","America/New_York","Northeast","578741","2025 metro population >= 500000"
+"Delaware","Wilmington","USA","39.735651","-75.532104","","America/New_York","South","",""
+"District of Columbia","Washington","USA","38.904243","-77.016524","","America/New_York","South","6465724","2025 metro population >= 500000"
+"Florida","Cape Coral","USA","26.643192","-81.997364","","America/New_York","South","875607","2025 metro population >= 500000"
+"Florida","Deltona","USA","28.905121","-81.210978","","America/New_York","South","746933","2025 metro population >= 500000"
+"Florida","Jacksonville","USA","30.336864","-81.661603","","America/New_York","South","1785500","2025 metro population >= 500000"
+"Florida","Key West","USA","24.565063","-81.775539","","America/New_York","South","","Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles"
+"Florida","Lakeland","USA","28.055496","-81.954772","","America/New_York","South","874790","2025 metro population >= 500000"
+"Florida","Miami","USA","25.775163","-80.208615","","America/New_York","South","",""
+"Florida","North Port","USA","27.058166","-82.198044","","America/New_York","South","948158","2025 metro population >= 500000"
+"Florida","Orlando","USA","28.472818","-81.320242","","America/New_York","South","2957672","2025 metro population >= 500000"
+"Florida","Palm Bay","USA","27.954802","-80.664962","","America/New_York","South","663982","2025 metro population >= 500000"
+"Florida","Pensacola","USA","30.440989","-87.191242","","America/Chicago","South","544949","2025 metro population >= 500000"
+"Florida","Port St. Lucie","USA","27.280554","-80.388261","","America/New_York","South","568721","2025 metro population >= 500000"
+"Florida","Tallahassee","USA","30.453529","-84.252272","","America/New_York","South","","Reviewed R100 hub>=50K"
+"Florida","Tampa","USA","27.970086","-82.479673","","America/New_York","South","3418895","2025 metro population >= 500000"
+"Georgia","Atlanta","USA","33.762909","-84.422675","","America/New_York","South","",""
+"Georgia","Augusta","USA","33.365531","-82.073422","","America/New_York","South","641231","2025 metro population >= 500000"
+"Georgia","Columbus","USA","32.510191","-84.874946","","America/New_York","South","","Reviewed R100 hub>=50K"
+"Georgia","Savannah","USA","32.012457","-81.194157","","America/New_York","South","","Reviewed R100 hub>=50K"
+"Hawaii","Honolulu","USA","21.324347","-157.84764","","Pacific/Honolulu","West","",""
+"Idaho","Boise","USA","43.59805","-116.231596","","America/Boise","West","",""
+"Idaho","Idaho Falls","USA","43.489616","-112.03534","","America/Boise","West","","Reviewed R100 hub>=50K"
+"Idaho","Twin Falls","USA","42.563807","-114.460597","","America/Boise","West","","Reviewed R100 hub>=50K"
+"Illinois","Chicago","USA","41.837045","-87.684939","","America/Chicago","Midwest","",""
+"Illinois","Peoria","USA","40.751641","-89.617198","","America/Chicago","Midwest","","Reviewed R100 hub>=50K"
+"Indiana","Indianapolis","USA","39.776664","-86.145935","","America/Indiana/Indianapolis","Midwest","",""
+"Iowa","Cedar Rapids","USA","41.96419","-91.67917","","America/Chicago","Midwest","","Reviewed R100 hub>=50K; substituted for better regional event hub"
+"Iowa","Des Moines","USA","41.57259","-93.610243","","America/Chicago","Midwest","",""
+"Kansas","Dodge City","USA","37.76067","-100.017863","","America/Chicago","Midwest","","Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles"
+"Kansas","Manhattan","USA","39.188307","-96.605864","","America/Chicago","Midwest","","Reviewed R100 hub>=50K; substituted for better regional event hub"
+"Kansas","Wichita","USA","37.690638","-97.345836","","America/Chicago","Midwest","",""
+"Kentucky","Lexington","USA","38.040678","-84.458272","","America/New_York","South","535174","2025 metro population >= 500000"
+"Kentucky","Louisville","USA","38.224728","-85.740614","","America/Kentucky/Louisville","South","",""
+"Louisiana","Baton Rouge","USA","30.442174","-91.130894","","America/Chicago","South","888699","2025 metro population >= 500000"
+"Louisiana","Bossier City","USA","32.523674","-93.655426","","America/Chicago","South","","Reviewed R100 hub>=50K"
+"Louisiana","New Orleans","USA","30.05342","-89.934502","","America/Chicago","South","",""
+"Maine","Bangor","USA","44.829625","-68.788767","","America/New_York","Northeast","","Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles"
+"Maine","Portland","USA","43.633157","-70.185305","","America/New_York","Northeast","",""
+"Maryland","Baltimore","USA","39.300032","-76.610476","","America/New_York","South","",""
+"Massachusetts","Boston","USA","42.338551","-71.018253","","America/New_York","Northeast","",""
+"Massachusetts","Worcester","USA","42.269478","-71.807783","","America/New_York","Northeast","888502","2025 metro population >= 500000"
+"Michigan","Detroit","USA","42.383037","-83.102237","","America/Detroit","Midwest","",""
+"Michigan","Grand Rapids","USA","42.961156","-85.65557","","America/Detroit","Midwest","1183645","2025 metro population >= 500000"
+"Michigan","Marquette","USA","46.550698","-87.395833","","America/Detroit","Midwest","","Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles"
+"Minnesota","Duluth","USA","46.774458","-92.134135","","America/Chicago","Midwest","","Reviewed R100 hub>=50K"
+"Minnesota","Minneapolis","USA","44.963324","-93.26832","","America/Chicago","Midwest","",""
+"Minnesota","Rochester","USA","44.014299","-92.478592","","America/Chicago","Midwest","","Reviewed R100 hub>=50K"
+"Mississippi","Jackson","USA","32.315834","-90.21285","","America/Chicago","South","",""
+"Missouri","Columbia","USA","38.94729","-92.326387","","America/Chicago","Midwest","","Reviewed R100 hub>=50K"
+"Missouri","Kansas City","USA","39.125155","-94.550313","","America/Chicago","Midwest","2270682","2025 metro population >= 500000"
+"Missouri","Springfield","USA","37.194157","-93.292642","","America/Chicago","Midwest","500694","2025 metro population >= 500000"
+"Missouri","St. Louis","USA","38.635699","-90.244582","","America/Chicago","Midwest","",""
+"Montana","Billings","USA","45.788538","-108.552475","","America/Denver","West","",""
+"Montana","Bozeman","USA","45.683155","-111.053782","","America/Denver","West","","Reviewed R100 hub>=50K"
+"Montana","Great Falls","USA","47.502518","-111.29997","","America/Denver","West","","Reviewed R100 hub>=50K"
+"Montana","Missoula","USA","46.874359","-114.026136","","America/Denver","West","","Reviewed R100 hub>=50K"
+"Nebraska","Grand Island","USA","40.921352","-98.358559","","America/Chicago","Midwest","","Reviewed R100 hub>=50K"
+"Nebraska","North Platte","USA","41.12496","-100.750359","","America/Chicago","Midwest","","Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles"
+"Nebraska","Omaha","USA","41.262705","-96.053475","","America/Chicago","Midwest","",""
+"Nevada","Elko","USA","40.838111","-115.767809","","America/Los_Angeles","West","","Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles"
+"Nevada","Las Vegas","USA","36.233499","-115.264037","","America/Los_Angeles","West","",""
+"Nevada","Reno","USA","39.549097","-119.849907","","America/Los_Angeles","West","578734","2025 metro population >= 500000"
+"New Hampshire","Manchester","USA","42.984941","-71.444131","","America/New_York","Northeast","",""
+"New Jersey","Newark","USA","40.72422","-74.172574","","America/New_York","Northeast","",""
+"New Mexico","Albuquerque","USA","35.10478","-106.646809","","America/Denver","West","",""
+"New Mexico","Farmington","USA","36.753833","-108.18053","","America/Denver","West","","Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles"
+"New Mexico","Roswell","USA","33.373442","-104.529393","","America/Denver","West","","Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles"
+"New York","Albany","USA","42.665745","-73.798353","","America/New_York","Northeast","915835","2025 metro population >= 500000"
+"New York","Buffalo","USA","42.892492","-78.859686","","America/New_York","Northeast","1155653","2025 metro population >= 500000"
+"New York","Kiryas Joel","USA","41.340667","-74.167274","","America/New_York","Northeast","718377","2025 metro population >= 500000"
+"New York","New York City","USA","40.662712","-73.938677","","America/New_York","Northeast","",""
+"New York","Rochester","USA","43.169927","-77.616891","","America/New_York","Northeast","1056149","2025 metro population >= 500000"
+"New York","Syracuse","USA","43.040998","-76.143554","","America/New_York","Northeast","652273","2025 metro population >= 500000"
+"North Carolina","Asheville","USA","35.570972","-82.552725","","America/New_York","South","","Reviewed R100 hub>=50K"
+"North Carolina","Charlotte","USA","35.209045","-80.83099","","America/New_York","South","",""
+"North Carolina","Durham","USA","35.977928","-78.898109","","America/New_York","South","625485","2025 metro population >= 500000"
+"North Carolina","Greensboro","USA","36.09485","-79.823624","","America/New_York","South","805945","2025 metro population >= 500000"
+"North Carolina","Raleigh","USA","35.831868","-78.641042","","America/New_York","South","1595720","2025 metro population >= 500000"
+"North Carolina","Wilmington","USA","34.209225","-77.885767","","America/New_York","South","","Reviewed R100 hub>=50K"
+"North Carolina","Winston-Salem","USA","36.102863","-80.260829","","America/New_York","South","712206","2025 metro population >= 500000"
+"North Dakota","Bismarck","USA","46.814572","-100.768568","","America/Chicago","Midwest","","Reviewed R100 hub>=50K"
+"North Dakota","Fargo","USA","46.8647","-96.82908","","America/Chicago","Midwest","",""
+"North Dakota","Minot","USA","48.236125","-101.277533","","America/Chicago","Midwest","","Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles"
+"North Dakota","Williston","USA","48.189496","-103.649117","","America/Chicago","Midwest","","Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles"
+"Ohio","Akron","USA","41.080456","-81.521429","","America/New_York","Midwest","701780","2025 metro population >= 500000"
+"Ohio","Cincinnati","USA","39.140183","-84.505829","","America/New_York","Midwest","2312858","2025 metro population >= 500000"
+"Ohio","Cleveland","USA","41.478462","-81.679435","","America/New_York","Midwest","2165775","2025 metro population >= 500000"
+"Ohio","Columbus","USA","39.985531","-82.985594","","America/New_York","Midwest","",""
+"Ohio","Dayton","USA","39.784743","-84.199632","","America/New_York","Midwest","826554","2025 metro population >= 500000"
+"Ohio","Toledo","USA","41.664071","-83.581861","","America/New_York","Midwest","599376","2025 metro population >= 500000"
+"Oklahoma","Oklahoma City","USA","35.467079","-97.513657","","America/Chicago","South","",""
+"Oklahoma","Tulsa","USA","36.127949","-95.902316","","America/Chicago","South","1069273","2025 metro population >= 500000"
+"Oregon","Eugene","USA","44.056848","-123.119019","","America/Los_Angeles","West","","Reviewed R100 hub>=50K"
+"Oregon","Medford","USA","42.336006","-122.851762","","America/Los_Angeles","West","","Reviewed R100 hub>=50K"
+"Oregon","Portland","USA","45.536951","-122.649971","","America/Los_Angeles","West","",""
+"Pennsylvania","Allentown","USA","40.593648","-75.478393","","America/New_York","Northeast","887615","2025 metro population >= 500000"
+"Pennsylvania","Harrisburg","USA","40.275891","-76.88502","","America/New_York","Northeast","617427","2025 metro population >= 500000"
+"Pennsylvania","Lancaster","USA","40.042061","-76.30099","","America/New_York","Northeast","563159","2025 metro population >= 500000"
+"Pennsylvania","Philadelphia","USA","40.009376","-75.133346","","America/New_York","Northeast","",""
+"Pennsylvania","Pittsburgh","USA","40.439936","-79.975676","","America/New_York","Northeast","2421992","2025 metro population >= 500000"
+"Pennsylvania","Scranton","USA","41.404178","-75.665908","","America/New_York","Northeast","574418","2025 metro population >= 500000"
+"Rhode Island","Providence","USA","41.823056","-71.418784","","America/New_York","Northeast","",""
+"South Carolina","Charleston","USA","32.828017","-79.972896","","America/New_York","South","",""
+"South Carolina","Columbia","USA","34.040519","-80.906099","","America/New_York","South","879918","2025 metro population >= 500000"
+"South Carolina","Greenville","USA","34.836902","-82.362997","","America/New_York","South","1014101","2025 metro population >= 500000"
+"South Dakota","Aberdeen","USA","45.464678","-98.468104","","America/Chicago","Midwest","","Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles"
+"South Dakota","Rapid City","USA","44.071071","-103.217924","","America/Denver","Midwest","","Reviewed R100 hub>=50K"
+"South Dakota","Sioux Falls","USA","43.540696","-96.731962","","America/Chicago","Midwest","",""
+"Tennessee","Chattanooga","USA","35.065958","-85.248386","","America/New_York","South","594530","2025 metro population >= 500000"
+"Tennessee","Clarksville","USA","36.56643","-87.345216","","America/Chicago","South","","Reviewed R100 hub>=50K"
+"Tennessee","Knoxville","USA","35.97068","-83.94927","","America/New_York","South","968137","2025 metro population >= 500000"
+"Tennessee","Memphis","USA","35.109164","-89.968511","","America/Chicago","South","1341412","2025 metro population >= 500000"
+"Tennessee","Nashville","USA","36.1718","-86.785002","","America/Chicago","South","",""
+"Texas","Abilene","USA","32.454514","-99.738147","","America/Chicago","South","","Reviewed R100 hub>=50K"
+"Texas","Amarillo","USA","35.199903","-101.830194","","America/Chicago","South","","Reviewed R100 hub>=50K"
+"Texas","Austin","USA","30.298622","-97.754134","","America/Chicago","South","2620945","2025 metro population >= 500000"
+"Texas","Beaumont","USA","30.084912","-94.14533","","America/Chicago","South","","Reviewed R100 hub>=50K"
+"Texas","Corpus Christi","USA","27.754252","-97.173385","","America/Chicago","South","","Reviewed R100 hub>=50K"
+"Texas","Dallas","USA","32.793333","-96.766513","","America/Chicago","South","",""
+"Texas","Del Rio","USA","29.373045","-100.881851","","America/Chicago","South","","Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles"
+"Texas","Denton","USA","33.217449","-97.141346","","America/Chicago","South","","Reviewed R100 hub>=50K"
+"Texas","El Paso","USA","31.84778","-106.431106","","America/Denver","South","881291","2025 metro population >= 500000"
+"Texas","Houston","USA","29.785743","-95.388806","","America/Chicago","South","7904627","2025 metro population >= 500000"
+"Texas","Killeen","USA","31.077669","-97.731952","","America/Chicago","South","511497","2025 metro population >= 500000"
+"Texas","Laredo","USA","27.560379","-99.489181","","America/Chicago","South","","Reviewed R100 hub>=50K"
+"Texas","Lubbock","USA","33.561901","-101.888883","","America/Chicago","South","","Reviewed R100 hub>=50K"
+"Texas","McAllen","USA","26.224966","-98.246083","","America/Chicago","South","921549","2025 metro population >= 500000"
+"Texas","Midland","USA","32.024642","-102.113467","","America/Chicago","South","","Reviewed R100 hub>=50K"
+"Texas","San Antonio","USA","29.462809","-98.524635","","America/Chicago","South","2813140","2025 metro population >= 500000"
+"Utah","Ogden","USA","41.228391","-111.968147","","America/Denver","West","672784","2025 metro population >= 500000"
+"Utah","Provo","USA","40.245312","-111.645057","","America/Denver","West","773426","2025 metro population >= 500000"
+"Utah","Salt Lake City","USA","40.776928","-111.930991","","America/Denver","West","",""
+"Utah","St. George","USA","37.077006","-113.576534","","America/Denver","West","","Reviewed R100 hub>=50K"
+"Vermont","Burlington","USA","44.491927","-73.238882","","America/New_York","Northeast","",""
+"Virginia","Richmond","USA","37.531399","-77.476009","","America/New_York","South","",""
+"Virginia","Virginia Beach","USA","36.779525","-76.029142","","America/New_York","South","1797213","2025 metro population >= 500000"
+"Washington","Kennewick","USA","46.197622","-119.175923","","America/Los_Angeles","West","","Reviewed R100 hub>=50K"
+"Washington","Seattle","USA","47.619335","-122.351538","","America/Los_Angeles","West","",""
+"Washington","Spokane","USA","47.666935","-117.433322","","America/Los_Angeles","West","608012","2025 metro population >= 500000"
+"West Virginia","Charleston","USA","38.348692","-81.632324","","America/New_York","South","",""
+"Wisconsin","Green Bay","USA","44.521542","-87.986568","","America/Chicago","Midwest","","Reviewed R100 hub>=50K"
+"Wisconsin","Madison","USA","43.087815","-89.429856","","America/Chicago","Midwest","709685","2025 metro population >= 500000"
+"Wisconsin","Milwaukee","USA","43.063348","-87.966695","","America/Chicago","Midwest","",""
+"Wyoming","Casper","USA","42.84212","-106.321282","","America/Denver","West","","Reviewed R100 hub>=50K"
+"Wyoming","Cheyenne","USA","41.128275","-104.799155","","America/Denver","West","",""
+"Wyoming","Gillette","USA","44.27258","-105.498936","","America/Denver","West","","Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles"
+"Wyoming","Rock Springs","USA","41.594705","-109.220921","","America/Denver","West","","Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles"
