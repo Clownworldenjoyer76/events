@@ -1,0 +1,51 @@
+﻿name: Ticketmaster Daily
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: repo-write-lock-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run Ticketmaster collector
+        id: collect
+        continue-on-error: true
+        env:
+          TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
+        run: python3 scripts/daily/tm.py
+
+      - name: Commit collected data
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -- data/raw/ticketmaster errors/tm.txt
+
+          if git diff --cached --quiet; then
+            echo "REPO WRITE: NO CHANGES"
+          else
+            git commit -m "Update Ticketmaster event data"
+            git pull --rebase origin "$GITHUB_REF_NAME"
+            git push origin "HEAD:$GITHUB_REF_NAME"
+            echo "REPO WRITE: PASS"
+          fi
+
+      - name: Report collector failure
+        if: steps.collect.outcome == 'failure'
+        run: exit 1
