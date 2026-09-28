@@ -1,0 +1,179 @@
+city_id,state,state_code,city,country,country_code,latitude,longitude,radius_miles,timezone,region,metro_population_2025,selection_rule
+100001,Alabama,AL,Birmingham,USA,US,33.527174,-86.797036,,America/Chicago,South,,
+100002,Alabama,AL,Huntsville,USA,US,34.69772,-86.67667,,America/Chicago,South,556444,2025 metro population >= 500000
+100003,Alabama,AL,Tuscaloosa,USA,US,33.234404,-87.5283,,America/Chicago,South,,Reviewed R100 hub>=50K
+100004,Alaska,AK,Anchorage,USA,US,61.17425,-149.284329,,America/Anchorage,West,,
+100005,Alaska,AK,Fairbanks,USA,US,64.836531,-147.651745,,America/Anchorage,West,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
+100006,Alaska,AK,Juneau,USA,US,58.37291,-134.178445,,America/Juneau,West,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
+100007,Arizona,AZ,Flagstaff,USA,US,35.185212,-111.620698,,America/Phoenix,West,,Reviewed R100 hub>=50K
+100008,Arizona,AZ,Lake Havasu City,USA,US,34.499809,-114.310943,,America/Phoenix,West,,Reviewed R100 hub>=50K
+100009,Arizona,AZ,Phoenix,USA,US,33.572154,-112.090132,,America/Phoenix,West,,
+100010,Arizona,AZ,Tucson,USA,US,32.153036,-110.870773,,America/Phoenix,West,1074685,2025 metro population >= 500000
+100011,Arizona,AZ,Yuma,USA,US,32.516286,-114.521782,,America/Phoenix,West,,Reviewed R100 hub>=50K
+100012,Arkansas,AR,Fayetteville,USA,US,36.071455,-94.166564,,America/Chicago,South,622177,2025 metro population >= 500000
+100013,Arkansas,AR,Little Rock,USA,US,34.725393,-92.358556,,America/Chicago,South,,
+100014,California,CA,Bakersfield,USA,US,35.353171,-119.037919,,America/Los_Angeles,West,927068,2025 metro population >= 500000
+100015,California,CA,Fresno,USA,US,36.782684,-119.793359,,America/Los_Angeles,West,1203383,2025 metro population >= 500000
+100016,California,CA,Los Angeles,USA,US,34.019394,-118.410825,,America/Los_Angeles,West,,
+100017,California,CA,Modesto,USA,US,37.637533,-121.003049,,America/Los_Angeles,West,557719,2025 metro population >= 500000
+100018,California,CA,Oxnard,USA,US,34.199436,-119.207515,,America/Los_Angeles,West,830851,2025 metro population >= 500000
+100019,California,CA,Redding,USA,US,40.570277,-122.366766,,America/Los_Angeles,West,,Reviewed R100 hub>=50K
+100020,California,CA,Riverside,USA,US,33.938143,-117.393168,,America/Los_Angeles,West,4769007,2025 metro population >= 500000
+100021,California,CA,Sacramento,USA,US,38.567694,-121.468161,,America/Los_Angeles,West,2477274,2025 metro population >= 500000
+100022,California,CA,San Diego,USA,US,32.830391,-117.120923,,America/Los_Angeles,West,3282248,2025 metro population >= 500000
+100023,California,CA,San Francisco,USA,US,37.727239,-123.032229,,America/Los_Angeles,West,4630041,2025 metro population >= 500000
+100024,California,CA,San Jose,USA,US,37.296011,-121.814552,,America/Los_Angeles,West,1984473,2025 metro population >= 500000
+100025,California,CA,Stockton,USA,US,37.976553,-121.308598,,America/Los_Angeles,West,823815,2025 metro population >= 500000
+100026,Colorado,CO,Colorado Springs,USA,US,38.867255,-104.760749,,America/Denver,West,781796,2025 metro population >= 500000
+100027,Colorado,CO,Denver,USA,US,39.76185,-104.881105,,America/Denver,West,,
+100028,Colorado,CO,Grand Junction,USA,US,39.089062,-108.567452,,America/Denver,West,,Reviewed R100 hub>=50K
+100029,Connecticut,CT,Bridgeport,USA,US,41.187393,-73.195757,,America/New_York,Northeast,978179,2025 metro population >= 500000
+100030,Connecticut,CT,Hartford,USA,US,41.765933,-72.681579,,America/New_York,Northeast,,
+100031,Connecticut,CT,New Haven,USA,US,41.310809,-72.924953,,America/New_York,Northeast,578741,2025 metro population >= 500000
+100032,Delaware,DE,Wilmington,USA,US,39.735651,-75.532104,,America/New_York,South,,
+100033,District of Columbia,DC,Washington,USA,US,38.904243,-77.016524,,America/New_York,South,6465724,2025 metro population >= 500000
+100034,Florida,FL,Cape Coral,USA,US,26.643192,-81.997364,,America/New_York,South,875607,2025 metro population >= 500000
+100035,Florida,FL,Deltona,USA,US,28.905121,-81.210978,,America/New_York,South,746933,2025 metro population >= 500000
+100036,Florida,FL,Jacksonville,USA,US,30.336864,-81.661603,,America/New_York,South,1785500,2025 metro population >= 500000
+100037,Florida,FL,Key West,USA,US,24.565063,-81.775539,,America/New_York,South,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
+100038,Florida,FL,Lakeland,USA,US,28.055496,-81.954772,,America/New_York,South,874790,2025 metro population >= 500000
+100039,Florida,FL,Miami,USA,US,25.775163,-80.208615,,America/New_York,South,,
+100040,Florida,FL,North Port,USA,US,27.058166,-82.198044,,America/New_York,South,948158,2025 metro population >= 500000
+100041,Florida,FL,Orlando,USA,US,28.472818,-81.320242,,America/New_York,South,2957672,2025 metro population >= 500000
+100042,Florida,FL,Palm Bay,USA,US,27.954802,-80.664962,,America/New_York,South,663982,2025 metro population >= 500000
+100043,Florida,FL,Pensacola,USA,US,30.440989,-87.191242,,America/Chicago,South,544949,2025 metro population >= 500000
+100044,Florida,FL,Port St. Lucie,USA,US,27.280554,-80.388261,,America/New_York,South,568721,2025 metro population >= 500000
+100045,Florida,FL,Tallahassee,USA,US,30.453529,-84.252272,,America/New_York,South,,Reviewed R100 hub>=50K
+100046,Florida,FL,Tampa,USA,US,27.970086,-82.479673,,America/New_York,South,3418895,2025 metro population >= 500000
+100047,Georgia,GA,Atlanta,USA,US,33.762909,-84.422675,,America/New_York,South,,
+100048,Georgia,GA,Augusta,USA,US,33.365531,-82.073422,,America/New_York,South,641231,2025 metro population >= 500000
+100049,Georgia,GA,Columbus,USA,US,32.510191,-84.874946,,America/New_York,South,,Reviewed R100 hub>=50K
+100050,Georgia,GA,Savannah,USA,US,32.012457,-81.194157,,America/New_York,South,,Reviewed R100 hub>=50K
+100051,Hawaii,HI,Honolulu,USA,US,21.324347,-157.84764,,Pacific/Honolulu,West,,
+100052,Idaho,ID,Boise,USA,US,43.59805,-116.231596,,America/Boise,West,,
+100053,Idaho,ID,Idaho Falls,USA,US,43.489616,-112.03534,,America/Boise,West,,Reviewed R100 hub>=50K
+100054,Idaho,ID,Twin Falls,USA,US,42.563807,-114.460597,,America/Boise,West,,Reviewed R100 hub>=50K
+100055,Illinois,IL,Chicago,USA,US,41.837045,-87.684939,,America/Chicago,Midwest,,
+100056,Illinois,IL,Peoria,USA,US,40.751641,-89.617198,,America/Chicago,Midwest,,Reviewed R100 hub>=50K
+100057,Indiana,IN,Indianapolis,USA,US,39.776664,-86.145935,,America/Indiana/Indianapolis,Midwest,,
+100058,Iowa,IA,Cedar Rapids,USA,US,41.96419,-91.67917,,America/Chicago,Midwest,,Reviewed R100 hub>=50K; substituted for better regional event hub
+100059,Iowa,IA,Des Moines,USA,US,41.57259,-93.610243,,America/Chicago,Midwest,,
+100060,Kansas,KS,Dodge City,USA,US,37.76067,-100.017863,,America/Chicago,Midwest,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
+100061,Kansas,KS,Manhattan,USA,US,39.188307,-96.605864,,America/Chicago,Midwest,,Reviewed R100 hub>=50K; substituted for better regional event hub
+100062,Kansas,KS,Wichita,USA,US,37.690638,-97.345836,,America/Chicago,Midwest,,
+100063,Kentucky,KY,Lexington,USA,US,38.040678,-84.458272,,America/New_York,South,535174,2025 metro population >= 500000
+100064,Kentucky,KY,Louisville,USA,US,38.224728,-85.740614,,America/Kentucky/Louisville,South,,
+100065,Louisiana,LA,Baton Rouge,USA,US,30.442174,-91.130894,,America/Chicago,South,888699,2025 metro population >= 500000
+100066,Louisiana,LA,Bossier City,USA,US,32.523674,-93.655426,,America/Chicago,South,,Reviewed R100 hub>=50K
+100067,Louisiana,LA,New Orleans,USA,US,30.05342,-89.934502,,America/Chicago,South,,
+100068,Maine,ME,Bangor,USA,US,44.829625,-68.788767,,America/New_York,Northeast,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
+100069,Maine,ME,Portland,USA,US,43.633157,-70.185305,,America/New_York,Northeast,,
+100070,Maryland,MD,Baltimore,USA,US,39.300032,-76.610476,,America/New_York,South,,
+100071,Massachusetts,MA,Boston,USA,US,42.338551,-71.018253,,America/New_York,Northeast,,
+100072,Massachusetts,MA,Worcester,USA,US,42.269478,-71.807783,,America/New_York,Northeast,888502,2025 metro population >= 500000
+100073,Michigan,MI,Detroit,USA,US,42.383037,-83.102237,,America/Detroit,Midwest,,
+100074,Michigan,MI,Grand Rapids,USA,US,42.961156,-85.65557,,America/Detroit,Midwest,1183645,2025 metro population >= 500000
+100075,Michigan,MI,Marquette,USA,US,46.550698,-87.395833,,America/Detroit,Midwest,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
+100076,Minnesota,MN,Duluth,USA,US,46.774458,-92.134135,,America/Chicago,Midwest,,Reviewed R100 hub>=50K
+100077,Minnesota,MN,Minneapolis,USA,US,44.963324,-93.26832,,America/Chicago,Midwest,,
+100078,Minnesota,MN,Rochester,USA,US,44.014299,-92.478592,,America/Chicago,Midwest,,Reviewed R100 hub>=50K
+100079,Mississippi,MS,Jackson,USA,US,32.315834,-90.21285,,America/Chicago,South,,
+100080,Missouri,MO,Columbia,USA,US,38.94729,-92.326387,,America/Chicago,Midwest,,Reviewed R100 hub>=50K
+100081,Missouri,MO,Kansas City,USA,US,39.125155,-94.550313,,America/Chicago,Midwest,2270682,2025 metro population >= 500000
+100082,Missouri,MO,Springfield,USA,US,37.194157,-93.292642,,America/Chicago,Midwest,500694,2025 metro population >= 500000
+100083,Missouri,MO,St. Louis,USA,US,38.635699,-90.244582,,America/Chicago,Midwest,,
+100084,Montana,MT,Billings,USA,US,45.788538,-108.552475,,America/Denver,West,,
+100085,Montana,MT,Bozeman,USA,US,45.683155,-111.053782,,America/Denver,West,,Reviewed R100 hub>=50K
+100086,Montana,MT,Great Falls,USA,US,47.502518,-111.29997,,America/Denver,West,,Reviewed R100 hub>=50K
+100087,Montana,MT,Missoula,USA,US,46.874359,-114.026136,,America/Denver,West,,Reviewed R100 hub>=50K
+100088,Nebraska,NE,Grand Island,USA,US,40.921352,-98.358559,,America/Chicago,Midwest,,Reviewed R100 hub>=50K
+100089,Nebraska,NE,North Platte,USA,US,41.12496,-100.750359,,America/Chicago,Midwest,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
+100090,Nebraska,NE,Omaha,USA,US,41.262705,-96.053475,,America/Chicago,Midwest,,
+100091,Nevada,NV,Elko,USA,US,40.838111,-115.767809,,America/Los_Angeles,West,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
+100092,Nevada,NV,Las Vegas,USA,US,36.233499,-115.264037,,America/Los_Angeles,West,,
+100093,Nevada,NV,Reno,USA,US,39.549097,-119.849907,,America/Los_Angeles,West,578734,2025 metro population >= 500000
+100094,New Hampshire,NH,Manchester,USA,US,42.984941,-71.444131,,America/New_York,Northeast,,
+100095,New Jersey,NJ,Newark,USA,US,40.72422,-74.172574,,America/New_York,Northeast,,
+100096,New Mexico,NM,Albuquerque,USA,US,35.10478,-106.646809,,America/Denver,West,,
+100097,New Mexico,NM,Farmington,USA,US,36.753833,-108.18053,,America/Denver,West,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
+100098,New Mexico,NM,Roswell,USA,US,33.373442,-104.529393,,America/Denver,West,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
+100099,New York,NY,Albany,USA,US,42.665745,-73.798353,,America/New_York,Northeast,915835,2025 metro population >= 500000
+100100,New York,NY,Buffalo,USA,US,42.892492,-78.859686,,America/New_York,Northeast,1155653,2025 metro population >= 500000
+100101,New York,NY,Kiryas Joel,USA,US,41.340667,-74.167274,,America/New_York,Northeast,718377,2025 metro population >= 500000
+100102,New York,NY,New York City,USA,US,40.662712,-73.938677,,America/New_York,Northeast,,
+100103,New York,NY,Rochester,USA,US,43.169927,-77.616891,,America/New_York,Northeast,1056149,2025 metro population >= 500000
+100104,New York,NY,Syracuse,USA,US,43.040998,-76.143554,,America/New_York,Northeast,652273,2025 metro population >= 500000
+100105,North Carolina,NC,Asheville,USA,US,35.570972,-82.552725,,America/New_York,South,,Reviewed R100 hub>=50K
+100106,North Carolina,NC,Charlotte,USA,US,35.209045,-80.83099,,America/New_York,South,,
+100107,North Carolina,NC,Durham,USA,US,35.977928,-78.898109,,America/New_York,South,625485,2025 metro population >= 500000
+100108,North Carolina,NC,Greensboro,USA,US,36.09485,-79.823624,,America/New_York,South,805945,2025 metro population >= 500000
+100109,North Carolina,NC,Raleigh,USA,US,35.831868,-78.641042,,America/New_York,South,1595720,2025 metro population >= 500000
+100110,North Carolina,NC,Wilmington,USA,US,34.209225,-77.885767,,America/New_York,South,,Reviewed R100 hub>=50K
+100111,North Carolina,NC,Winston-Salem,USA,US,36.102863,-80.260829,,America/New_York,South,712206,2025 metro population >= 500000
+100112,North Dakota,ND,Bismarck,USA,US,46.814572,-100.768568,,America/Chicago,Midwest,,Reviewed R100 hub>=50K
+100113,North Dakota,ND,Fargo,USA,US,46.8647,-96.82908,,America/Chicago,Midwest,,
+100114,North Dakota,ND,Minot,USA,US,48.236125,-101.277533,,America/Chicago,Midwest,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
+100115,North Dakota,ND,Williston,USA,US,48.189496,-103.649117,,America/Chicago,Midwest,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
+100116,Ohio,OH,Akron,USA,US,41.080456,-81.521429,,America/New_York,Midwest,701780,2025 metro population >= 500000
+100117,Ohio,OH,Cincinnati,USA,US,39.140183,-84.505829,,America/New_York,Midwest,2312858,2025 metro population >= 500000
+100118,Ohio,OH,Cleveland,USA,US,41.478462,-81.679435,,America/New_York,Midwest,2165775,2025 metro population >= 500000
+100119,Ohio,OH,Columbus,USA,US,39.985531,-82.985594,,America/New_York,Midwest,,
+100120,Ohio,OH,Dayton,USA,US,39.784743,-84.199632,,America/New_York,Midwest,826554,2025 metro population >= 500000
+100121,Ohio,OH,Toledo,USA,US,41.664071,-83.581861,,America/New_York,Midwest,599376,2025 metro population >= 500000
+100122,Oklahoma,OK,Oklahoma City,USA,US,35.467079,-97.513657,,America/Chicago,South,,
+100123,Oklahoma,OK,Tulsa,USA,US,36.127949,-95.902316,,America/Chicago,South,1069273,2025 metro population >= 500000
+100124,Oregon,OR,Eugene,USA,US,44.056848,-123.119019,,America/Los_Angeles,West,,Reviewed R100 hub>=50K
+100125,Oregon,OR,Medford,USA,US,42.336006,-122.851762,,America/Los_Angeles,West,,Reviewed R100 hub>=50K
+100126,Oregon,OR,Portland,USA,US,45.536951,-122.649971,,America/Los_Angeles,West,,
+100127,Pennsylvania,PA,Allentown,USA,US,40.593648,-75.478393,,America/New_York,Northeast,887615,2025 metro population >= 500000
+100128,Pennsylvania,PA,Harrisburg,USA,US,40.275891,-76.88502,,America/New_York,Northeast,617427,2025 metro population >= 500000
+100129,Pennsylvania,PA,Lancaster,USA,US,40.042061,-76.30099,,America/New_York,Northeast,563159,2025 metro population >= 500000
+100130,Pennsylvania,PA,Philadelphia,USA,US,40.009376,-75.133346,,America/New_York,Northeast,,
+100131,Pennsylvania,PA,Pittsburgh,USA,US,40.439936,-79.975676,,America/New_York,Northeast,2421992,2025 metro population >= 500000
+100132,Pennsylvania,PA,Scranton,USA,US,41.404178,-75.665908,,America/New_York,Northeast,574418,2025 metro population >= 500000
+100133,Rhode Island,RI,Providence,USA,US,41.823056,-71.418784,,America/New_York,Northeast,,
+100134,South Carolina,SC,Charleston,USA,US,32.828017,-79.972896,,America/New_York,South,,
+100135,South Carolina,SC,Columbia,USA,US,34.040519,-80.906099,,America/New_York,South,879918,2025 metro population >= 500000
+100136,South Carolina,SC,Greenville,USA,US,34.836902,-82.362997,,America/New_York,South,1014101,2025 metro population >= 500000
+100137,South Dakota,SD,Aberdeen,USA,US,45.464678,-98.468104,,America/Chicago,Midwest,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
+100138,South Dakota,SD,Rapid City,USA,US,44.071071,-103.217924,,America/Denver,Midwest,,Reviewed R100 hub>=50K
+100139,South Dakota,SD,Sioux Falls,USA,US,43.540696,-96.731962,,America/Chicago,Midwest,,
+100140,Tennessee,TN,Chattanooga,USA,US,35.065958,-85.248386,,America/New_York,South,594530,2025 metro population >= 500000
+100141,Tennessee,TN,Clarksville,USA,US,36.56643,-87.345216,,America/Chicago,South,,Reviewed R100 hub>=50K
+100142,Tennessee,TN,Knoxville,USA,US,35.97068,-83.94927,,America/New_York,South,968137,2025 metro population >= 500000
+100143,Tennessee,TN,Memphis,USA,US,35.109164,-89.968511,,America/Chicago,South,1341412,2025 metro population >= 500000
+100144,Tennessee,TN,Nashville,USA,US,36.1718,-86.785002,,America/Chicago,South,,
+100145,Texas,TX,Abilene,USA,US,32.454514,-99.738147,,America/Chicago,South,,Reviewed R100 hub>=50K
+100146,Texas,TX,Amarillo,USA,US,35.199903,-101.830194,,America/Chicago,South,,Reviewed R100 hub>=50K
+100147,Texas,TX,Austin,USA,US,30.298622,-97.754134,,America/Chicago,South,2620945,2025 metro population >= 500000
+100148,Texas,TX,Beaumont,USA,US,30.084912,-94.14533,,America/Chicago,South,,Reviewed R100 hub>=50K
+100149,Texas,TX,Corpus Christi,USA,US,27.754252,-97.173385,,America/Chicago,South,,Reviewed R100 hub>=50K
+100150,Texas,TX,Dallas,USA,US,32.793333,-96.766513,,America/Chicago,South,,
+100151,Texas,TX,Del Rio,USA,US,29.373045,-100.881851,,America/Chicago,South,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
+100152,Texas,TX,Denton,USA,US,33.217449,-97.141346,,America/Chicago,South,,Reviewed R100 hub>=50K
+100153,Texas,TX,El Paso,USA,US,31.84778,-106.431106,,America/Denver,South,881291,2025 metro population >= 500000
+100154,Texas,TX,Houston,USA,US,29.785743,-95.388806,,America/Chicago,South,7904627,2025 metro population >= 500000
+100155,Texas,TX,Killeen,USA,US,31.077669,-97.731952,,America/Chicago,South,511497,2025 metro population >= 500000
+100156,Texas,TX,Laredo,USA,US,27.560379,-99.489181,,America/Chicago,South,,Reviewed R100 hub>=50K
+100157,Texas,TX,Lubbock,USA,US,33.561901,-101.888883,,America/Chicago,South,,Reviewed R100 hub>=50K
+100158,Texas,TX,McAllen,USA,US,26.224966,-98.246083,,America/Chicago,South,921549,2025 metro population >= 500000
+100159,Texas,TX,Midland,USA,US,32.024642,-102.113467,,America/Chicago,South,,Reviewed R100 hub>=50K
+100160,Texas,TX,San Antonio,USA,US,29.462809,-98.524635,,America/Chicago,South,2813140,2025 metro population >= 500000
+100161,Utah,UT,Ogden,USA,US,41.228391,-111.968147,,America/Denver,West,672784,2025 metro population >= 500000
+100162,Utah,UT,Provo,USA,US,40.245312,-111.645057,,America/Denver,West,773426,2025 metro population >= 500000
+100163,Utah,UT,Salt Lake City,USA,US,40.776928,-111.930991,,America/Denver,West,,
+100164,Utah,UT,St. George,USA,US,37.077006,-113.576534,,America/Denver,West,,Reviewed R100 hub>=50K
+100165,Vermont,VT,Burlington,USA,US,44.491927,-73.238882,,America/New_York,Northeast,,
+100166,Virginia,VA,Richmond,USA,US,37.531399,-77.476009,,America/New_York,South,,
+100167,Virginia,VA,Virginia Beach,USA,US,36.779525,-76.029142,,America/New_York,South,1797213,2025 metro population >= 500000
+100168,Washington,WA,Kennewick,USA,US,46.197622,-119.175923,,America/Los_Angeles,West,,Reviewed R100 hub>=50K
+100169,Washington,WA,Seattle,USA,US,47.619335,-122.351538,,America/Los_Angeles,West,,
+100170,Washington,WA,Spokane,USA,US,47.666935,-117.433322,,America/Los_Angeles,West,608012,2025 metro population >= 500000
+100171,West Virginia,WV,Charleston,USA,US,38.348692,-81.632324,,America/New_York,South,,
+100172,Wisconsin,WI,Green Bay,USA,US,44.521542,-87.986568,,America/Chicago,Midwest,,Reviewed R100 hub>=50K
+100173,Wisconsin,WI,Madison,USA,US,43.087815,-89.429856,,America/Chicago,Midwest,709685,2025 metro population >= 500000
+100174,Wisconsin,WI,Milwaukee,USA,US,43.063348,-87.966695,,America/Chicago,Midwest,,
+100175,Wyoming,WY,Casper,USA,US,42.84212,-106.321282,,America/Denver,West,,Reviewed R100 hub>=50K
+100176,Wyoming,WY,Cheyenne,USA,US,41.128275,-104.799155,,America/Denver,West,,
+100177,Wyoming,WY,Gillette,USA,US,44.27258,-105.498936,,America/Denver,West,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
+100178,Wyoming,WY,Rock Springs,USA,US,41.594705,-109.220921,,America/Denver,West,,Final sub-50K gap hub selected to complete Census >=20K coverage at 100 miles
