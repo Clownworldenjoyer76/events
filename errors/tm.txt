@@ -1,16 +1,16 @@
 Ticketmaster daily collector
-run_started_utc: 2026-09-28T21:28:49Z
+run_started_utc: 2026-09-28T21:44:28Z
 page_size: 20
 max_calls_per_city: 15
 
-status: PARTIAL
+status: PASS
 city_rows: 178
-cities_successful: 176
-cities_failed: 2
+cities_successful: 178
+cities_failed: 0
 cities_capped_at_15_calls: 53
-api_calls: 1342
-events_downloaded: 25395
-raw_files_written: 1340
+api_calls: 1343
+events_downloaded: 25447
+raw_files_written: 1343
 
 CITY RESULTS
 OK | Birmingham, AL (100001) | calls=15 | events=300 | files=15 | source_pages=20 | capped=yes
@@ -19,7 +19,7 @@ OK | Tuscaloosa, AL (100003) | calls=3 | events=50 | files=3 | source_pages=3 | 
 OK | Anchorage, AK (100004) | calls=3 | events=48 | files=3 | source_pages=3 | capped=no
 OK | Fairbanks, AK (100005) | calls=1 | events=11 | files=1 | source_pages=1 | capped=no
 OK | Juneau, AK (100006) | calls=1 | events=0 | files=1 | source_pages=0 | capped=no
-FAIL | Flagstaff, AZ (100007): HTTP 429 Too Many Requests; calls=1; events=0; files=0
+OK | Flagstaff, AZ (100007) | calls=1 | events=20 | files=1 | source_pages=1 | capped=no
 OK | Lake Havasu City, AZ (100008) | calls=1 | events=0 | files=1 | source_pages=0 | capped=no
 OK | Phoenix, AZ (100009) | calls=15 | events=300 | files=15 | source_pages=68 | capped=yes
 OK | Tucson, AZ (100010) | calls=15 | events=300 | files=15 | source_pages=20 | capped=yes
@@ -39,7 +39,7 @@ OK | San Francisco, CA (100023) | calls=15 | events=300 | files=15 | source_page
 OK | San Jose, CA (100024) | calls=15 | events=300 | files=15 | source_pages=22 | capped=yes
 OK | Stockton, CA (100025) | calls=4 | events=67 | files=4 | source_pages=4 | capped=no
 OK | Colorado Springs, CO (100026) | calls=12 | events=240 | files=12 | source_pages=12 | capped=no
-OK | Denver, CO (100027) | calls=15 | events=300 | files=15 | source_pages=86 | capped=yes
+OK | Denver, CO (100027) | calls=15 | events=300 | files=15 | source_pages=87 | capped=yes
 OK | Grand Junction, CO (100028) | calls=2 | events=25 | files=2 | source_pages=2 | capped=no
 OK | Bridgeport, CT (100029) | calls=1 | events=8 | files=1 | source_pages=1 | capped=no
 OK | Hartford, CT (100030) | calls=15 | events=285 | files=15 | source_pages=15 | capped=no
@@ -73,7 +73,7 @@ OK | Indianapolis, IN (100057) | calls=15 | events=300 | files=15 | source_pages
 OK | Cedar Rapids, IA (100058) | calls=6 | events=114 | files=6 | source_pages=6 | capped=no
 OK | Des Moines, IA (100059) | calls=8 | events=151 | files=8 | source_pages=8 | capped=no
 OK | Dodge City, KS (100060) | calls=1 | events=2 | files=1 | source_pages=1 | capped=no
-FAIL | Manhattan, KS (100061): HTTP 429 Too Many Requests; calls=1; events=0; files=0
+OK | Manhattan, KS (100061) | calls=2 | events=32 | files=2 | source_pages=2 | capped=no
 OK | Wichita, KS (100062) | calls=12 | events=222 | files=12 | source_pages=12 | capped=no
 OK | Lexington, KY (100063) | calls=8 | events=142 | files=8 | source_pages=8 | capped=no
 OK | Louisville, KY (100064) | calls=15 | events=300 | files=15 | source_pages=18 | capped=yes
@@ -193,5 +193,4 @@ OK | Gillette, WY (100177) | calls=1 | events=0 | files=1 | source_pages=0 | cap
 OK | Rock Springs, WY (100178) | calls=1 | events=0 | files=1 | source_pages=0 | capped=no
 
 ERRORS
-Flagstaff, AZ (100007): HTTP 429 Too Many Requests; calls=1; events=0; files=0
-Manhattan, KS (100061): HTTP 429 Too Many Requests; calls=1; events=0; files=0
+none
