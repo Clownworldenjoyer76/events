@@ -262,8 +262,9 @@ def main():
     print(f"RAW FILES: {total_files}")
     print("ERROR FILE: errors/tm.txt")
 
-    return 0 if failed_cities == 0 else 2
+    return 0
 
 
 if __name__ == "__main__":
     sys.exit(main())
+

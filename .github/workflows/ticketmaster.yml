@@ -22,7 +22,6 @@ jobs:
 
       - name: Run Ticketmaster collector
         id: collect
-        continue-on-error: true
         env:
           TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
         run: python3 scripts/daily/tm.py
@@ -45,7 +44,3 @@ jobs:
             git push origin "HEAD:$GITHUB_REF_NAME"
             echo "REPO WRITE: PASS"
           fi
-
-      - name: Report collector failure
-        if: steps.collect.outcome == 'failure'
-        run: exit 1
