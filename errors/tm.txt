@@ -1,16 +1,16 @@
 Ticketmaster daily collector
-run_started_utc: 2026-09-28T21:44:28Z
+run_started_utc: 2026-09-29T10:44:54Z
 page_size: 20
 max_calls_per_city: 15
 
-status: PASS
+status: PARTIAL
 city_rows: 178
-cities_successful: 178
-cities_failed: 0
-cities_capped_at_15_calls: 53
-api_calls: 1343
-events_downloaded: 25447
-raw_files_written: 1343
+cities_successful: 169
+cities_failed: 9
+cities_capped_at_15_calls: 50
+api_calls: 1323
+events_downloaded: 24908
+raw_files_written: 1314
 
 CITY RESULTS
 OK | Birmingham, AL (100001) | calls=15 | events=300 | files=15 | source_pages=20 | capped=yes
@@ -28,7 +28,7 @@ OK | Fayetteville, AR (100012) | calls=3 | events=52 | files=3 | source_pages=3 
 OK | Little Rock, AR (100013) | calls=4 | events=62 | files=4 | source_pages=4 | capped=no
 OK | Bakersfield, CA (100014) | calls=5 | events=84 | files=5 | source_pages=5 | capped=no
 OK | Fresno, CA (100015) | calls=7 | events=121 | files=7 | source_pages=7 | capped=no
-OK | Los Angeles, CA (100016) | calls=15 | events=300 | files=15 | source_pages=87 | capped=yes
+OK | Los Angeles, CA (100016) | calls=15 | events=300 | files=15 | source_pages=86 | capped=yes
 OK | Modesto, CA (100017) | calls=1 | events=6 | files=1 | source_pages=1 | capped=no
 OK | Oxnard, CA (100018) | calls=2 | events=27 | files=2 | source_pages=2 | capped=no
 OK | Redding, CA (100019) | calls=1 | events=4 | files=1 | source_pages=1 | capped=no
@@ -38,7 +38,7 @@ OK | San Diego, CA (100022) | calls=15 | events=300 | files=15 | source_pages=41
 OK | San Francisco, CA (100023) | calls=15 | events=300 | files=15 | source_pages=71 | capped=yes
 OK | San Jose, CA (100024) | calls=15 | events=300 | files=15 | source_pages=22 | capped=yes
 OK | Stockton, CA (100025) | calls=4 | events=67 | files=4 | source_pages=4 | capped=no
-OK | Colorado Springs, CO (100026) | calls=12 | events=240 | files=12 | source_pages=12 | capped=no
+OK | Colorado Springs, CO (100026) | calls=12 | events=239 | files=12 | source_pages=12 | capped=no
 OK | Denver, CO (100027) | calls=15 | events=300 | files=15 | source_pages=87 | capped=yes
 OK | Grand Junction, CO (100028) | calls=2 | events=25 | files=2 | source_pages=2 | capped=no
 OK | Bridgeport, CT (100029) | calls=1 | events=8 | files=1 | source_pages=1 | capped=no
@@ -51,7 +51,7 @@ OK | Deltona, FL (100035) | calls=1 | events=0 | files=1 | source_pages=0 | capp
 OK | Jacksonville, FL (100036) | calls=15 | events=300 | files=15 | source_pages=18 | capped=yes
 OK | Key West, FL (100037) | calls=2 | events=34 | files=2 | source_pages=2 | capped=no
 OK | Lakeland, FL (100038) | calls=1 | events=15 | files=1 | source_pages=1 | capped=no
-OK | Miami, FL (100039) | calls=15 | events=300 | files=15 | source_pages=53 | capped=yes
+FAIL | Miami, FL (100039): HTTP 429 Too Many Requests; calls=14; events=260; files=13
 OK | North Port, FL (100040) | calls=1 | events=0 | files=1 | source_pages=0 | capped=no
 OK | Orlando, FL (100041) | calls=15 | events=300 | files=15 | source_pages=78 | capped=yes
 OK | Palm Bay, FL (100042) | calls=1 | events=0 | files=1 | source_pages=0 | capped=no
@@ -59,31 +59,31 @@ OK | Pensacola, FL (100043) | calls=7 | events=124 | files=7 | source_pages=7 | 
 OK | Port St. Lucie, FL (100044) | calls=1 | events=0 | files=1 | source_pages=0 | capped=no
 OK | Tallahassee, FL (100045) | calls=4 | events=66 | files=4 | source_pages=4 | capped=no
 OK | Tampa, FL (100046) | calls=15 | events=300 | files=15 | source_pages=18 | capped=yes
-OK | Atlanta, GA (100047) | calls=15 | events=300 | files=15 | source_pages=85 | capped=yes
-OK | Augusta, GA (100048) | calls=1 | events=12 | files=1 | source_pages=1 | capped=no
-OK | Columbus, GA (100049) | calls=3 | events=47 | files=3 | source_pages=3 | capped=no
-OK | Savannah, GA (100050) | calls=5 | events=95 | files=5 | source_pages=5 | capped=no
+FAIL | Atlanta, GA (100047): HTTP 500 Internal Server Error; calls=8; events=140; files=7
+FAIL | Augusta, GA (100048): HTTP 500 Internal Server Error; calls=1; events=0; files=0
+FAIL | Columbus, GA (100049): HTTP 500 Internal Server Error; calls=1; events=0; files=0
+FAIL | Savannah, GA (100050): HTTP 500 Internal Server Error; calls=1; events=0; files=0
 OK | Honolulu, HI (100051) | calls=15 | events=300 | files=15 | source_pages=41 | capped=yes
 OK | Boise, ID (100052) | calls=15 | events=300 | files=15 | source_pages=19 | capped=yes
 OK | Idaho Falls, ID (100053) | calls=3 | events=46 | files=3 | source_pages=3 | capped=no
 OK | Twin Falls, ID (100054) | calls=1 | events=0 | files=1 | source_pages=0 | capped=no
 OK | Chicago, IL (100055) | calls=15 | events=300 | files=15 | source_pages=331 | capped=yes
-OK | Peoria, IL (100056) | calls=5 | events=96 | files=5 | source_pages=5 | capped=no
+FAIL | Peoria, IL (100056): HTTP 500 Internal Server Error; calls=3; events=40; files=2
 OK | Indianapolis, IN (100057) | calls=15 | events=300 | files=15 | source_pages=32 | capped=yes
 OK | Cedar Rapids, IA (100058) | calls=6 | events=114 | files=6 | source_pages=6 | capped=no
 OK | Des Moines, IA (100059) | calls=8 | events=151 | files=8 | source_pages=8 | capped=no
 OK | Dodge City, KS (100060) | calls=1 | events=2 | files=1 | source_pages=1 | capped=no
 OK | Manhattan, KS (100061) | calls=2 | events=32 | files=2 | source_pages=2 | capped=no
-OK | Wichita, KS (100062) | calls=12 | events=222 | files=12 | source_pages=12 | capped=no
+FAIL | Wichita, KS (100062): HTTP 429 Too Many Requests; calls=11; events=200; files=10
 OK | Lexington, KY (100063) | calls=8 | events=142 | files=8 | source_pages=8 | capped=no
 OK | Louisville, KY (100064) | calls=15 | events=300 | files=15 | source_pages=18 | capped=yes
-OK | Baton Rouge, LA (100065) | calls=8 | events=147 | files=8 | source_pages=8 | capped=no
+OK | Baton Rouge, LA (100065) | calls=8 | events=146 | files=8 | source_pages=8 | capped=no
 OK | Bossier City, LA (100066) | calls=1 | events=19 | files=1 | source_pages=1 | capped=no
 OK | New Orleans, LA (100067) | calls=15 | events=300 | files=15 | source_pages=31 | capped=yes
 OK | Bangor, ME (100068) | calls=2 | events=36 | files=2 | source_pages=2 | capped=no
-OK | Portland, ME (100069) | calls=14 | events=277 | files=14 | source_pages=14 | capped=no
-OK | Baltimore, MD (100070) | calls=15 | events=300 | files=15 | source_pages=20 | capped=yes
-OK | Boston, MA (100071) | calls=15 | events=300 | files=15 | source_pages=76 | capped=yes
+OK | Portland, ME (100069) | calls=14 | events=276 | files=14 | source_pages=14 | capped=no
+FAIL | Baltimore, MD (100070): HTTP 429 Too Many Requests; calls=12; events=220; files=11
+OK | Boston, MA (100071) | calls=15 | events=300 | files=15 | source_pages=75 | capped=yes
 OK | Worcester, MA (100072) | calls=10 | events=195 | files=10 | source_pages=10 | capped=no
 OK | Detroit, MI (100073) | calls=15 | events=300 | files=15 | source_pages=37 | capped=yes
 OK | Grand Rapids, MI (100074) | calls=15 | events=300 | files=15 | source_pages=24 | capped=yes
@@ -95,7 +95,7 @@ OK | Jackson, MS (100079) | calls=3 | events=56 | files=3 | source_pages=3 | cap
 OK | Columbia, MO (100080) | calls=4 | events=77 | files=4 | source_pages=4 | capped=no
 OK | Kansas City, MO (100081) | calls=15 | events=300 | files=15 | source_pages=21 | capped=yes
 OK | Springfield, MO (100082) | calls=3 | events=56 | files=3 | source_pages=3 | capped=no
-OK | St. Louis, MO (100083) | calls=6 | events=107 | files=6 | source_pages=6 | capped=no
+OK | St. Louis, MO (100083) | calls=6 | events=106 | files=6 | source_pages=6 | capped=no
 OK | Billings, MT (100084) | calls=3 | events=49 | files=3 | source_pages=3 | capped=no
 OK | Bozeman, MT (100085) | calls=2 | events=34 | files=2 | source_pages=2 | capped=no
 OK | Great Falls, MT (100086) | calls=1 | events=11 | files=1 | source_pages=1 | capped=no
@@ -108,7 +108,7 @@ OK | Las Vegas, NV (100092) | calls=15 | events=300 | files=15 | source_pages=50
 OK | Reno, NV (100093) | calls=15 | events=296 | files=15 | source_pages=15 | capped=no
 OK | Manchester, NH (100094) | calls=3 | events=47 | files=3 | source_pages=3 | capped=no
 OK | Newark, NJ (100095) | calls=12 | events=221 | files=12 | source_pages=12 | capped=no
-OK | Albuquerque, NM (100096) | calls=9 | events=180 | files=9 | source_pages=9 | capped=no
+OK | Albuquerque, NM (100096) | calls=9 | events=179 | files=9 | source_pages=9 | capped=no
 OK | Farmington, NM (100097) | calls=1 | events=0 | files=1 | source_pages=0 | capped=no
 OK | Roswell, NM (100098) | calls=2 | events=24 | files=2 | source_pages=2 | capped=no
 OK | Albany, NY (100099) | calls=8 | events=144 | files=8 | source_pages=8 | capped=no
@@ -117,12 +117,12 @@ OK | Kiryas Joel, NY (100101) | calls=1 | events=0 | files=1 | source_pages=0 | 
 OK | New York City, NY (100102) | calls=15 | events=300 | files=15 | source_pages=267 | capped=yes
 OK | Rochester, NY (100103) | calls=10 | events=187 | files=10 | source_pages=10 | capped=no
 OK | Syracuse, NY (100104) | calls=15 | events=300 | files=15 | source_pages=16 | capped=yes
-OK | Asheville, NC (100105) | calls=7 | events=133 | files=7 | source_pages=7 | capped=no
+OK | Asheville, NC (100105) | calls=7 | events=131 | files=7 | source_pages=7 | capped=no
 OK | Charlotte, NC (100106) | calls=15 | events=300 | files=15 | source_pages=31 | capped=yes
 OK | Durham, NC (100107) | calls=15 | events=291 | files=15 | source_pages=15 | capped=no
 OK | Greensboro, NC (100108) | calls=15 | events=300 | files=15 | source_pages=16 | capped=yes
-OK | Raleigh, NC (100109) | calls=15 | events=300 | files=15 | source_pages=24 | capped=yes
-OK | Wilmington, NC (100110) | calls=4 | events=69 | files=4 | source_pages=4 | capped=no
+OK | Raleigh, NC (100109) | calls=15 | events=300 | files=15 | source_pages=23 | capped=yes
+OK | Wilmington, NC (100110) | calls=4 | events=68 | files=4 | source_pages=4 | capped=no
 OK | Winston-Salem, NC (100111) | calls=1 | events=0 | files=1 | source_pages=0 | capped=no
 OK | Bismarck, ND (100112) | calls=2 | events=28 | files=2 | source_pages=2 | capped=no
 OK | Fargo, ND (100113) | calls=3 | events=51 | files=3 | source_pages=3 | capped=no
@@ -131,14 +131,14 @@ OK | Williston, ND (100115) | calls=1 | events=0 | files=1 | source_pages=0 | ca
 OK | Akron, OH (100116) | calls=8 | events=154 | files=8 | source_pages=8 | capped=no
 OK | Cincinnati, OH (100117) | calls=15 | events=300 | files=15 | source_pages=32 | capped=yes
 OK | Cleveland, OH (100118) | calls=15 | events=300 | files=15 | source_pages=30 | capped=yes
-OK | Columbus, OH (100119) | calls=15 | events=300 | files=15 | source_pages=34 | capped=yes
+OK | Columbus, OH (100119) | calls=15 | events=300 | files=15 | source_pages=35 | capped=yes
 OK | Dayton, OH (100120) | calls=4 | events=68 | files=4 | source_pages=4 | capped=no
 OK | Toledo, OH (100121) | calls=8 | events=152 | files=8 | source_pages=8 | capped=no
 OK | Oklahoma City, OK (100122) | calls=15 | events=300 | files=15 | source_pages=17 | capped=yes
 OK | Tulsa, OK (100123) | calls=13 | events=247 | files=13 | source_pages=13 | capped=no
 OK | Eugene, OR (100124) | calls=5 | events=89 | files=5 | source_pages=5 | capped=no
 OK | Medford, OR (100125) | calls=1 | events=0 | files=1 | source_pages=0 | capped=no
-OK | Portland, OR (100126) | calls=15 | events=300 | files=15 | source_pages=43 | capped=yes
+OK | Portland, OR (100126) | calls=15 | events=300 | files=15 | source_pages=42 | capped=yes
 OK | Allentown, PA (100127) | calls=6 | events=102 | files=6 | source_pages=6 | capped=no
 OK | Harrisburg, PA (100128) | calls=4 | events=67 | files=4 | source_pages=4 | capped=no
 OK | Lancaster, PA (100129) | calls=13 | events=257 | files=13 | source_pages=13 | capped=no
@@ -146,20 +146,20 @@ OK | Philadelphia, PA (100130) | calls=15 | events=300 | files=15 | source_pages
 OK | Pittsburgh, PA (100131) | calls=15 | events=300 | files=15 | source_pages=34 | capped=yes
 OK | Scranton, PA (100132) | calls=1 | events=20 | files=1 | source_pages=1 | capped=no
 OK | Providence, RI (100133) | calls=15 | events=300 | files=15 | source_pages=19 | capped=yes
-OK | Charleston, SC (100134) | calls=11 | events=202 | files=11 | source_pages=11 | capped=no
+OK | Charleston, SC (100134) | calls=11 | events=201 | files=11 | source_pages=11 | capped=no
 OK | Columbia, SC (100135) | calls=4 | events=61 | files=4 | source_pages=4 | capped=no
 OK | Greenville, SC (100136) | calls=9 | events=168 | files=9 | source_pages=9 | capped=no
 OK | Aberdeen, SD (100137) | calls=1 | events=0 | files=1 | source_pages=0 | capped=no
-OK | Rapid City, SD (100138) | calls=3 | events=51 | files=3 | source_pages=3 | capped=no
+OK | Rapid City, SD (100138) | calls=3 | events=52 | files=3 | source_pages=3 | capped=no
 OK | Sioux Falls, SD (100139) | calls=6 | events=118 | files=6 | source_pages=6 | capped=no
 OK | Chattanooga, TN (100140) | calls=7 | events=135 | files=7 | source_pages=7 | capped=no
 OK | Clarksville, TN (100141) | calls=2 | events=30 | files=2 | source_pages=2 | capped=no
 OK | Knoxville, TN (100142) | calls=15 | events=300 | files=15 | source_pages=23 | capped=yes
 OK | Memphis, TN (100143) | calls=15 | events=300 | files=15 | source_pages=16 | capped=yes
-OK | Nashville, TN (100144) | calls=15 | events=300 | files=15 | source_pages=71 | capped=yes
+OK | Nashville, TN (100144) | calls=15 | events=300 | files=15 | source_pages=70 | capped=yes
 OK | Abilene, TX (100145) | calls=1 | events=7 | files=1 | source_pages=1 | capped=no
 OK | Amarillo, TX (100146) | calls=4 | events=74 | files=4 | source_pages=4 | capped=no
-OK | Austin, TX (100147) | calls=15 | events=300 | files=15 | source_pages=32 | capped=yes
+OK | Austin, TX (100147) | calls=15 | events=300 | files=15 | source_pages=33 | capped=yes
 OK | Beaumont, TX (100148) | calls=2 | events=39 | files=2 | source_pages=2 | capped=no
 OK | Corpus Christi, TX (100149) | calls=7 | events=134 | files=7 | source_pages=7 | capped=no
 OK | Dallas, TX (100150) | calls=15 | events=300 | files=15 | source_pages=40 | capped=yes
@@ -174,23 +174,31 @@ OK | McAllen, TX (100158) | calls=3 | events=50 | files=3 | source_pages=3 | cap
 OK | Midland, TX (100159) | calls=1 | events=19 | files=1 | source_pages=1 | capped=no
 OK | San Antonio, TX (100160) | calls=15 | events=300 | files=15 | source_pages=33 | capped=yes
 OK | Ogden, UT (100161) | calls=1 | events=14 | files=1 | source_pages=1 | capped=no
-OK | Provo, UT (100162) | calls=2 | events=36 | files=2 | source_pages=2 | capped=no
+OK | Provo, UT (100162) | calls=2 | events=35 | files=2 | source_pages=2 | capped=no
 OK | Salt Lake City, UT (100163) | calls=15 | events=300 | files=15 | source_pages=26 | capped=yes
 OK | St. George, UT (100164) | calls=1 | events=0 | files=1 | source_pages=0 | capped=no
 OK | Burlington, VT (100165) | calls=1 | events=4 | files=1 | source_pages=1 | capped=no
-OK | Richmond, VA (100166) | calls=12 | events=237 | files=12 | source_pages=12 | capped=no
+OK | Richmond, VA (100166) | calls=12 | events=235 | files=12 | source_pages=12 | capped=no
 OK | Virginia Beach, VA (100167) | calls=9 | events=176 | files=9 | source_pages=9 | capped=no
 OK | Kennewick, WA (100168) | calls=5 | events=82 | files=5 | source_pages=5 | capped=no
 OK | Seattle, WA (100169) | calls=15 | events=300 | files=15 | source_pages=62 | capped=yes
-OK | Spokane, WA (100170) | calls=14 | events=271 | files=14 | source_pages=14 | capped=no
-OK | Charleston, WV (100171) | calls=2 | events=37 | files=2 | source_pages=2 | capped=no
+OK | Spokane, WA (100170) | calls=14 | events=272 | files=14 | source_pages=14 | capped=no
+FAIL | Charleston, WV (100171): HTTP 429 Too Many Requests; calls=2; events=20; files=1
 OK | Green Bay, WI (100172) | calls=4 | events=76 | files=4 | source_pages=4 | capped=no
 OK | Madison, WI (100173) | calls=15 | events=300 | files=15 | source_pages=16 | capped=yes
-OK | Milwaukee, WI (100174) | calls=15 | events=300 | files=15 | source_pages=32 | capped=yes
+OK | Milwaukee, WI (100174) | calls=15 | events=300 | files=15 | source_pages=31 | capped=yes
 OK | Casper, WY (100175) | calls=1 | events=12 | files=1 | source_pages=1 | capped=no
 OK | Cheyenne, WY (100176) | calls=1 | events=17 | files=1 | source_pages=1 | capped=no
 OK | Gillette, WY (100177) | calls=1 | events=0 | files=1 | source_pages=0 | capped=no
 OK | Rock Springs, WY (100178) | calls=1 | events=0 | files=1 | source_pages=0 | capped=no
 
 ERRORS
-none
+Miami, FL (100039): HTTP 429 Too Many Requests; calls=14; events=260; files=13
+Atlanta, GA (100047): HTTP 500 Internal Server Error; calls=8; events=140; files=7
+Augusta, GA (100048): HTTP 500 Internal Server Error; calls=1; events=0; files=0
+Columbus, GA (100049): HTTP 500 Internal Server Error; calls=1; events=0; files=0
+Savannah, GA (100050): HTTP 500 Internal Server Error; calls=1; events=0; files=0
+Peoria, IL (100056): HTTP 500 Internal Server Error; calls=3; events=40; files=2
+Wichita, KS (100062): HTTP 429 Too Many Requests; calls=11; events=200; files=10
+Baltimore, MD (100070): HTTP 429 Too Many Requests; calls=12; events=220; files=11
+Charleston, WV (100171): HTTP 429 Too Many Requests; calls=2; events=20; files=1
