@@ -3,6 +3,7 @@ import csv
 import json
 import re
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
@@ -17,6 +18,7 @@ INSTANCE_DIRECTORY = "https://instances.mobilizon.org/"
 TIMEOUT = 25
 PAGE_SIZE = 50
 MIN_INTERVAL = 0.10
+MAX_WORKERS = 16
 _last_request = 0.0
 
 EVENT_FIELDS = """
@@ -256,19 +258,7 @@ def discover_instances():
     html = get_bytes(INSTANCE_DIRECTORY).decode("utf-8", errors="replace")
     parser = InstanceParser()
     parser.feed(html)
-
-    valid = []
-    failed = []
-
-    for host in parser.hosts:
-        try:
-            data = graphql(host, CONFIG_QUERY)
-            if isinstance(data.get("config"), dict):
-                valid.append(host)
-        except Exception as exc:
-            failed.append(f"{host}: {type(exc).__name__}: {exc}")
-
-    return valid, failed
+    return parser.hosts
 
 
 def fetch_modern_events(host, now):
@@ -464,7 +454,7 @@ def main():
     }
     city_events = {city_id: {} for city_id in city_rows}
 
-    instances, directory_failures = discover_instances()
+    instances = discover_instances()
 
     if not instances:
         print("MOBILIZON: FAILED")
@@ -477,46 +467,60 @@ def main():
     graphql_seen = 0
     graphql_mapped = 0
 
-    for i, host in enumerate(instances, 1):
-        try:
-            events, schema = fetch_instance_events(host, now)
-            schema_counts[schema] += 1
-        except Exception as exc:
-            message = f"{host}: {type(exc).__name__}: {exc}"
-            graphql_failures.append(message)
-            print(
-                f"INSTANCE {i:03d}/{len(instances)} "
-                f"{host}: FAILED | {message[:240]}"
-            )
-            continue
+    completed_instances = 0
+    workers = min(MAX_WORKERS, len(instances))
 
-        graphql_seen += len(events)
-        mapped = 0
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        futures = {
+            executor.submit(fetch_instance_events, host, now): host
+            for host in instances
+        }
 
-        for event in events:
-            feed = group_feed(event, host)
-            if feed:
-                feeds.add(feed)
+        for future in as_completed(futures):
+            host = futures[future]
+            completed_instances += 1
 
-            city_id = map_city(event, lookup)
-            if not city_id:
+            try:
+                events, schema = future.result()
+                schema_counts[schema] += 1
+            except Exception as exc:
+                message = f"{host}: {type(exc).__name__}: {exc}"
+                graphql_failures.append(message)
+                print(
+                    f"INSTANCE {completed_instances:03d}/{len(instances)} "
+                    f"{host}: FAILED | {message[:240]}",
+                    flush=True,
+                )
                 continue
 
-            key = event_key(event)
+            graphql_seen += len(events)
+            mapped = 0
 
-            if key not in city_events[city_id]:
-                city_events[city_id][key] = {
-                    "source_method": "graphql",
-                    "discovered_on_instance": host,
-                    "event": event,
-                }
-                graphql_mapped += 1
-                mapped += 1
+            for event in events:
+                feed = group_feed(event, host)
+                if feed:
+                    feeds.add(feed)
 
-        print(
-            f"INSTANCE {i:03d}/{len(instances)} {host}: "
-            f"{schema} events={len(events)} mapped={mapped}"
-        )
+                city_id = map_city(event, lookup)
+                if not city_id:
+                    continue
+
+                key = event_key(event)
+
+                if key not in city_events[city_id]:
+                    city_events[city_id][key] = {
+                        "source_method": "graphql",
+                        "discovered_on_instance": host,
+                        "event": event,
+                    }
+                    graphql_mapped += 1
+                    mapped += 1
+
+            print(
+                f"INSTANCE {completed_instances:03d}/{len(instances)} {host}: "
+                f"{schema} events={len(events)} mapped={mapped}",
+                flush=True,
+            )
 
     feed_failures = []
     feed_seen = 0
@@ -625,6 +629,7 @@ def main():
     print("MOBILIZON: PASS")
     print(f"CITIES IN MASTER: {len(city_rows)}")
     print(f"INSTANCES DISCOVERED: {len(instances)}")
+    print(f"NETWORK WORKERS: {workers}")
     print(f"MODERN SCHEMA INSTANCES: {schema_counts['modern']}")
     print(f"LEGACY SCHEMA INSTANCES: {schema_counts['legacy']}")
     print(f"GRAPHQL EVENTS SEEN: {graphql_seen}")
@@ -635,7 +640,6 @@ def main():
     print(f"POPULATED CITIES: {populated}")
     print(f"UNIQUE EVENTS: {total_events}")
     print(f"FILES WRITTEN: {files_written}")
-    print(f"INSTANCE DIRECTORY FAILURES: {len(directory_failures)}")
     print(f"GRAPHQL FAILURES: {len(graphql_failures)}")
     print(f"ICS FEED FAILURES: {len(feed_failures)}")
 
