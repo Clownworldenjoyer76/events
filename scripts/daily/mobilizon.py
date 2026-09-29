@@ -19,92 +19,76 @@ PAGE_SIZE = 50
 MIN_INTERVAL = 0.10
 _last_request = 0.0
 
-SEARCH_QUERY = """
-query SearchEvents($page: Int, $limit: Int, $beginsOn: DateTime) {
-  searchEvents(page: $page, limit: $limit, beginsOn: $beginsOn) {
+EVENT_FIELDS = """
+uuid
+url
+title
+description
+beginsOn
+endsOn
+status
+physicalAddress {
+  street
+  locality
+  postalCode
+  region
+  country
+  description
+  geom
+}
+organizerActor {
+  preferredUsername
+  domain
+  name
+}
+attributedTo {
+  preferredUsername
+  domain
+  name
+}
+tags {
+  slug
+  title
+}
+"""
+
+MODERN_EVENTS_QUERY = """
+query Events($page: Int, $limit: Int) {
+  events(
+    page: $page
+    limit: $limit
+    orderBy: BEGINS_ON
+    direction: DESC
+  ) {
     total
     elements {
-      uuid
-      url
-      title
-      description
-      beginsOn
-      endsOn
-      status
-      category
-      physicalAddress {
-        street
-        locality
-        postalCode
-        region
-        country
-        description
-        geom
-      }
-      organizerActor {
-        preferredUsername
-        domain
-        name
-      }
-      attributedTo {
-        preferredUsername
-        domain
-        name
-        type
-      }
-      tags {
-        slug
-        title
-      }
+      %s
     }
   }
 }
-"""
+""" % EVENT_FIELDS
+
+LEGACY_EVENTS_QUERY = """
+query Events($page: Int, $limit: Int) {
+  events(page: $page, limit: $limit) {
+    %s
+  }
+}
+""" % EVENT_FIELDS
 
 EVENT_QUERY = """
 query EventByUUID($uuid: UUID!) {
   event(uuid: $uuid) {
-    uuid
-    url
-    title
-    description
-    beginsOn
-    endsOn
-    status
-    category
-    physicalAddress {
-      street
-      locality
-      postalCode
-      region
-      country
-      description
-      geom
-    }
-    organizerActor {
-      preferredUsername
-      domain
-      name
-    }
-    attributedTo {
-      preferredUsername
-      domain
-      name
-      type
-    }
-    tags {
-      slug
-      title
-    }
+    %s
   }
 }
-"""
+""" % EVENT_FIELDS
 
 CONFIG_QUERY = "query { config { name } }"
 
 UUID_RE = re.compile(
-    r"(?i)\\b[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-"
-    r"[89ab][0-9a-f]{3}-[0-9a-f]{12}\\b"
+    r"(?i)\b[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-"
+    r"[89ab][0-9a-f]{3}-[0-9a-f]{12}\b"
 )
 
 
@@ -147,7 +131,7 @@ def get_bytes(url, accept="text/html,application/xhtml+xml,*/*"):
         url,
         headers={
             "Accept": accept,
-            "User-Agent": "events-mobilizon-collector/1.0",
+            "User-Agent": "events-mobilizon-collector/1.1",
         },
     )
     with urlopen(req, timeout=TIMEOUT) as response:
@@ -168,11 +152,12 @@ def graphql(host, query, variables=None):
         headers={
             "Accept": "application/json",
             "Content-Type": "application/json",
-            "User-Agent": "events-mobilizon-collector/1.0",
+            "User-Agent": "events-mobilizon-collector/1.1",
         },
     )
     with urlopen(req, timeout=TIMEOUT) as response:
         payload = json.loads(response.read())
+
     if payload.get("errors"):
         messages = [
             str(item.get("message") or item)
@@ -180,11 +165,12 @@ def graphql(host, query, variables=None):
             if isinstance(item, dict)
         ]
         raise RuntimeError("; ".join(messages) or "GraphQL returned errors")
+
     return payload.get("data") or {}
 
 
 def norm(value):
-    return re.sub(r"\\s+", " ", str(value or "").strip()).casefold()
+    return re.sub(r"\s+", " ", str(value or "").strip()).casefold()
 
 
 def norm_country(value):
@@ -198,6 +184,21 @@ def norm_country(value):
     return aliases.get(value, value)
 
 
+def parse_dt(value):
+    text = str(value or "").strip()
+    if not text:
+        return None
+    if text.endswith("Z"):
+        text = text[:-1] + "+00:00"
+    try:
+        dt = datetime.fromisoformat(text)
+    except ValueError:
+        return None
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt.astimezone(timezone.utc)
+
+
 def build_city_lookup(cities):
     lookup = {}
     for row in cities:
@@ -206,11 +207,14 @@ def build_city_lookup(cities):
         state_name = norm(row.get("state"))
         country = norm_country(row.get("country_code"))
         city_id = str(row.get("city_id") or "").strip()
+
         if not city or not state_code or not city_id:
             continue
+
         for region in {state_code, state_name} - {""}:
             lookup[(city, region, country)] = city_id
             lookup[(city, region, "")] = city_id
+
     return lookup
 
 
@@ -218,13 +222,16 @@ def map_city(event, lookup):
     address = event.get("physicalAddress") or {}
     if not isinstance(address, dict):
         return None
+
     locality = norm(address.get("locality"))
     region = norm(address.get("region"))
     country = norm_country(address.get("country"))
+
     if not locality or not region:
         return None
     if country and country != "us":
         return None
+
     return (
         lookup.get((locality, region, country))
         or lookup.get((locality, region, ""))
@@ -232,18 +239,16 @@ def map_city(event, lookup):
 
 
 def event_key(event):
-    url = str(event.get("url") or "").strip()
-    if url:
-        return url
-    uuid = str(event.get("uuid") or "").strip()
-    if uuid:
-        return uuid
-    return "|".join(
-        [
-            norm(event.get("title")),
-            norm(event.get("beginsOn")),
-            norm((event.get("physicalAddress") or {}).get("description")),
-        ]
+    return (
+        str(event.get("url") or "").strip()
+        or str(event.get("uuid") or "").strip()
+        or "|".join(
+            [
+                norm(event.get("title")),
+                norm(event.get("beginsOn")),
+                norm((event.get("physicalAddress") or {}).get("description")),
+            ]
+        )
     )
 
 
@@ -266,55 +271,116 @@ def discover_instances():
     return valid, failed
 
 
-def fetch_instance_events(host, begins_on):
+def fetch_modern_events(host, now):
     collected = []
     page = 1
-    total = None
 
     while True:
         data = graphql(
             host,
-            SEARCH_QUERY,
-            {"page": page, "limit": PAGE_SIZE, "beginsOn": begins_on},
+            MODERN_EVENTS_QUERY,
+            {"page": page, "limit": PAGE_SIZE},
         )
-        result = data.get("searchEvents") or {}
+
+        result = data.get("events") or {}
         elements = result.get("elements") or []
+
         if not isinstance(elements, list) or not elements:
             break
 
-        if total is None:
-            try:
-                total = int(result.get("total") or 0)
-            except (TypeError, ValueError):
-                total = 0
+        page_has_future = False
 
-        collected.extend(x for x in elements if isinstance(x, dict))
+        for event in elements:
+            if not isinstance(event, dict):
+                continue
+            begins = parse_dt(event.get("beginsOn"))
+            if begins and begins >= now:
+                collected.append(event)
+                page_has_future = True
 
-        if total and len(collected) >= total:
-            break
         if len(elements) < PAGE_SIZE:
             break
+
+        if not page_has_future:
+            break
+
         page += 1
 
     return collected
 
 
+def fetch_legacy_events(host, now):
+    collected = []
+    page = 1
+
+    while True:
+        data = graphql(
+            host,
+            LEGACY_EVENTS_QUERY,
+            {"page": page, "limit": PAGE_SIZE},
+        )
+
+        elements = data.get("events") or []
+
+        if not isinstance(elements, list) or not elements:
+            break
+
+        future_count = 0
+
+        for event in elements:
+            if not isinstance(event, dict):
+                continue
+            begins = parse_dt(event.get("beginsOn"))
+            if begins and begins >= now:
+                collected.append(event)
+                future_count += 1
+
+        if len(elements) < PAGE_SIZE:
+            break
+
+        if future_count == 0 and page > 1:
+            break
+
+        page += 1
+
+    return collected
+
+
+def fetch_instance_events(host, now):
+    modern_error = None
+
+    try:
+        return fetch_modern_events(host, now), "modern"
+    except Exception as exc:
+        modern_error = exc
+
+    try:
+        return fetch_legacy_events(host, now), "legacy"
+    except Exception as legacy_error:
+        raise RuntimeError(
+            f"modern={modern_error}; legacy={legacy_error}"
+        ) from legacy_error
+
+
 def group_feed(event, discovered_host):
     actor = event.get("attributedTo") or {}
-    if not isinstance(actor, dict) or norm(actor.get("type")) != "group":
+    if not isinstance(actor, dict):
         return None
+
     username = str(actor.get("preferredUsername") or "").strip()
     if not username:
         return None
+
     domain = str(actor.get("domain") or "").strip().lower()
     host = domain or discovered_host
+
     return f"https://{host}/@{username}/feed/ics"
 
 
 def unfold_ics(text):
     lines = []
-    for line in text.replace("\\r\\n", "\\n").replace("\\r", "\\n").split("\\n"):
-        if line.startswith((" ", "\\t")) and lines:
+    for line in text.replace("\r\n", "\n").replace("\r", "\n").split("\n"):
+        if line.startswith((" ", "\t")) and lines:
             lines[-1] += line[1:]
         else:
             lines.append(line)
@@ -324,33 +390,42 @@ def unfold_ics(text):
 def parse_ics(text):
     items = []
     current = None
+
     for line in unfold_ics(text):
         if line == "BEGIN:VEVENT":
             current = {}
             continue
+
         if line == "END:VEVENT":
             if current is not None:
                 items.append(current)
             current = None
             continue
+
         if current is None or ":" not in line:
             continue
+
         left, value = line.split(":", 1)
         key = left.split(";", 1)[0].upper()
+
         if key in {"UID", "URL", "SUMMARY", "DTSTART", "DTEND", "LOCATION"}:
             current[key] = value.strip()
+
     return items
 
 
 def ics_event_ref(feed_url, item):
     url = str(item.get("URL") or "").strip()
     uid = str(item.get("UID") or "").strip()
+
     match = UUID_RE.search(url or uid)
     if not match:
         return None, None
+
     host = (urlparse(url).hostname or "").lower() if url else ""
     if not host:
         host = (urlparse(feed_url).hostname or "").lower()
+
     return (host, match.group(0)) if host else (None, None)
 
 
@@ -361,14 +436,15 @@ def fetch_event(host, uuid):
 
 
 def main():
-    started = datetime.now(timezone.utc)
-    started_text = started.strftime("%Y-%m-%dT%H:%M:%SZ")
-    run_date = started.strftime("%Y%m%d")
+    now = datetime.now(timezone.utc)
+    started_text = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+    run_date = now.strftime("%Y%m%d")
 
     with CITY_FILE.open("r", encoding="utf-8-sig", newline="") as handle:
         cities = list(csv.DictReader(handle))
 
     required = {"city_id", "state", "state_code", "city", "country_code"}
+
     if not cities:
         print("MOBILIZON: FAILED")
         print("ERROR: city_master.csv is empty")
@@ -389,22 +465,29 @@ def main():
     city_events = {city_id: {} for city_id in city_rows}
 
     instances, directory_failures = discover_instances()
+
     if not instances:
         print("MOBILIZON: FAILED")
         print("ERROR: no valid Mobilizon instances discovered")
         return 2
 
     graphql_failures = []
+    schema_counts = {"modern": 0, "legacy": 0}
     feeds = set()
     graphql_seen = 0
     graphql_mapped = 0
 
     for i, host in enumerate(instances, 1):
         try:
-            events = fetch_instance_events(host, started_text)
+            events, schema = fetch_instance_events(host, now)
+            schema_counts[schema] += 1
         except Exception as exc:
-            graphql_failures.append(f"{host}: {type(exc).__name__}: {exc}")
-            print(f"INSTANCE {i:03d}/{len(instances)} {host}: FAILED")
+            message = f"{host}: {type(exc).__name__}: {exc}"
+            graphql_failures.append(message)
+            print(
+                f"INSTANCE {i:03d}/{len(instances)} "
+                f"{host}: FAILED | {message[:240]}"
+            )
             continue
 
         graphql_seen += len(events)
@@ -420,6 +503,7 @@ def main():
                 continue
 
             key = event_key(event)
+
             if key not in city_events[city_id]:
                 city_events[city_id][key] = {
                     "source_method": "graphql",
@@ -431,7 +515,7 @@ def main():
 
         print(
             f"INSTANCE {i:03d}/{len(instances)} {host}: "
-            f"events={len(events)} mapped={mapped}"
+            f"{schema} events={len(events)} mapped={mapped}"
         )
 
     feed_failures = []
@@ -440,13 +524,15 @@ def main():
     event_cache = {}
 
     feed_list = sorted(feeds)
+
     for i, feed_url in enumerate(feed_list, 1):
         try:
             raw = get_bytes(feed_url, accept="text/calendar,*/*")
             items = parse_ics(raw.decode("utf-8", errors="replace"))
         except Exception as exc:
-            feed_failures.append(f"{feed_url}: {type(exc).__name__}: {exc}")
-            print(f"FEED {i:03d}/{len(feed_list)}: FAILED")
+            message = f"{feed_url}: {type(exc).__name__}: {exc}"
+            feed_failures.append(message)
+            print(f"FEED {i:03d}/{len(feed_list)}: FAILED | {message[:240]}")
             continue
 
         feed_seen += len(items)
@@ -458,6 +544,7 @@ def main():
                 continue
 
             cache_key = f"{host}|{uuid}"
+
             if cache_key not in event_cache:
                 try:
                     event_cache[cache_key] = fetch_event(host, uuid)
@@ -466,6 +553,10 @@ def main():
 
             event = event_cache[cache_key]
             if not event:
+                continue
+
+            begins = parse_dt(event.get("beginsOn"))
+            if not begins or begins < now:
                 continue
 
             city_id = map_city(event, lookup)
@@ -506,6 +597,7 @@ def main():
 
         if records:
             populated += 1
+
         total_events += len(records)
 
         city_dir = RAW_ROOT / city_id
@@ -533,6 +625,8 @@ def main():
     print("MOBILIZON: PASS")
     print(f"CITIES IN MASTER: {len(city_rows)}")
     print(f"INSTANCES DISCOVERED: {len(instances)}")
+    print(f"MODERN SCHEMA INSTANCES: {schema_counts['modern']}")
+    print(f"LEGACY SCHEMA INSTANCES: {schema_counts['legacy']}")
     print(f"GRAPHQL EVENTS SEEN: {graphql_seen}")
     print(f"GRAPHQL EVENTS MAPPED: {graphql_mapped}")
     print(f"GROUP ICS FEEDS DISCOVERED: {len(feed_list)}")
