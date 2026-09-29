@@ -1,0 +1,194 @@
+Foursquare venue collector
+run_started_utc: 2026-09-29T15:36:50Z
+api_version: 2025-06-17
+limit_per_search: 50
+searches_per_city: arts_entertainment, bars
+
+PASS | Birmingham, AL (100001) | searches=2/2 | unique_places=94 | capped=2
+PASS | Huntsville, AL (100002) | searches=2/2 | unique_places=99 | capped=2
+PASS | Tuscaloosa, AL (100003) | searches=2/2 | unique_places=99 | capped=2
+PASS | Anchorage, AK (100004) | searches=2/2 | unique_places=11 | capped=0
+PASS | Fairbanks, AK (100005) | searches=2/2 | unique_places=98 | capped=2
+PASS | Juneau, AK (100006) | searches=2/2 | unique_places=89 | capped=1
+PASS | Flagstaff, AZ (100007) | searches=2/2 | unique_places=98 | capped=2
+PASS | Lake Havasu City, AZ (100008) | searches=2/2 | unique_places=99 | capped=2
+PASS | Phoenix, AZ (100009) | searches=2/2 | unique_places=97 | capped=2
+PASS | Tucson, AZ (100010) | searches=2/2 | unique_places=99 | capped=2
+PASS | Yuma, AZ (100011) | searches=2/2 | unique_places=49 | capped=0
+PASS | Fayetteville, AR (100012) | searches=2/2 | unique_places=99 | capped=2
+PASS | Little Rock, AR (100013) | searches=2/2 | unique_places=99 | capped=2
+PASS | Bakersfield, CA (100014) | searches=2/2 | unique_places=97 | capped=2
+PASS | Fresno, CA (100015) | searches=2/2 | unique_places=97 | capped=2
+PASS | Los Angeles, CA (100016) | searches=2/2 | unique_places=100 | capped=2
+PASS | Modesto, CA (100017) | searches=2/2 | unique_places=99 | capped=2
+PASS | Oxnard, CA (100018) | searches=2/2 | unique_places=99 | capped=2
+PASS | Redding, CA (100019) | searches=2/2 | unique_places=100 | capped=2
+PASS | Riverside, CA (100020) | searches=2/2 | unique_places=98 | capped=2
+PASS | Sacramento, CA (100021) | searches=2/2 | unique_places=94 | capped=2
+PASS | San Diego, CA (100022) | searches=2/2 | unique_places=98 | capped=2
+PASS | San Francisco, CA (100023) | searches=2/2 | unique_places=0 | capped=0
+PASS | San Jose, CA (100024) | searches=2/2 | unique_places=99 | capped=2
+PASS | Stockton, CA (100025) | searches=2/2 | unique_places=99 | capped=2
+PASS | Colorado Springs, CO (100026) | searches=2/2 | unique_places=99 | capped=2
+PASS | Denver, CO (100027) | searches=2/2 | unique_places=93 | capped=1
+PASS | Grand Junction, CO (100028) | searches=2/2 | unique_places=98 | capped=2
+PASS | Bridgeport, CT (100029) | searches=2/2 | unique_places=100 | capped=2
+PASS | Hartford, CT (100030) | searches=2/2 | unique_places=99 | capped=2
+PASS | New Haven, CT (100031) | searches=2/2 | unique_places=97 | capped=2
+PASS | Wilmington, DE (100032) | searches=2/2 | unique_places=99 | capped=2
+PASS | Washington, DC (100033) | searches=2/2 | unique_places=100 | capped=2
+PASS | Cape Coral, FL (100034) | searches=2/2 | unique_places=100 | capped=2
+PASS | Deltona, FL (100035) | searches=2/2 | unique_places=100 | capped=2
+PASS | Jacksonville, FL (100036) | searches=2/2 | unique_places=99 | capped=2
+PASS | Key West, FL (100037) | searches=2/2 | unique_places=96 | capped=2
+PASS | Lakeland, FL (100038) | searches=2/2 | unique_places=99 | capped=2
+PASS | Miami, FL (100039) | searches=2/2 | unique_places=97 | capped=2
+PASS | North Port, FL (100040) | searches=2/2 | unique_places=99 | capped=2
+PASS | Orlando, FL (100041) | searches=2/2 | unique_places=89 | capped=1
+PASS | Palm Bay, FL (100042) | searches=2/2 | unique_places=99 | capped=2
+PASS | Pensacola, FL (100043) | searches=2/2 | unique_places=100 | capped=2
+PASS | Port St. Lucie, FL (100044) | searches=2/2 | unique_places=99 | capped=2
+PASS | Tallahassee, FL (100045) | searches=2/2 | unique_places=100 | capped=2
+PASS | Tampa, FL (100046) | searches=2/2 | unique_places=98 | capped=2
+PASS | Atlanta, GA (100047) | searches=2/2 | unique_places=99 | capped=2
+PASS | Augusta, GA (100048) | searches=2/2 | unique_places=99 | capped=2
+PASS | Columbus, GA (100049) | searches=2/2 | unique_places=100 | capped=2
+PASS | Savannah, GA (100050) | searches=2/2 | unique_places=99 | capped=2
+PASS | Honolulu, HI (100051) | searches=2/2 | unique_places=100 | capped=2
+PASS | Boise, ID (100052) | searches=2/2 | unique_places=98 | capped=2
+PASS | Idaho Falls, ID (100053) | searches=2/2 | unique_places=100 | capped=2
+PASS | Twin Falls, ID (100054) | searches=2/2 | unique_places=99 | capped=2
+PASS | Chicago, IL (100055) | searches=2/2 | unique_places=86 | capped=1
+PASS | Peoria, IL (100056) | searches=2/2 | unique_places=97 | capped=2
+PASS | Indianapolis, IN (100057) | searches=2/2 | unique_places=97 | capped=2
+PASS | Cedar Rapids, IA (100058) | searches=2/2 | unique_places=99 | capped=2
+PASS | Des Moines, IA (100059) | searches=2/2 | unique_places=99 | capped=2
+PASS | Dodge City, KS (100060) | searches=2/2 | unique_places=65 | capped=0
+PASS | Manhattan, KS (100061) | searches=2/2 | unique_places=92 | capped=1
+PASS | Wichita, KS (100062) | searches=2/2 | unique_places=98 | capped=2
+PASS | Lexington, KY (100063) | searches=2/2 | unique_places=96 | capped=2
+PASS | Louisville, KY (100064) | searches=2/2 | unique_places=98 | capped=2
+PASS | Baton Rouge, LA (100065) | searches=2/2 | unique_places=99 | capped=2
+PASS | Bossier City, LA (100066) | searches=2/2 | unique_places=96 | capped=2
+PASS | New Orleans, LA (100067) | searches=2/2 | unique_places=89 | capped=2
+PASS | Bangor, ME (100068) | searches=2/2 | unique_places=99 | capped=2
+PASS | Portland, ME (100069) | searches=2/2 | unique_places=99 | capped=2
+PASS | Baltimore, MD (100070) | searches=2/2 | unique_places=97 | capped=2
+PASS | Boston, MA (100071) | searches=2/2 | unique_places=97 | capped=2
+PASS | Worcester, MA (100072) | searches=2/2 | unique_places=98 | capped=2
+PASS | Detroit, MI (100073) | searches=2/2 | unique_places=97 | capped=2
+PASS | Grand Rapids, MI (100074) | searches=2/2 | unique_places=98 | capped=2
+PASS | Marquette, MI (100075) | searches=2/2 | unique_places=98 | capped=2
+PASS | Duluth, MN (100076) | searches=2/2 | unique_places=99 | capped=2
+PASS | Minneapolis, MN (100077) | searches=2/2 | unique_places=96 | capped=2
+PASS | Rochester, MN (100078) | searches=2/2 | unique_places=100 | capped=2
+PASS | Jackson, MS (100079) | searches=2/2 | unique_places=97 | capped=2
+PASS | Columbia, MO (100080) | searches=2/2 | unique_places=96 | capped=2
+PASS | Kansas City, MO (100081) | searches=2/2 | unique_places=95 | capped=2
+PASS | Springfield, MO (100082) | searches=2/2 | unique_places=98 | capped=2
+PASS | St. Louis, MO (100083) | searches=2/2 | unique_places=95 | capped=2
+PASS | Billings, MT (100084) | searches=2/2 | unique_places=92 | capped=2
+PASS | Bozeman, MT (100085) | searches=2/2 | unique_places=97 | capped=2
+PASS | Great Falls, MT (100086) | searches=2/2 | unique_places=96 | capped=2
+PASS | Missoula, MT (100087) | searches=2/2 | unique_places=96 | capped=2
+PASS | Grand Island, NE (100088) | searches=2/2 | unique_places=99 | capped=2
+PASS | North Platte, NE (100089) | searches=2/2 | unique_places=98 | capped=2
+PASS | Omaha, NE (100090) | searches=2/2 | unique_places=97 | capped=2
+PASS | Elko, NV (100091) | searches=2/2 | unique_places=91 | capped=1
+PASS | Las Vegas, NV (100092) | searches=2/2 | unique_places=98 | capped=2
+PASS | Reno, NV (100093) | searches=2/2 | unique_places=96 | capped=2
+PASS | Manchester, NH (100094) | searches=2/2 | unique_places=97 | capped=2
+PASS | Newark, NJ (100095) | searches=2/2 | unique_places=98 | capped=2
+PASS | Albuquerque, NM (100096) | searches=2/2 | unique_places=99 | capped=2
+PASS | Farmington, NM (100097) | searches=2/2 | unique_places=90 | capped=1
+PASS | Roswell, NM (100098) | searches=2/2 | unique_places=92 | capped=1
+PASS | Albany, NY (100099) | searches=2/2 | unique_places=96 | capped=2
+PASS | Buffalo, NY (100100) | searches=2/2 | unique_places=97 | capped=2
+PASS | Kiryas Joel, NY (100101) | searches=2/2 | unique_places=100 | capped=2
+PASS | New York City, NY (100102) | searches=2/2 | unique_places=100 | capped=2
+PASS | Rochester, NY (100103) | searches=2/2 | unique_places=98 | capped=2
+PASS | Syracuse, NY (100104) | searches=2/2 | unique_places=98 | capped=2
+PASS | Asheville, NC (100105) | searches=2/2 | unique_places=96 | capped=2
+PASS | Charlotte, NC (100106) | searches=2/2 | unique_places=96 | capped=2
+PASS | Durham, NC (100107) | searches=2/2 | unique_places=97 | capped=2
+PASS | Greensboro, NC (100108) | searches=2/2 | unique_places=97 | capped=2
+PASS | Raleigh, NC (100109) | searches=2/2 | unique_places=98 | capped=2
+PASS | Wilmington, NC (100110) | searches=2/2 | unique_places=99 | capped=2
+PASS | Winston-Salem, NC (100111) | searches=2/2 | unique_places=98 | capped=2
+PASS | Bismarck, ND (100112) | searches=2/2 | unique_places=99 | capped=2
+PASS | Fargo, ND (100113) | searches=2/2 | unique_places=100 | capped=2
+PASS | Minot, ND (100114) | searches=2/2 | unique_places=99 | capped=2
+PASS | Williston, ND (100115) | searches=2/2 | unique_places=94 | capped=1
+PASS | Akron, OH (100116) | searches=2/2 | unique_places=98 | capped=2
+PASS | Cincinnati, OH (100117) | searches=2/2 | unique_places=98 | capped=2
+PASS | Cleveland, OH (100118) | searches=2/2 | unique_places=96 | capped=2
+PASS | Columbus, OH (100119) | searches=2/2 | unique_places=95 | capped=2
+PASS | Dayton, OH (100120) | searches=2/2 | unique_places=93 | capped=2
+PASS | Toledo, OH (100121) | searches=2/2 | unique_places=99 | capped=2
+PASS | Oklahoma City, OK (100122) | searches=2/2 | unique_places=98 | capped=2
+PASS | Tulsa, OK (100123) | searches=2/2 | unique_places=98 | capped=2
+PASS | Eugene, OR (100124) | searches=2/2 | unique_places=97 | capped=2
+PASS | Medford, OR (100125) | searches=2/2 | unique_places=95 | capped=2
+PASS | Portland, OR (100126) | searches=2/2 | unique_places=94 | capped=2
+PASS | Allentown, PA (100127) | searches=2/2 | unique_places=99 | capped=2
+PASS | Harrisburg, PA (100128) | searches=2/2 | unique_places=97 | capped=2
+PASS | Lancaster, PA (100129) | searches=2/2 | unique_places=99 | capped=2
+PASS | Philadelphia, PA (100130) | searches=2/2 | unique_places=100 | capped=2
+PASS | Pittsburgh, PA (100131) | searches=2/2 | unique_places=93 | capped=2
+PASS | Scranton, PA (100132) | searches=2/2 | unique_places=98 | capped=2
+PASS | Providence, RI (100133) | searches=2/2 | unique_places=95 | capped=2
+PASS | Charleston, SC (100134) | searches=2/2 | unique_places=97 | capped=2
+PASS | Columbia, SC (100135) | searches=2/2 | unique_places=100 | capped=2
+PASS | Greenville, SC (100136) | searches=2/2 | unique_places=96 | capped=2
+PASS | Aberdeen, SD (100137) | searches=2/2 | unique_places=98 | capped=1
+PASS | Rapid City, SD (100138) | searches=2/2 | unique_places=99 | capped=2
+PASS | Sioux Falls, SD (100139) | searches=2/2 | unique_places=99 | capped=2
+PASS | Chattanooga, TN (100140) | searches=2/2 | unique_places=99 | capped=2
+PASS | Clarksville, TN (100141) | searches=2/2 | unique_places=99 | capped=2
+PASS | Knoxville, TN (100142) | searches=2/2 | unique_places=99 | capped=2
+PASS | Memphis, TN (100143) | searches=2/2 | unique_places=99 | capped=2
+PASS | Nashville, TN (100144) | searches=2/2 | unique_places=88 | capped=2
+PASS | Abilene, TX (100145) | searches=2/2 | unique_places=97 | capped=2
+PASS | Amarillo, TX (100146) | searches=2/2 | unique_places=99 | capped=2
+PASS | Austin, TX (100147) | searches=2/2 | unique_places=93 | capped=2
+PASS | Beaumont, TX (100148) | searches=2/2 | unique_places=96 | capped=2
+PASS | Corpus Christi, TX (100149) | searches=2/2 | unique_places=78 | capped=0
+PASS | Dallas, TX (100150) | searches=2/2 | unique_places=97 | capped=2
+PASS | Del Rio, TX (100151) | searches=2/2 | unique_places=97 | capped=2
+PASS | Denton, TX (100152) | searches=2/2 | unique_places=99 | capped=2
+PASS | El Paso, TX (100153) | searches=2/2 | unique_places=76 | capped=0
+PASS | Houston, TX (100154) | searches=2/2 | unique_places=100 | capped=2
+PASS | Killeen, TX (100155) | searches=2/2 | unique_places=97 | capped=2
+PASS | Laredo, TX (100156) | searches=2/2 | unique_places=98 | capped=2
+PASS | Lubbock, TX (100157) | searches=2/2 | unique_places=99 | capped=2
+PASS | McAllen, TX (100158) | searches=2/2 | unique_places=95 | capped=2
+PASS | Midland, TX (100159) | searches=2/2 | unique_places=100 | capped=2
+PASS | San Antonio, TX (100160) | searches=2/2 | unique_places=99 | capped=2
+PASS | Ogden, UT (100161) | searches=2/2 | unique_places=99 | capped=2
+PASS | Provo, UT (100162) | searches=2/2 | unique_places=98 | capped=2
+PASS | Salt Lake City, UT (100163) | searches=2/2 | unique_places=98 | capped=2
+PASS | St. George, UT (100164) | searches=2/2 | unique_places=100 | capped=2
+PASS | Burlington, VT (100165) | searches=2/2 | unique_places=98 | capped=2
+PASS | Richmond, VA (100166) | searches=2/2 | unique_places=98 | capped=2
+PASS | Virginia Beach, VA (100167) | searches=2/2 | unique_places=97 | capped=2
+PASS | Kennewick, WA (100168) | searches=2/2 | unique_places=98 | capped=2
+PASS | Seattle, WA (100169) | searches=2/2 | unique_places=99 | capped=2
+PASS | Spokane, WA (100170) | searches=2/2 | unique_places=95 | capped=2
+PASS | Charleston, WV (100171) | searches=2/2 | unique_places=99 | capped=2
+PASS | Green Bay, WI (100172) | searches=2/2 | unique_places=96 | capped=2
+PASS | Madison, WI (100173) | searches=2/2 | unique_places=100 | capped=2
+PASS | Milwaukee, WI (100174) | searches=2/2 | unique_places=99 | capped=2
+PASS | Casper, WY (100175) | searches=2/2 | unique_places=99 | capped=2
+PASS | Cheyenne, WY (100176) | searches=2/2 | unique_places=100 | capped=2
+PASS | Gillette, WY (100177) | searches=2/2 | unique_places=91 | capped=0
+PASS | Rock Springs, WY (100178) | searches=2/2 | unique_places=59 | capped=0
+
+status: PASS
+cities_in_master: 178
+successful_cities: 178
+partial_cities: 0
+failed_cities: 0
+api_calls: 356
+files_written: 178
+sum_unique_places_by_city: 16990
+capped_searches: 330
