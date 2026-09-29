@@ -242,6 +242,37 @@ def map_city(event, lookup):
     )
 
 
+def city_mapping_diagnostic(event, lookup):
+    address = event.get("physicalAddress")
+    if not isinstance(address, dict) or not address:
+        return None, "no_physical_address"
+
+    locality_raw = str(address.get("locality") or "").strip()
+    region_raw = str(address.get("region") or "").strip()
+    country_raw = str(address.get("country") or "").strip()
+
+    locality = norm(locality_raw)
+    region = norm(region_raw)
+    country = norm_country(country_raw)
+
+    if not locality:
+        return None, "missing_locality"
+    if not region:
+        return None, "missing_region"
+    if country and country != "us":
+        return None, "non_us_country"
+
+    city_id = (
+        lookup.get((locality, region, country))
+        or lookup.get((locality, region, ""))
+    )
+
+    if city_id:
+        return city_id, "mapped"
+
+    return None, "city_not_in_master"
+
+
 def event_key(event):
     return (
         str(event.get("url") or "").strip()
@@ -485,6 +516,7 @@ def main():
     feeds = set()
     graphql_seen = 0
     graphql_mapped = 0
+    diagnostic_counts = {}
 
     completed_instances = 0
     workers = min(MAX_WORKERS, len(instances))
@@ -520,7 +552,37 @@ def main():
                 if feed:
                     feeds.add(feed)
 
-                city_id = map_city(event, lookup)
+                city_id, rejection_reason = city_mapping_diagnostic(event, lookup)
+                diagnostic_counts[rejection_reason] = (
+                    diagnostic_counts.get(rejection_reason, 0) + 1
+                )
+
+                address = event.get("physicalAddress")
+                if not isinstance(address, dict):
+                    address = {}
+
+                print(
+                    "DIAG GRAPHQL "
+                    + json.dumps(
+                        {
+                            "instance": host,
+                            "uuid": event.get("uuid"),
+                            "url": event.get("url"),
+                            "title": event.get("title"),
+                            "beginsOn": event.get("beginsOn"),
+                            "locality": address.get("locality"),
+                            "region": address.get("region"),
+                            "country": address.get("country"),
+                            "geom": address.get("geom"),
+                            "mapped_city_id": city_id,
+                            "reason": rejection_reason,
+                        },
+                        ensure_ascii=False,
+                        separators=(",", ":"),
+                    ),
+                    flush=True,
+                )
+
                 if not city_id:
                     continue
 
@@ -653,6 +715,14 @@ def main():
     print(f"LEGACY SCHEMA INSTANCES: {schema_counts['legacy']}")
     print(f"GRAPHQL EVENTS SEEN: {graphql_seen}")
     print(f"GRAPHQL EVENTS MAPPED: {graphql_mapped}")
+    print(
+        "GRAPHQL MAPPING REASONS: "
+        + json.dumps(
+            dict(sorted(diagnostic_counts.items())),
+            ensure_ascii=False,
+            separators=(",", ":"),
+        )
+    )
     print(f"GROUP ICS FEEDS DISCOVERED: {len(feed_list)}")
     print(f"ICS EVENTS SEEN: {feed_seen}")
     print(f"ICS EVENTS ADDED: {feed_added}")
