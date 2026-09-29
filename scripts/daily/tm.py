@@ -1,9 +1,9 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 # scripts/daily/tm.py
+
 import csv
 import json
 import os
-import shutil
 import sys
 import time
 from datetime import datetime, timezone
@@ -14,7 +14,7 @@ from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[2]
 CITY_FILE = ROOT / "data" / "location" / "usa" / "city_master.csv"
-RAW_ROOT = ROOT / "data" / "raw" / "ticketmaster"
+RAW_ROOT = ROOT / "data" / "events" / "raw" / "ticketmaster"
 ERROR_FILE = ROOT / "errors" / "tm.txt"
 
 API_URL = "https://app.ticketmaster.com/discovery/v2/events.json"
@@ -47,6 +47,7 @@ def fetch_raw(params):
     )
 
     _last_request_started = time.monotonic()
+
     with urlopen(request, timeout=REQUEST_TIMEOUT_SECONDS) as response:
         return response.read()
 
@@ -65,8 +66,12 @@ def main():
     ]
 
     api_key = os.environ.get("TICKETMASTER_API_KEY", "").strip()
+
     if not api_key:
-        report.extend(["status: FAILED", "error: TICKETMASTER_API_KEY is not set"])
+        report.extend([
+            "status: FAILED",
+            "error: TICKETMASTER_API_KEY is not set",
+        ])
         write_report(report)
         print("TICKETMASTER: FAILED")
         print("ERROR: TICKETMASTER_API_KEY is not set")
@@ -76,7 +81,10 @@ def main():
         with CITY_FILE.open("r", encoding="utf-8-sig", newline="") as handle:
             cities = list(csv.DictReader(handle))
     except Exception as exc:
-        report.extend(["status: FAILED", f"error: unable to read city file: {exc}"])
+        report.extend([
+            "status: FAILED",
+            f"error: unable to read city file: {exc}",
+        ])
         write_report(report)
         print("TICKETMASTER: FAILED")
         print("ERROR: unable to read city_master.csv")
@@ -114,7 +122,8 @@ def main():
         }
 
         missing_values = [
-            name for name, value in values.items()
+            name
+            for name, value in values.items()
             if not value
         ]
 
@@ -134,12 +143,13 @@ def main():
             city_lines.append(f"FAIL | {message}")
             continue
 
-        city_dir = RAW_ROOT / values["city_id"] / run_date
+        city_dir = RAW_ROOT / values["city_id"]
+        city_file = city_dir / f"{run_date}.json"
 
-        # Only today's run folder may be replaced. Older dated folders are untouched.
-        if city_dir.exists():
-            shutil.rmtree(city_dir)
         city_dir.mkdir(parents=True, exist_ok=True)
+
+        if city_file.exists():
+            city_file.unlink()
 
         city_calls = 0
         city_events = 0
@@ -147,6 +157,7 @@ def main():
         total_pages = None
         failed = False
         failure_message = ""
+        collected_pages = []
 
         for page in range(MAX_CALLS_PER_CITY):
             params = {
@@ -178,11 +189,6 @@ def main():
                 failure_message = f"{type(exc).__name__}: {exc}"
                 break
 
-            page_file = city_dir / f"page_{page:03d}.json"
-            page_file.write_bytes(raw)
-            city_files += 1
-            total_files += 1
-
             try:
                 payload = json.loads(raw)
             except Exception as exc:
@@ -190,11 +196,27 @@ def main():
                 failure_message = f"invalid JSON on page {page}: {exc}"
                 break
 
+            collected_pages.append(payload)
+
+            city_file.write_text(
+                json.dumps(
+                    {"pages": collected_pages},
+                    ensure_ascii=False,
+                    separators=(",", ":"),
+                ),
+                encoding="utf-8",
+            )
+
+            if city_files == 0:
+                city_files = 1
+                total_files += 1
+
             events = payload.get("_embedded", {}).get("events", [])
             city_events += len(events)
             total_events += len(events)
 
             page_info = payload.get("page", {})
+
             try:
                 total_pages = int(page_info.get("totalPages", 0))
             except (TypeError, ValueError):
@@ -215,6 +237,7 @@ def main():
             city_lines.append(f"FAIL | {message}")
         else:
             successful_cities += 1
+
             capped = (
                 total_pages is not None
                 and total_pages > MAX_CALLS_PER_CITY
@@ -232,24 +255,22 @@ def main():
 
     status = "PASS" if failed_cities == 0 else "PARTIAL"
 
-    report.extend(
-        [
-            f"status: {status}",
-            f"city_rows: {len(cities)}",
-            f"cities_successful: {successful_cities}",
-            f"cities_failed: {failed_cities}",
-            f"cities_capped_at_15_calls: {capped_cities}",
-            f"api_calls: {total_calls}",
-            f"events_downloaded: {total_events}",
-            f"raw_files_written: {total_files}",
-            "",
-            "CITY RESULTS",
-            *city_lines,
-            "",
-            "ERRORS",
-            *(error_lines if error_lines else ["none"]),
-        ]
-    )
+    report.extend([
+        f"status: {status}",
+        f"city_rows: {len(cities)}",
+        f"cities_successful: {successful_cities}",
+        f"cities_failed: {failed_cities}",
+        f"cities_capped_at_15_calls: {capped_cities}",
+        f"api_calls: {total_calls}",
+        f"events_downloaded: {total_events}",
+        f"raw_files_written: {total_files}",
+        "",
+        "CITY RESULTS",
+        *city_lines,
+        "",
+        "ERRORS",
+        *(error_lines if error_lines else ["none"]),
+    ])
 
     write_report(report)
 
@@ -268,4 +289,3 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
-
