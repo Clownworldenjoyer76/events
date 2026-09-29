@@ -14,9 +14,11 @@ ROOT = Path(__file__).resolve().parents[2]
 CITY_FILE = ROOT / "data" / "location" / "usa" / "city_master.csv"
 RAW_ROOT = ROOT / "data" / "events" / "raw" / "mobilizon"
 
-INSTANCE_DIRECTORY = "https://instances.mobilizon.org/"
+INSTANCES = ("mobilizon.us", "my-group.events")
 TIMEOUT = 25
 PAGE_SIZE = 50
+MAX_PAGES_PER_INSTANCE = 5
+MAX_RUNTIME_PER_INSTANCE_SECONDS = 60
 MIN_INTERVAL = 0.10
 MAX_WORKERS = 16
 _last_request = 0.0
@@ -136,11 +138,11 @@ def get_bytes(url, accept="text/html,application/xhtml+xml,*/*"):
             "User-Agent": "events-mobilizon-collector/1.1",
         },
     )
-    with urlopen(req, timeout=TIMEOUT) as response:
+    with urlopen(req, timeout=max(1.0, min(TIMEOUT, timeout))) as response:
         return response.read()
 
 
-def graphql(host, query, variables=None):
+def graphql(host, query, variables=None, timeout=TIMEOUT):
     throttle()
     body = json.dumps(
         {"query": query, "variables": variables or {}},
@@ -255,21 +257,25 @@ def event_key(event):
 
 
 def discover_instances():
-    html = get_bytes(INSTANCE_DIRECTORY).decode("utf-8", errors="replace")
-    parser = InstanceParser()
-    parser.feed(html)
-    return parser.hosts
+    return list(INSTANCES)
 
 
-def fetch_modern_events(host, now):
+def fetch_modern_events(host, now, deadline):
     collected = []
     page = 1
 
-    while True:
+    while page <= MAX_PAGES_PER_INSTANCE:
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            raise TimeoutError(
+                f"{host} exceeded {MAX_RUNTIME_PER_INSTANCE_SECONDS}s runtime limit"
+            )
+
         data = graphql(
             host,
             MODERN_EVENTS_QUERY,
             {"page": page, "limit": PAGE_SIZE},
+            timeout=remaining,
         )
 
         result = data.get("events") or {}
@@ -299,15 +305,22 @@ def fetch_modern_events(host, now):
     return collected
 
 
-def fetch_legacy_events(host, now):
+def fetch_legacy_events(host, now, deadline):
     collected = []
     page = 1
 
-    while True:
+    while page <= MAX_PAGES_PER_INSTANCE:
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            raise TimeoutError(
+                f"{host} exceeded {MAX_RUNTIME_PER_INSTANCE_SECONDS}s runtime limit"
+            )
+
         data = graphql(
             host,
             LEGACY_EVENTS_QUERY,
             {"page": page, "limit": PAGE_SIZE},
+            timeout=remaining,
         )
 
         elements = data.get("events") or []
@@ -337,15 +350,21 @@ def fetch_legacy_events(host, now):
 
 
 def fetch_instance_events(host, now):
+    deadline = time.monotonic() + MAX_RUNTIME_PER_INSTANCE_SECONDS
     modern_error = None
 
     try:
-        return fetch_modern_events(host, now), "modern"
+        return fetch_modern_events(host, now, deadline), "modern"
     except Exception as exc:
         modern_error = exc
 
+    if time.monotonic() >= deadline:
+        raise TimeoutError(
+            f"{host} exceeded {MAX_RUNTIME_PER_INSTANCE_SECONDS}s runtime limit"
+        )
+
     try:
-        return fetch_legacy_events(host, now), "legacy"
+        return fetch_legacy_events(host, now, deadline), "legacy"
     except Exception as legacy_error:
         raise RuntimeError(
             f"modern={modern_error}; legacy={legacy_error}"
