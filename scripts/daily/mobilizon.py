@@ -138,7 +138,7 @@ def get_bytes(url, accept="text/html,application/xhtml+xml,*/*"):
             "User-Agent": "events-mobilizon-collector/1.1",
         },
     )
-    with urlopen(req, timeout=max(1.0, min(TIMEOUT, timeout))) as response:
+    with urlopen(req, timeout=TIMEOUT) as response:
         return response.read()
 
 
@@ -159,7 +159,7 @@ def graphql(host, query, variables=None, timeout=TIMEOUT):
             "User-Agent": "events-mobilizon-collector/1.1",
         },
     )
-    with urlopen(req, timeout=TIMEOUT) as response:
+    with urlopen(req, timeout=max(1.0, min(TIMEOUT, timeout))) as response:
         payload = json.loads(response.read())
 
     if payload.get("errors"):
