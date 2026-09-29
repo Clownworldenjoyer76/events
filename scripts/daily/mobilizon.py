@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import csv
 import json
+import math
 import re
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -19,6 +20,7 @@ TIMEOUT = 25
 PAGE_SIZE = 50
 MAX_PAGES_PER_INSTANCE = 5
 MAX_RUNTIME_PER_INSTANCE_SECONDS = 60
+COORDINATE_FALLBACK_MILES = 40.0
 MIN_INTERVAL = 0.10
 MAX_WORKERS = 16
 _last_request = 0.0
@@ -222,55 +224,116 @@ def build_city_lookup(cities):
     return lookup
 
 
-def map_city(event, lookup):
-    address = event.get("physicalAddress") or {}
-    if not isinstance(address, dict):
+def build_city_points(cities):
+    points = []
+
+    for row in cities:
+        city_id = str(row.get("city_id") or "").strip()
+        try:
+            latitude = float(row.get("latitude"))
+            longitude = float(row.get("longitude"))
+        except (TypeError, ValueError):
+            continue
+
+        if city_id:
+            points.append((city_id, latitude, longitude))
+
+    return points
+
+
+def parse_geom(value):
+    parts = str(value or "").strip().split(";")
+    if len(parts) != 2:
         return None
+
+    try:
+        longitude = float(parts[0])
+        latitude = float(parts[1])
+    except ValueError:
+        return None
+
+    if not (-90 <= latitude <= 90 and -180 <= longitude <= 180):
+        return None
+
+    return latitude, longitude
+
+
+def distance_miles(lat1, lon1, lat2, lon2):
+    radius = 3958.7613
+    phi1 = math.radians(lat1)
+    phi2 = math.radians(lat2)
+    dphi = math.radians(lat2 - lat1)
+    dlambda = math.radians(lon2 - lon1)
+
+    value = (
+        math.sin(dphi / 2) ** 2
+        + math.cos(phi1) * math.cos(phi2) * math.sin(dlambda / 2) ** 2
+    )
+    arc = 2 * math.atan2(math.sqrt(value), math.sqrt(1 - value))
+    return radius * arc
+
+
+def resolve_city(event, lookup, city_points):
+    address = event.get("physicalAddress")
+    if not isinstance(address, dict) or not address:
+        return None, "no_physical_address", None
 
     locality = norm(address.get("locality"))
     region = norm(address.get("region"))
     country = norm_country(address.get("country"))
 
-    if not locality or not region:
-        return None
     if country and country != "us":
-        return None
+        return None, "non_us_country", None
 
-    return (
-        lookup.get((locality, region, country))
-        or lookup.get((locality, region, ""))
-    )
+    if locality and region:
+        city_id = (
+            lookup.get((locality, region, country))
+            or lookup.get((locality, region, ""))
+        )
+        if city_id:
+            return city_id, "mapped_exact", 0.0
 
+    coordinates = parse_geom(address.get("geom"))
+    if coordinates:
+        latitude, longitude = coordinates
+        nearest_city_id = None
+        nearest_distance = None
 
-def city_mapping_diagnostic(event, lookup):
-    address = event.get("physicalAddress")
-    if not isinstance(address, dict) or not address:
-        return None, "no_physical_address"
+        for city_id, city_latitude, city_longitude in city_points:
+            miles = distance_miles(
+                latitude,
+                longitude,
+                city_latitude,
+                city_longitude,
+            )
+            if nearest_distance is None or miles < nearest_distance:
+                nearest_distance = miles
+                nearest_city_id = city_id
 
-    locality_raw = str(address.get("locality") or "").strip()
-    region_raw = str(address.get("region") or "").strip()
-    country_raw = str(address.get("country") or "").strip()
+        if (
+            nearest_city_id
+            and nearest_distance is not None
+            and nearest_distance <= COORDINATE_FALLBACK_MILES
+        ):
+            return nearest_city_id, "mapped_radius", nearest_distance
 
-    locality = norm(locality_raw)
-    region = norm(region_raw)
-    country = norm_country(country_raw)
+        return None, "outside_40_miles", nearest_distance
 
     if not locality:
-        return None, "missing_locality"
+        return None, "missing_locality", None
     if not region:
-        return None, "missing_region"
-    if country and country != "us":
-        return None, "non_us_country"
+        return None, "missing_region", None
 
-    city_id = (
-        lookup.get((locality, region, country))
-        or lookup.get((locality, region, ""))
-    )
+    return None, "city_not_in_master", None
 
-    if city_id:
-        return city_id, "mapped"
 
-    return None, "city_not_in_master"
+def map_city(event, lookup, city_points):
+    city_id, _, _ = resolve_city(event, lookup, city_points)
+    return city_id
+
+
+def city_mapping_diagnostic(event, lookup, city_points):
+    return resolve_city(event, lookup, city_points)
 
 
 def event_key(event):
@@ -497,6 +560,7 @@ def main():
         return 2
 
     lookup = build_city_lookup(cities)
+    city_points = build_city_points(cities)
     city_rows = {
         str(row.get("city_id") or "").strip(): row
         for row in cities
@@ -552,7 +616,11 @@ def main():
                 if feed:
                     feeds.add(feed)
 
-                city_id, rejection_reason = city_mapping_diagnostic(event, lookup)
+                city_id, rejection_reason, distance = city_mapping_diagnostic(
+                    event,
+                    lookup,
+                    city_points,
+                )
                 diagnostic_counts[rejection_reason] = (
                     diagnostic_counts.get(rejection_reason, 0) + 1
                 )
@@ -575,6 +643,11 @@ def main():
                             "country": address.get("country"),
                             "geom": address.get("geom"),
                             "mapped_city_id": city_id,
+                            "mapping_distance_miles": (
+                                round(distance, 2)
+                                if distance is not None
+                                else None
+                            ),
                             "reason": rejection_reason,
                         },
                         ensure_ascii=False,
@@ -644,7 +717,7 @@ def main():
             if not begins or begins < now:
                 continue
 
-            city_id = map_city(event, lookup)
+            city_id = map_city(event, lookup, city_points)
             if not city_id:
                 continue
 
