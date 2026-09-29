@@ -3,36 +3,22 @@
 import csv
 import json
 import re
-import time
 import unicodedata
 from datetime import datetime, timezone
-from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urljoin
-from urllib.request import Request, urlopen
+
+from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
+from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[2]
 CITY_FILE = ROOT / "data" / "location" / "usa" / "city_master.csv"
 OUT_ROOT = ROOT / "data" / "events" / "raw" / "bandsintown"
 
 BASE_URL = "https://www.bandsintown.com"
-TIMEOUT = 30
-REQUEST_DELAY = 0.5
-
-_last_request = 0.0
-
-
-def fetch(url):
-    global _last_request
-    elapsed = time.monotonic() - _last_request
-    if elapsed < REQUEST_DELAY:
-        time.sleep(REQUEST_DELAY - elapsed)
-
-    req = Request(url, headers={"User-Agent": "events-collector/1.0"})
-    _last_request = time.monotonic()
-
-    with urlopen(req, timeout=TIMEOUT) as response:
-        return response.read().decode("utf-8", errors="replace")
+NAV_TIMEOUT_MS = 45_000
+CITY_SETTLE_MS = 2_000
+EVENT_SETTLE_MS = 700
+EVENT_RE = re.compile(r"/e/(\d+)-", re.IGNORECASE)
 
 
 def slugify(value):
@@ -42,93 +28,58 @@ def slugify(value):
     return re.sub(r"[^a-z0-9]+", "-", value).strip("-")
 
 
-class EventLinkParser(HTMLParser):
-    def __init__(self):
-        super().__init__()
-        self.links = {}
-
-    def handle_starttag(self, tag, attrs):
-        if tag != "a":
-            return
-
-        href = dict(attrs).get("href", "")
-        match = re.search(r"/e/(\d+)-[^?#]+", href)
-
-        if match:
-            event_id = match.group(1)
-            self.links[event_id] = urljoin(BASE_URL, href.split("?")[0])
-
-
-class JsonLdParser(HTMLParser):
-    def __init__(self):
-        super().__init__()
-        self.capture = False
-        self.buffer = []
-        self.documents = []
-
-    def handle_starttag(self, tag, attrs):
-        attrs = dict(attrs)
-        if tag == "script" and attrs.get("type") == "application/ld+json":
-            self.capture = True
-            self.buffer = []
-
-    def handle_data(self, data):
-        if self.capture:
-            self.buffer.append(data)
-
-    def handle_endtag(self, tag):
-        if tag == "script" and self.capture:
-            text = "".join(self.buffer).strip()
-            if text:
-                try:
-                    self.documents.append(json.loads(text))
-                except json.JSONDecodeError:
-                    pass
-            self.capture = False
-
-
 def find_event(value):
     if isinstance(value, dict):
         event_type = value.get("@type")
-
         if event_type == "Event":
             return value
-
         if isinstance(event_type, list) and "Event" in event_type:
             return value
-
         for child in value.values():
-            result = find_event(child)
-            if result:
-                return result
-
+            found = find_event(child)
+            if found:
+                return found
     elif isinstance(value, list):
         for child in value:
-            result = find_event(child)
-            if result:
-                return result
+            found = find_event(child)
+            if found:
+                return found
+    return None
 
+
+def extract_json_ld_event(page):
+    for text in page.locator('script[type="application/ld+json"]').all_text_contents():
+        text = text.strip()
+        if not text:
+            continue
+        try:
+            document = json.loads(text)
+        except json.JSONDecodeError:
+            continue
+        event = find_event(document)
+        if event:
+            return event
     return None
 
 
 def get_location(event):
     location = event.get("location") or {}
-
     if isinstance(location, list):
-        location = next(
-            (item for item in location if isinstance(item, dict)),
-            {},
-        )
-
-    address = location.get("address") or {}
-
-    if isinstance(address, str):
+        location = next((item for item in location if isinstance(item, dict)), {})
+    if not isinstance(location, dict):
         return None, None
 
-    city = (address.get("addressLocality") or "").strip()
-    region = (address.get("addressRegion") or "").strip()
+    address = location.get("address") or {}
+    if not isinstance(address, dict):
+        return None, None
 
-    return city, region
+    city = str(address.get("addressLocality") or "").strip()
+    region = str(address.get("addressRegion") or "").strip()
+    return city or None, region or None
+
+
+def normalize_key(value):
+    return re.sub(r"\s+", " ", str(value or "").strip().casefold())
 
 
 def main():
@@ -137,98 +88,170 @@ def main():
     with CITY_FILE.open("r", encoding="utf-8-sig", newline="") as handle:
         cities = list(csv.DictReader(handle))
 
-    city_lookup = {
-        (
-            row["city"].strip().lower(),
-            row["state_code"].strip().lower(),
-        ): row["city_id"].strip()
-        for row in cities
-    }
+    if not cities:
+        raise RuntimeError("city_master.csv contains no cities")
+
+    city_lookup = {}
+    for row in cities:
+        city = normalize_key(row["city"])
+        city_id = row["city_id"].strip()
+        for region in (row.get("state_code"), row.get("state")):
+            if region:
+                city_lookup[(city, normalize_key(region))] = city_id
 
     results = {row["city_id"].strip(): {} for row in cities}
     event_cache = {}
+    city_pages_with_links = 0
+    discovered_links = 0
+    event_pages_parsed = 0
 
-    for row in cities:
-        city = row["city"].strip()
-        state = row["state_code"].strip()
-
-        city_url = (
-            f"{BASE_URL}/c/"
-            f"{slugify(city)}-{slugify(state)}"
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        context = browser.new_context(
+            locale="en-US",
+            user_agent=(
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/153.0.0.0 Safari/537.36"
+            ),
         )
+        city_page = context.new_page()
+        event_page = context.new_page()
+        city_page.set_default_navigation_timeout(NAV_TIMEOUT_MS)
+        event_page.set_default_navigation_timeout(NAV_TIMEOUT_MS)
 
-        try:
-            html = fetch(city_url)
-        except Exception as exc:
-            print(f"CITY FAILED: {city}, {state}: {exc}")
-            continue
+        for index, row in enumerate(cities, start=1):
+            city = row["city"].strip()
+            state = row["state_code"].strip()
+            source_city_id = row["city_id"].strip()
+            city_url = f"{BASE_URL}/c/{slugify(city)}-{slugify(state)}"
 
-        parser = EventLinkParser()
-        parser.feed(html)
+            try:
+                response = city_page.goto(city_url, wait_until="domcontentloaded")
+                if response is not None and response.status >= 400:
+                    print(f"CITY HTTP {response.status}: {city}, {state}")
+                    continue
 
-        for event_id, event_url in parser.links.items():
-            if event_id not in event_cache:
                 try:
-                    event_html = fetch(event_url)
+                    city_page.locator('a[href*="/e/"]').first.wait_for(
+                        state="attached", timeout=10_000
+                    )
+                except PlaywrightTimeoutError:
+                    pass
 
-                    json_parser = JsonLdParser()
-                    json_parser.feed(event_html)
+                city_page.wait_for_timeout(CITY_SETTLE_MS)
 
+                hrefs = city_page.locator('a[href*="/e/"]').evaluate_all(
+                    """els => [...new Set(
+                        els.map(el => el.href).filter(Boolean)
+                    )]"""
+                )
+            except Exception as exc:
+                print(f"CITY FAILED: {city}, {state}: {exc}")
+                continue
+
+            links = {}
+            for href in hrefs:
+                match = EVENT_RE.search(href)
+                if not match:
+                    continue
+                event_id = match.group(1)
+                clean_url = href.split("?", 1)[0]
+                links[event_id] = clean_url
+
+            if links:
+                city_pages_with_links += 1
+                discovered_links += len(links)
+
+            print(
+                f"CITY {index:03d}/{len(cities)} "
+                f"{source_city_id} {city}, {state}: {len(links)} links"
+            )
+
+            for event_id, event_url in links.items():
+                if event_id not in event_cache:
                     event_data = None
-                    for document in json_parser.documents:
-                        event_data = find_event(document)
-                        if event_data:
-                            break
+                    try:
+                        response = event_page.goto(
+                            event_url, wait_until="domcontentloaded"
+                        )
+                        if response is None or response.status < 400:
+                            event_page.wait_for_timeout(EVENT_SETTLE_MS)
+                            event_data = extract_json_ld_event(event_page)
+                            if event_data:
+                                event_pages_parsed += 1
+                    except Exception as exc:
+                        print(f"EVENT FAILED: {event_id}: {exc}")
 
                     event_cache[event_id] = event_data
 
-                except Exception as exc:
-                    print(f"EVENT FAILED: {event_id}: {exc}")
-                    event_cache[event_id] = None
+                event_data = event_cache[event_id]
+                if not event_data:
+                    continue
 
-            event_data = event_cache[event_id]
+                event_city, event_region = get_location(event_data)
+                if not event_city or not event_region:
+                    continue
 
-            if not event_data:
-                continue
+                city_id = city_lookup.get(
+                    (normalize_key(event_city), normalize_key(event_region))
+                )
+                if not city_id:
+                    continue
 
-            event_city, event_region = get_location(event_data)
+                results[city_id][event_id] = {
+                    "bandsintown_event_id": event_id,
+                    "source_city_id": source_city_id,
+                    "source_city_url": city_url,
+                    "source_url": event_url,
+                    "data": event_data,
+                }
 
-            if not event_city or not event_region:
-                continue
+        context.close()
+        browser.close()
 
-            city_id = city_lookup.get(
-                (event_city.lower(), event_region.lower())
-            )
+    if discovered_links == 0:
+        raise RuntimeError(
+            "Bandsintown city pages produced zero event links; refusing empty output"
+        )
 
-            if not city_id:
-                continue
+    total_events = sum(len(events) for events in results.values())
+    populated_cities = sum(bool(events) for events in results.values())
 
-            results[city_id][event_id] = {
-                "bandsintown_event_id": event_id,
-                "source_url": event_url,
-                "data": event_data,
-            }
+    if total_events == 0:
+        raise RuntimeError(
+            f"Discovered {discovered_links} event links but mapped zero events; "
+            "refusing empty output"
+        )
 
-    total_events = 0
+    OUT_ROOT.mkdir(parents=True, exist_ok=True)
 
+    for old_file in OUT_ROOT.glob(f"*/{run_date}.json"):
+        old_file.unlink()
+
+    written_files = 0
     for city_id, events in results.items():
+        if not events:
+            continue
+
         output_dir = OUT_ROOT / city_id
         output_dir.mkdir(parents=True, exist_ok=True)
-
         output_file = output_dir / f"{run_date}.json"
         records = list(events.values())
-
         output_file.write_text(
             json.dumps(records, ensure_ascii=False, indent=2),
             encoding="utf-8",
         )
-
-        total_events += len(records)
+        written_files += 1
 
     print("BANDSINTOWN: PASS")
-    print(f"CITIES: {len(cities)}")
+    print(f"CITIES CHECKED: {len(cities)}")
+    print(f"CITY PAGES WITH LINKS: {city_pages_with_links}")
+    print(f"EVENT LINKS DISCOVERED: {discovered_links}")
+    print(f"EVENT PAGES PARSED: {event_pages_parsed}")
+    print(f"POPULATED CITIES: {populated_cities}")
     print(f"UNIQUE EVENTS: {total_events}")
-    print(f"FILES: {len(cities)}")
+    print(f"FILES WRITTEN: {written_files}")
 
     return 0
 
