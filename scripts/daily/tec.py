@@ -28,7 +28,22 @@ MAX_PAGES_PER_SITE = 250
 
 CSV_ROWS_PER_FILE = 1000
 
-USER_AGENT = "events-tec-collector/1.2"
+USER_AGENT = "events-tec-collector/1.3"
+
+EXCLUDED_HOSTS = {
+    "kwel.com",
+}
+
+RADIO_TEXT_MARKERS = (
+    "radio show",
+    "radio program",
+    "radio hour",
+    "on-air",
+    "on air",
+    "broadcast live",
+    "live broadcast",
+    "streaming live",
+)
 
 
 def request_json(url):
@@ -216,6 +231,9 @@ def discover_website_groups():
                 )
 
                 if not host_key:
+                    continue
+
+                if host_key in EXCLUDED_HOSTS:
                     continue
 
                 group = groups.setdefault(
@@ -415,6 +433,78 @@ def event_identity(event):
     )
 
 
+def venue_has_physical_location(value):
+    if isinstance(value, list):
+        return any(
+            venue_has_physical_location(item)
+            for item in value
+        )
+
+    if not isinstance(value, dict):
+        return False
+
+    location_fields = (
+        "address",
+        "city",
+        "state",
+        "province",
+        "zip",
+        "geo_lat",
+        "geo_lng",
+    )
+
+    return any(
+        value.get(field) not in (None, "", [], {})
+        for field in location_fields
+    )
+
+
+def event_is_virtual_only(event):
+    if venue_has_physical_location(event.get("venue")):
+        return False
+
+    if event.get("is_virtual") is True:
+        return True
+
+    return bool(
+        str(event.get("virtual_url") or "").strip()
+        or str(event.get("virtual_video_source") or "").strip()
+    )
+
+
+def event_is_radio_program(event):
+    if venue_has_physical_location(event.get("venue")):
+        return False
+
+    text_parts = [
+        event.get("title"),
+        event.get("description"),
+        event.get("excerpt"),
+    ]
+
+    for collection_name in ("categories", "tags"):
+        collection = event.get(collection_name) or []
+
+        if isinstance(collection, list):
+            for item in collection:
+                if isinstance(item, dict):
+                    text_parts.extend(
+                        (item.get("name"), item.get("slug"))
+                    )
+                else:
+                    text_parts.append(item)
+
+    text = " ".join(
+        str(value or "")
+        for value in text_parts
+    ).lower()
+
+    return any(
+        marker in text
+        for marker in RADIO_TEXT_MARKERS
+    )
+
+
 def fetch_site(
     site,
     start_date,
@@ -427,6 +517,8 @@ def fetch_site(
 
     pages_fetched = 0
     duplicate_identity_rows = 0
+    filtered_virtual_only = 0
+    filtered_radio = 0
 
     status = "PASS"
     error = ""
@@ -486,6 +578,14 @@ def fetch_site(
 
         for event in events:
             if not isinstance(event, dict):
+                continue
+
+            if event_is_virtual_only(event):
+                filtered_virtual_only += 1
+                continue
+
+            if event_is_radio_program(event):
+                filtered_radio += 1
                 continue
 
             identity = event_identity(event)
@@ -560,6 +660,10 @@ def fetch_site(
             len(rows),
         "duplicate_identity_rows":
             duplicate_identity_rows,
+        "filtered_virtual_only":
+            filtered_virtual_only,
+        "filtered_radio":
+            filtered_radio,
         "rows":
             rows,
     }
@@ -1173,6 +1277,16 @@ def main():
         for item in fetch_results
     )
 
+    filtered_virtual_only = sum(
+        int(item.get("filtered_virtual_only", 0))
+        for item in fetch_results
+    )
+
+    filtered_radio = sum(
+        int(item.get("filtered_radio", 0))
+        for item in fetch_results
+    )
+
     status = (
         "PASS"
         if (
@@ -1218,6 +1332,16 @@ def main():
     print(
         f"DUPLICATE IDENTITY ROWS: "
         f"{duplicate_identity_rows}"
+    )
+
+    print(
+        f"FILTERED VIRTUAL ONLY: "
+        f"{filtered_virtual_only}"
+    )
+
+    print(
+        f"FILTERED RADIO PROGRAMS: "
+        f"{filtered_radio}"
     )
 
     print(
