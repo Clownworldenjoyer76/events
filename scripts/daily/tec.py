@@ -1026,12 +1026,31 @@ def compact_organizer(value):
     return compact_dict(value, keys)
 
 
+def decode_html_value(value):
+    if isinstance(value, str):
+        return unescape(value)
+
+    if isinstance(value, list):
+        return [
+            decode_html_value(item)
+            for item in value
+        ]
+
+    if isinstance(value, dict):
+        return {
+            key: decode_html_value(item)
+            for key, item in value.items()
+        }
+
+    return value
+
+
 def json_cell(value):
     if value in (None, ""):
         return ""
 
     return json.dumps(
-        value,
+        decode_html_value(value),
         ensure_ascii=False,
         separators=(",", ":"),
     )
@@ -1182,7 +1201,7 @@ def serialize_event_fields(event):
         "event.venue_json": json_cell(compact_venue(event.get("venue"))),
         "event.organizer_json": json_cell(compact_organizer(event.get("organizer"))),
         "event.description": clean_description(event.get("description")),
-        "event.excerpt": decoded_scalar_cell(event.get("excerpt")),
+        "event.excerpt": clean_description(event.get("excerpt")),
         "event.image_json": json_cell(compact_image(event.get("image"))),
         "event.custom_fields_json": json_cell(event.get("custom_fields")),
         "event.hide_from_listings": scalar_cell(event.get("hide_from_listings")),
