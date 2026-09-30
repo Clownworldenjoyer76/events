@@ -565,47 +565,134 @@ def fetch_site(
     }
 
 
+EVENT_CSV_FIELDS = [
+    "tec_run_started_utc",
+    "tec_canonical_host",
+    "tec_endpoint",
+    "tec_page",
+    "event.id",
+    "event.global_id",
+    "event.title",
+    "event.start_date",
+    "event.utc_start_date",
+    "event.end_date",
+    "event.utc_end_date",
+    "event.timezone",
+    "event.all_day",
+    "event.featured",
+    "event.status",
+    "event.url",
+    "event.website",
+    "event.purchase_link",
+    "event.cost",
+    "event.cost_details_json",
+    "event.categories_json",
+    "event.tags_json",
+    "event.venue_json",
+    "event.organizer_json",
+    "event.description",
+    "event.excerpt",
+    "event.image_json",
+    "event.custom_fields_json",
+    "event.hide_from_listings",
+    "event.is_virtual",
+    "event.virtual_url",
+    "event.virtual_video_source",
+    "event.modified",
+    "event.modified_utc",
+    "event.show_map",
+    "event.show_map_link",
+    "event.subevents_json",
+    "event.ticketed",
+    "event.ticketed_json",
+]
+
+
+SCALAR_EVENT_FIELDS = (
+    "id",
+    "global_id",
+    "title",
+    "start_date",
+    "utc_start_date",
+    "end_date",
+    "utc_end_date",
+    "timezone",
+    "all_day",
+    "featured",
+    "status",
+    "url",
+    "website",
+    "purchase_link",
+    "cost",
+    "description",
+    "excerpt",
+    "hide_from_listings",
+    "is_virtual",
+    "virtual_url",
+    "virtual_video_source",
+    "modified",
+    "modified_utc",
+    "show_map",
+    "show_map_link",
+)
+
+
+JSON_EVENT_FIELDS = (
+    "cost_details",
+    "categories",
+    "tags",
+    "venue",
+    "organizer",
+    "image",
+    "custom_fields",
+    "subevents",
+)
+
+
+def scalar_cell(value):
+    if value is None:
+        return ""
+    if isinstance(value, bool):
+        return "true" if value else "false"
+    return str(value)
+
+
+def json_cell(value):
+    if value is None:
+        return ""
+    return json.dumps(
+        value,
+        ensure_ascii=False,
+        separators=(",", ":"),
+    )
+
+
 def serialize_event_fields(event):
-    """
-    Preserve every top-level TEC event field without recursively exploding
-    nested WordPress/plugin objects into hundreds or thousands of CSV columns.
-
-    Scalar values become normal columns:
-        event.id
-        event.title
-        event.start_date
-        event.cost
-        ...
-
-    Dict/list values become one compact JSON cell:
-        event.categories_json
-        event.tags_json
-        event.venue_json
-        event.organizer_json
-        event.image_json
-        event.custom_fields_json
-        ...
-
-    This is lossless for the event payload because every top-level key is
-    retained exactly once and all nested content is preserved as JSON.
-    """
+    """Return only the approved TEC fields for raw CSV storage."""
     output = {}
 
-    for key, value in event.items():
-        column = f"event.{key}"
+    for key in SCALAR_EVENT_FIELDS:
+        output[f"event.{key}"] = scalar_cell(
+            event.get(key)
+        )
 
-        if isinstance(value, (dict, list)):
-            output[f"{column}_json"] = json.dumps(
-                value,
-                ensure_ascii=False,
-                separators=(",", ":"),
-            )
-        elif value is None:
-            output[column] = ""
-        elif isinstance(value, bool):
-            output[column] = "true" if value else "false"
-        else:
-            output[column] = str(value)
+    for key in JSON_EVENT_FIELDS:
+        output[f"event.{key}_json"] = json_cell(
+            event.get(key)
+        )
+
+    ticketed = event.get("ticketed")
+
+    if isinstance(ticketed, (dict, list)):
+        output["event.ticketed"] = ""
+        output["event.ticketed_json"] = json_cell(
+            ticketed
+        )
+    else:
+        output["event.ticketed"] = scalar_cell(
+            ticketed
+        )
+        output["event.ticketed_json"] = ""
 
     return output
 
@@ -662,61 +749,8 @@ def write_csv(
 
 
 def ordered_event_fields(rows):
-    metadata = [
-        "tec_run_started_utc",
-        "tec_canonical_host",
-        "tec_endpoint",
-        "tec_page",
-    ]
+    return list(EVENT_CSV_FIELDS)
 
-    preferred = [
-        "event.id",
-        "event.global_id",
-        "event.title",
-        "event.start_date",
-        "event.utc_start_date",
-        "event.end_date",
-        "event.utc_end_date",
-        "event.timezone",
-        "event.all_day",
-        "event.featured",
-        "event.status",
-        "event.url",
-        "event.website",
-        "event.cost",
-        "event.cat_text",
-        "event.categories_json",
-        "event.tags_json",
-        "event.venue_json",
-        "event.organizer_json",
-        "event.description",
-        "event.excerpt",
-        "event.image_json",
-        "event.custom_fields_json",
-    ]
-
-    all_fields = set()
-
-    for row in rows:
-        all_fields.update(row.keys())
-
-    ordered_preferred = [
-        field
-        for field in preferred
-        if field in all_fields
-    ]
-
-    remaining = sorted(
-        all_fields
-        - set(metadata)
-        - set(ordered_preferred)
-    )
-
-    return (
-        metadata
-        + ordered_preferred
-        + remaining
-    )
 
 def write_event_chunks(
     run_dir,
