@@ -2,6 +2,8 @@
 
 import csv
 import json
+import math
+import re
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
@@ -13,6 +15,7 @@ from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[2]
 FOURSQUARE_ROOT = ROOT / "data" / "venues" / "raw" / "foursquare"
+CITY_FILE = ROOT / "data" / "location" / "usa" / "city_master.csv"
 RAW_ROOT = ROOT / "data" / "events" / "raw" / "tec"
 
 TEC_PATH = "/wp-json/tribe/events/v1/events"
@@ -27,8 +30,9 @@ PER_PAGE = 50
 MAX_PAGES_PER_SITE = 250
 
 CSV_ROWS_PER_FILE = 1000
+COORDINATE_FALLBACK_MILES = 40.0
 
-USER_AGENT = "events-tec-collector/1.3"
+USER_AGENT = "events-tec-collector/1.4"
 
 EXCLUDED_HOSTS = {
     "kwel.com",
@@ -148,6 +152,265 @@ def website_bases(value):
             result.append(item)
 
     return result
+
+
+def norm(value):
+    return re.sub(
+        r"\s+",
+        " ",
+        str(value or "").strip(),
+    ).casefold()
+
+
+def norm_country(value):
+    value = norm(value)
+
+    aliases = {
+        "us": "us",
+        "usa": "us",
+        "united states": "us",
+        "united states of america": "us",
+    }
+
+    return aliases.get(value, value)
+
+
+def load_city_mapping():
+    with CITY_FILE.open(
+        "r",
+        encoding="utf-8-sig",
+        newline="",
+    ) as handle:
+        cities = list(csv.DictReader(handle))
+
+    if not cities:
+        raise RuntimeError("city_master.csv is empty")
+
+    required = {
+        "city_id",
+        "state",
+        "state_code",
+        "city",
+        "country_code",
+        "latitude",
+        "longitude",
+    }
+
+    missing = sorted(
+        required - set(cities[0].keys())
+    )
+
+    if missing:
+        raise RuntimeError(
+            "missing city columns: "
+            + ", ".join(missing)
+        )
+
+    lookup = {}
+    points = []
+
+    for row in cities:
+        city_id = str(
+            row.get("city_id") or ""
+        ).strip()
+
+        city = norm(row.get("city"))
+        state_code = norm(row.get("state_code"))
+        state_name = norm(row.get("state"))
+        country = norm_country(
+            row.get("country_code")
+        )
+
+        if city_id and city and state_code:
+            for region in {
+                state_code,
+                state_name,
+            } - {""}:
+                lookup[
+                    (city, region, country)
+                ] = city_id
+                lookup[
+                    (city, region, "")
+                ] = city_id
+
+        try:
+            latitude = float(row.get("latitude"))
+            longitude = float(row.get("longitude"))
+        except (TypeError, ValueError):
+            continue
+
+        if city_id:
+            points.append(
+                (
+                    city_id,
+                    latitude,
+                    longitude,
+                )
+            )
+
+    return lookup, points
+
+
+def distance_miles(
+    lat1,
+    lon1,
+    lat2,
+    lon2,
+):
+    radius = 3958.7613
+    phi1 = math.radians(lat1)
+    phi2 = math.radians(lat2)
+    dphi = math.radians(lat2 - lat1)
+    dlambda = math.radians(lon2 - lon1)
+
+    value = (
+        math.sin(dphi / 2) ** 2
+        + math.cos(phi1)
+        * math.cos(phi2)
+        * math.sin(dlambda / 2) ** 2
+    )
+
+    arc = 2 * math.atan2(
+        math.sqrt(value),
+        math.sqrt(1 - value),
+    )
+
+    return radius * arc
+
+
+def venue_records(value):
+    if isinstance(value, dict):
+        return [value]
+
+    if isinstance(value, list):
+        return [
+            item
+            for item in value
+            if isinstance(item, dict)
+        ]
+
+    return []
+
+
+def venue_coordinates(venue):
+    try:
+        latitude = float(venue.get("geo_lat"))
+        longitude = float(venue.get("geo_lng"))
+    except (TypeError, ValueError):
+        return None
+
+    if not (
+        -90 <= latitude <= 90
+        and -180 <= longitude <= 180
+    ):
+        return None
+
+    return latitude, longitude
+
+
+def resolve_event_city(
+    event,
+    lookup,
+    city_points,
+):
+    venues = venue_records(
+        event.get("venue")
+    )
+
+    if not venues:
+        return None, "no_physical_venue", None
+
+    usable = []
+    non_us = 0
+
+    for venue in venues:
+        if not venue_has_physical_location(
+            venue
+        ):
+            continue
+
+        country = norm_country(
+            venue.get("country")
+        )
+
+        if country and country != "us":
+            non_us += 1
+            continue
+
+        usable.append(venue)
+
+        locality = norm(venue.get("city"))
+        region = norm(
+            venue.get("state")
+            or venue.get("province")
+        )
+
+        if locality and region:
+            city_id = (
+                lookup.get(
+                    (locality, region, country)
+                )
+                or lookup.get(
+                    (locality, region, "")
+                )
+            )
+
+            if city_id:
+                return city_id, "mapped_exact", 0.0
+
+    nearest_city_id = None
+    nearest_distance = None
+
+    for venue in usable:
+        coordinates = venue_coordinates(venue)
+
+        if not coordinates:
+            continue
+
+        latitude, longitude = coordinates
+
+        for (
+            city_id,
+            city_latitude,
+            city_longitude,
+        ) in city_points:
+            miles = distance_miles(
+                latitude,
+                longitude,
+                city_latitude,
+                city_longitude,
+            )
+
+            if (
+                nearest_distance is None
+                or miles < nearest_distance
+            ):
+                nearest_distance = miles
+                nearest_city_id = city_id
+
+    if (
+        nearest_city_id
+        and nearest_distance is not None
+        and nearest_distance
+        <= COORDINATE_FALLBACK_MILES
+    ):
+        return (
+            nearest_city_id,
+            "mapped_radius",
+            nearest_distance,
+        )
+
+    if non_us and not usable:
+        return None, "non_us_country", None
+
+    if nearest_distance is not None:
+        return (
+            None,
+            "outside_40_miles",
+            nearest_distance,
+        )
+
+    return None, "city_not_in_master", None
 
 
 def latest_foursquare_files():
@@ -929,57 +1192,91 @@ def ordered_event_fields(rows):
     ]
 
 
-def write_event_chunks(
-    run_dir,
-    rows,
-):
-    for stale in run_dir.glob(
+def clear_city_run_files(run_date, diagnostic_dir):
+    for stale in diagnostic_dir.glob(
         "events_*.csv"
     ):
         stale.unlink()
 
-    if not rows:
-        write_csv(
-            run_dir / "events_000.csv",
-            [],
-            [
-                "tec_run_started_utc",
-                "tec_canonical_host",
-                "tec_endpoint",
-                "tec_page",
-            ],
-        )
+    for city_dir in RAW_ROOT.iterdir():
+        if (
+            not city_dir.is_dir()
+            or not city_dir.name.isdigit()
+        ):
+            continue
 
-        return 1
+        date_dir = city_dir / run_date
 
-    fieldnames = ordered_event_fields(
-        rows
+        if not date_dir.exists():
+            continue
+
+        for stale in date_dir.glob(
+            "page_*.csv"
+        ):
+            stale.unlink()
+
+        try:
+            date_dir.rmdir()
+        except OSError:
+            pass
+
+
+def write_city_event_files(
+    run_date,
+    rows_by_city,
+    diagnostic_dir,
+):
+    clear_city_run_files(
+        run_date,
+        diagnostic_dir,
     )
 
+    fieldnames = ordered_event_fields([])
     files_written = 0
 
-    for offset in range(
-        0,
-        len(rows),
-        CSV_ROWS_PER_FILE,
-    ):
-        chunk = rows[
-            offset:
-            offset + CSV_ROWS_PER_FILE
-        ]
+    for city_id in sorted(rows_by_city):
+        rows = rows_by_city[city_id]
 
-        path = (
-            run_dir
-            / f"events_{files_written:03d}.csv"
+        rows.sort(
+            key=lambda row: (
+                row.get("event.start_date", ""),
+                row.get("event.title", ""),
+                row.get("event.id", ""),
+            )
         )
 
-        write_csv(
-            path,
-            chunk,
-            fieldnames,
+        date_dir = (
+            RAW_ROOT
+            / city_id
+            / run_date
         )
 
-        files_written += 1
+        for offset in range(
+            0,
+            len(rows),
+            CSV_ROWS_PER_FILE,
+        ):
+            chunk = rows[
+                offset:
+                offset + CSV_ROWS_PER_FILE
+            ]
+
+            page_number = (
+                offset // CSV_ROWS_PER_FILE
+            )
+
+            path = (
+                date_dir
+                / f"page_{page_number:03d}.csv"
+            )
+
+            write_csv(
+                path,
+                chunk,
+                fieldnames,
+            )
+
+            files_written += 1
 
     return files_written
 
@@ -1009,6 +1306,15 @@ def main():
         parents=True,
         exist_ok=True,
     )
+
+    try:
+        city_lookup, city_points = (
+            load_city_mapping()
+        )
+    except Exception as exc:
+        print("TEC: FAILED")
+        print(f"ERROR: {exc}")
+        return 2
 
     groups = discover_website_groups()
 
@@ -1226,13 +1532,43 @@ def main():
             item["rows"]
         )
 
-    event_rows = build_event_csv_rows(
-        raw_rows
+    rows_by_city = {}
+    mapping_counts = {}
+    mapped_raw_rows = []
+
+    for item in raw_rows:
+        city_id, reason, _ = resolve_event_city(
+            item["event"],
+            city_lookup,
+            city_points,
+        )
+
+        mapping_counts[reason] = (
+            mapping_counts.get(reason, 0) + 1
+        )
+
+        if not city_id:
+            continue
+
+        mapped_raw_rows.append(item)
+
+        row = build_event_csv_rows(
+            [item]
+        )[0]
+
+        rows_by_city.setdefault(
+            city_id,
+            [],
+        ).append(row)
+
+    event_rows_count = len(
+        mapped_raw_rows
     )
 
-    event_files = write_event_chunks(
+    event_files = write_city_event_files(
+        run_date,
+        rows_by_city,
         run_dir,
-        event_rows,
     )
 
     successful_sites = sum(
@@ -1256,7 +1592,7 @@ def main():
 
     category_events = sum(
         1
-        for item in raw_rows
+        for item in mapped_raw_rows
         if item["event"].get(
             "categories"
         )
@@ -1264,7 +1600,7 @@ def main():
 
     tag_events = sum(
         1
-        for item in raw_rows
+        for item in mapped_raw_rows
         if item["event"].get("tags")
     )
 
@@ -1326,7 +1662,7 @@ def main():
 
     print(
         f"EVENTS WRITTEN: "
-        f"{len(event_rows)}"
+        f"{event_rows_count}"
     )
 
     print(
@@ -1355,16 +1691,46 @@ def main():
     )
 
     print(
+        f"EVENTS FETCHED AFTER FILTERS: "
+        f"{len(raw_rows)}"
+    )
+
+    print(
+        f"CITY MAPPED EXACT: "
+        f"{mapping_counts.get('mapped_exact', 0)}"
+    )
+
+    print(
+        f"CITY MAPPED <=40 MI: "
+        f"{mapping_counts.get('mapped_radius', 0)}"
+    )
+
+    unmapped_events = (
+        len(raw_rows) - event_rows_count
+    )
+
+    print(
+        f"CITY UNMAPPED: "
+        f"{unmapped_events}"
+    )
+
+    print(
+        f"CITIES WRITTEN: "
+        f"{len(rows_by_city)}"
+    )
+
+    print(
         f"EVENT CSV FILES: "
         f"{event_files}"
     )
 
     print(
-        f"OUTPUT: "
-        f"{run_dir.relative_to(ROOT)}"
+        "OUTPUT: "
+        "data/events/raw/tec/<city_id>/"
+        f"{run_date}/page_###.csv"
     )
 
-    return 0 if event_rows else 2
+    return 0 if event_rows_count else 2
 
 
 if __name__ == "__main__":
