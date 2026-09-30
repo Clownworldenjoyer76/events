@@ -1155,11 +1155,15 @@ def scalar_cell(value):
     return str(value)
 
 
+def decoded_scalar_cell(value):
+    return unescape(scalar_cell(value))
+
+
 def serialize_event_fields(event):
     row = {
         "event.id": scalar_cell(event.get("id")),
         "event.global_id": scalar_cell(event.get("global_id")),
-        "event.title": scalar_cell(event.get("title")),
+        "event.title": decoded_scalar_cell(event.get("title")),
         "event.start_date": scalar_cell(event.get("start_date")),
         "event.utc_start_date": scalar_cell(event.get("utc_start_date")),
         "event.end_date": scalar_cell(event.get("end_date")),
@@ -1178,7 +1182,7 @@ def serialize_event_fields(event):
         "event.venue_json": json_cell(compact_venue(event.get("venue"))),
         "event.organizer_json": json_cell(compact_organizer(event.get("organizer"))),
         "event.description": clean_description(event.get("description")),
-        "event.excerpt": scalar_cell(event.get("excerpt")),
+        "event.excerpt": decoded_scalar_cell(event.get("excerpt")),
         "event.image_json": json_cell(compact_image(event.get("image"))),
         "event.custom_fields_json": json_cell(event.get("custom_fields")),
         "event.hide_from_listings": scalar_cell(event.get("hide_from_listings")),
