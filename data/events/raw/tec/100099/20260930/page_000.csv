@@ -1,0 +1,238 @@
+﻿tec_run_started_utc,tec_canonical_host,tec_endpoint,tec_page,event.id,event.global_id,event.title,event.start_date,event.utc_start_date,event.end_date,event.utc_end_date,event.timezone,event.all_day,event.featured,event.status,event.url,event.website,event.purchase_link,event.cost,event.cost_details_json,event.categories_json,event.tags_json,event.venue_json,event.organizer_json,event.description,event.excerpt,event.image_json,event.custom_fields_json,event.hide_from_listings,event.is_virtual,event.virtual_url,event.virtual_video_source,event.modified,event.modified_utc,event.show_map,event.show_map_link,event.subevents_json,event.ticketed,event.ticketed_json
+2026-09-30T15:38:46Z,steamer10theatre.org,https://www.steamer10theatre.org/wp-json/tribe/events/v1/events,1,93697,steamer10theatre.org?id=93697,New York State International Film Festival &#8211; October 2,2026-10-02 17:30:00,2026-10-02 21:30:00,2026-10-02 23:30:00,2026-10-03 03:30:00,America/New_York,false,false,publish,https://steamer10theatre.org/event/new-york-state-international-film-festival-october-2/,,,&#x24;25.00 – &#x24;45.00,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":"""",""values"":[""25"",""45""]}",[],[],"{""id"":101,""global_id"":""steamer10theatre.org?id=101"",""venue"":""Steamer N.10 Theatre"",""address"":""500 Western Ave"",""city"":""Albany"",""country"":""United States"",""state"":""NY"",""zip"":""12203"",""website"":""https://steamer10theatre.org"",""phone"":""(518) 438-5503"",""url"":""https://steamer10theatre.org/venue/steamer-n-10-theatre/"",""show_map"":true,""show_map_link"":false}","[{""id"":102,""global_id"":""steamer10theatre.org?id=102"",""organizer"":""Ric Chesser"",""url"":""https://steamer10theatre.org/organizer/ric-chesser/"",""phone"":""(518) 438-5503"",""email"":""info@steamer10theatre.org""}]","<p>Join us October 2–3 at Steamer 10 Theatre for the 11th Annual New York State International Film Festival, a two-day celebration of independent filmmaking from around the world!</p>
+<p>Doors open at 5:30 PM, with film screenings beginning at 6:00 PM each night. The festival will showcase a diverse selection of local, national, and international independent short films, bringing unique stories, creative voices, and talented filmmakers together for an exciting weekend of cinema.</p>
+<p>In addition to the film screenings, audiences will have the opportunity to participate in Q&amp;A panels with filmmakers, offering a behind-the-scenes look at the creative process and the stories behind the films.</p>
+<p>The festival will also feature our Best Movies Award Ceremony, celebrating outstanding films and filmmakers selected from this year&#8217;s program.</p>
+<p>We are proud to present the Brendan Fahy Bequette Fund Best Young Filmmaker Award, which includes a $500 cash prize to support and encourage the next generation of independent filmmakers.</p>
+<p>Come experience two nights of great short films, meet filmmakers, participate in Q&amp;A discussions, and celebrate independent cinema at the 11th Annual New York State International Film Festival!</p>","<p>Join us October 2–3 at Steamer 10 Theatre for the 11th Annual New York State International Film Festival, a two-day celebration of independent filmmaking from around the world!</p>
+<p>Doors open at 5:30 PM, with film screenings beginning at 6:00 PM each night. The festival will showcase a diverse selection of local, national, and international independent short films, bringing unique stories, creative voices, and talented filmmakers together for an exciting weekend of cinema.<br />
+We are proud to present the Brendan Fahy Bequette Fund Best Young Filmmaker Award, which includes a $500 cash prize to support and encourage the next generation of independent filmmakers.</p>
+<p>Come experience two nights of great short films, meet filmmakers, participate in Q&#038;A discussions, and celebrate independent cinema at the 11th Annual New York State International Film Festival!</p>","{""url"":""https://steamer10theatre.org/wp-content/uploads/2026/08/2-nysiff-2026-1.png"",""id"":93708,""extension"":""png"",""width"":1545,""height"":1999}",[],false,false,,,2026-08-30 11:17:11,2026-08-30 15:17:11,true,true,,,"[""tc""]"
+2026-09-30T15:38:46Z,steamer10theatre.org,https://www.steamer10theatre.org/wp-json/tribe/events/v1/events,1,93702,steamer10theatre.org?id=93702,New York State International Film Festival &#8211; October 3,2026-10-03 17:30:00,2026-10-03 21:30:00,2026-10-03 23:30:00,2026-10-04 03:30:00,America/New_York,false,false,publish,https://steamer10theatre.org/event/new-york-state-international-film-festival-october-3/,,,&#x24;25.00 – &#x24;45.00,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":"""",""values"":[""25"",""45""]}",[],[],"{""id"":101,""global_id"":""steamer10theatre.org?id=101"",""venue"":""Steamer N.10 Theatre"",""address"":""500 Western Ave"",""city"":""Albany"",""country"":""United States"",""state"":""NY"",""zip"":""12203"",""website"":""https://steamer10theatre.org"",""phone"":""(518) 438-5503"",""url"":""https://steamer10theatre.org/venue/steamer-n-10-theatre/"",""show_map"":true,""show_map_link"":false}","[{""id"":102,""global_id"":""steamer10theatre.org?id=102"",""organizer"":""Ric Chesser"",""url"":""https://steamer10theatre.org/organizer/ric-chesser/"",""phone"":""(518) 438-5503"",""email"":""info@steamer10theatre.org""}]","<p>Join us October 2–3 at Steamer 10 Theatre for the 11th Annual New York State International Film Festival, a two-day celebration of independent filmmaking from around the world!</p>
+<p>Doors open at 5:30 PM, with film screenings beginning at 6:00 PM each night. The festival will showcase a diverse selection of local, national, and international independent short films, bringing unique stories, creative voices, and talented filmmakers together for an exciting weekend of cinema.</p>
+<p>In addition to the film screenings, audiences will have the opportunity to participate in Q&amp;A panels with filmmakers, offering a behind-the-scenes look at the creative process and the stories behind the films.</p>
+<p>The festival will also feature our Best Movies Award Ceremony, celebrating outstanding films and filmmakers selected from this year&#8217;s program.</p>
+<p>We are proud to present the Brendan Fahy Bequette Fund Best Young Filmmaker Award, which includes a $500 cash prize to support and encourage the next generation of independent filmmakers.</p>
+<p>Come experience two nights of great short films, meet filmmakers, participate in Q&amp;A discussions, and celebrate independent cinema at the 11th Annual New York State International Film Festival!</p>","<p>Join us October 2–3 at Steamer 10 Theatre for the 11th Annual New York State International Film Festival, a two-day celebration of independent filmmaking from around the world!</p>
+<p>Doors open at 5:30 PM, with film screenings beginning at 6:00 PM each night. The festival will showcase a diverse selection of local, national, and international independent short films, bringing unique stories, creative voices, and talented filmmakers together for an exciting weekend of cinema.<br />
+We are proud to present the Brendan Fahy Bequette Fund Best Young Filmmaker Award, which includes a $500 cash prize to support and encourage the next generation of independent filmmakers.</p>
+<p>Come experience two nights of great short films, meet filmmakers, participate in Q&#038;A discussions, and celebrate independent cinema at the 11th Annual New York State International Film Festival!</p>","{""url"":""https://steamer10theatre.org/wp-content/uploads/2026/08/2-nysiff-2026-1.png"",""id"":93708,""extension"":""png"",""width"":1545,""height"":1999}",[],false,false,,,2026-08-30 11:16:27,2026-08-30 15:16:27,true,true,,,"[""tc""]"
+2026-09-30T15:38:46Z,steamer10theatre.org,https://www.steamer10theatre.org/wp-json/tribe/events/v1/events,1,93769,steamer10theatre.org?id=93769,LIZZIE (The Musical),2026-11-06 19:00:00,2026-11-07 00:00:00,2026-11-06 21:30:00,2026-11-07 02:30:00,America/New_York,false,false,publish,https://steamer10theatre.org/event/lizzie-the-musical/,,,&#x24;25.00 – &#x24;30.00,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":"""",""values"":[""25"",""30""]}",[],[],"{""id"":101,""global_id"":""steamer10theatre.org?id=101"",""venue"":""Steamer N.10 Theatre"",""address"":""500 Western Ave"",""city"":""Albany"",""country"":""United States"",""state"":""NY"",""zip"":""12203"",""website"":""https://steamer10theatre.org"",""phone"":""(518) 438-5503"",""url"":""https://steamer10theatre.org/venue/steamer-n-10-theatre/"",""show_map"":true,""show_map_link"":false}","[{""id"":261,""global_id"":""steamer10theatre.org?id=261"",""organizer"":""Eleah Jayne"",""url"":""https://steamer10theatre.org/organizer/eliah-peal/"",""phone"":""518-860-9827"",""email"":""eleahjayne@steamer10theatre.org""}]","<pre><strong><em><span style=""color: #800000;"">Lizzie Borden took an ax</span></em></strong>
+<strong><em><span style=""color: #800000;"">And gave her mother forty whacks,</span></em></strong>
+<strong><em><span style=""color: #800000;"">And when she saw what she had done,</span></em></strong>
+<strong><em><span style=""color: #800000;"">She gave her father forty-one.</span></em></strong></pre>
+<h3><em>Steamer No.10 Theatre&#8217;s Eclectic Performance Series for Adult Audiences</em></h3>
+<h3><em>presents the CAPITAL REGION PREMIERE OF</em></h3>
+<h1>LIZZIE (The Musical)</h1>
+<h3><em>Music by Steven Cheslik-DeMeyer and Alan Stevens Hewitt</em><br />
+<em>Lyrics by Steven Cheslik-DeMeyer and Tim Maner</em><br />
+<em>Book by Tim Maner</em><br />
+<em>Additional Music by Tim Maner</em><br />
+<em>Additional Lyrics by Alan Stevens Hewitt</em><br />
+<em>Based on an original concept by Steven Cheslik-DeMeyer and Tim Maner</em><br />
+<em>Orchestrations by Alan Stevens Hewitt </em></h3>
+<h3>DIRECTED &amp; CHOREOGRAPHED BY KELLY SIENKIEWICZ</h3>
+<h3>ASSISTANT DIRECTED &amp; STAGED MANAGED BY MELANIE MAGRI</h3>
+<h3>MUSIC DIRECTED BY JESS FITZSISTI</h3>
+<p>&nbsp;</p>
+<h3>STARRING&#8230;</h3>
+<h2>MEGAN MORSE as <em>EMMA</em></h2>
+<h2>KELLY SIENKIEWICZ as <em>BRIDGET</em></h2>
+<h2>EMILY JENKINS as <em>ALICE</em></h2>
+<h2>REGAN ZLOTNICK as <em>LIZZIE </em></h2>
+<h2>MELANIE MAGRI as <em>SWING</em></h2>
+<h3><em><strong>Rage! Sex! Betrayal! Bloody murder! In the heat of late summer 1892, Andrew Borden and his wife are found murdered in their house. The main suspect? Andrew’s youngest daughter from a previous marriage: Lizzie Borden. This all-woman musical sets American mythology to a searing rock score – complete with riffs on the historical record – to explore the heady and heated days leading up to the historical murder and Lizzie’s controversial acquittal of all charges.</strong></em></h3>
+<p>&nbsp;</p>
+<h3>SHOW DATES &amp; TIMES</h3>
+<h4>FRIDAY, NOVEMBER 6 @ 7:00 PM</h4>
+<h4>SATURDAY, NOVEMBER 7 @ 7:00 PM</h4>
+<h4>SUNDAY, NOVEMBER 8 @ 3:00 PM</h4>
+<h4>FRIDAY, NOVEMBER 13 @ 7:00 PM</h4>
+<h4>SATURDAY, NOVEMBER 14 @ 7:00 PM</h4>
+<h4>SUNDAY, NOVEMBER 15 @ 3:00 PM</h4>
+<p>&nbsp;</p>
+<p><em><strong>L</strong></em><em><strong>IZZIE is presented by arrangement with Concord Theatricals.</strong></em><br />
+<em><strong>www.concordtheatricals.com</strong></em></p>","<p>Rage! Sex! Betrayal! Bloody murder! In the heat of late summer 1892, Andrew Borden and his wife are found murdered in their house. The main suspect? Andrew’s youngest daughter from a previous marriage: Lizzie Borden. This all-woman musical sets American mythology to a searing rock score – complete with riffs on the historical record – to explore the heady and heated days leading up to the historical murder and Lizzie’s controversial acquittal of all charges.</p>","{""url"":""https://steamer10theatre.org/wp-content/uploads/2026/09/FST-COPY-4-LIZZIE-1080-x-1080-px.png"",""id"":93772,""extension"":""png"",""width"":1080,""height"":1080}",[],false,false,,,2026-09-29 10:16:49,2026-09-29 14:16:49,true,true,,,"[""tc""]"
+2026-09-30T15:38:46Z,steamer10theatre.org,https://www.steamer10theatre.org/wp-json/tribe/events/v1/events,1,93774,steamer10theatre.org?id=93774,LIZZIE (The Musical),2026-11-07 19:00:00,2026-11-08 00:00:00,2026-11-07 21:30:00,2026-11-08 02:30:00,America/New_York,false,false,publish,https://steamer10theatre.org/event/lizzie-the-musical-2/,,,&#x24;25.00 – &#x24;30.00,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":"""",""values"":[""25"",""30""]}",[],[],"{""id"":101,""global_id"":""steamer10theatre.org?id=101"",""venue"":""Steamer N.10 Theatre"",""address"":""500 Western Ave"",""city"":""Albany"",""country"":""United States"",""state"":""NY"",""zip"":""12203"",""website"":""https://steamer10theatre.org"",""phone"":""(518) 438-5503"",""url"":""https://steamer10theatre.org/venue/steamer-n-10-theatre/"",""show_map"":true,""show_map_link"":false}","[{""id"":261,""global_id"":""steamer10theatre.org?id=261"",""organizer"":""Eleah Jayne"",""url"":""https://steamer10theatre.org/organizer/eliah-peal/"",""phone"":""518-860-9827"",""email"":""eleahjayne@steamer10theatre.org""}]","<pre><strong><em><span style=""color: #800000;"">Lizzie Borden took an ax</span></em></strong>
+<strong><em><span style=""color: #800000;"">And gave her mother forty whacks,</span></em></strong>
+<strong><em><span style=""color: #800000;"">And when she saw what she had done,</span></em></strong>
+<strong><em><span style=""color: #800000;"">She gave her father forty-one.</span></em></strong></pre>
+<h3><em>Steamer No.10 Theatre&#8217;s Eclectic Performance Series for Adult Audiences</em></h3>
+<h3><em>presents the CAPITAL REGION PREMIERE OF</em></h3>
+<h1>LIZZIE (The Musical)</h1>
+<h3><em>Music by Steven Cheslik-DeMeyer and Alan Stevens Hewitt</em><br />
+<em>Lyrics by Steven Cheslik-DeMeyer and Tim Maner</em><br />
+<em>Book by Tim Maner</em><br />
+<em>Additional Music by Tim Maner</em><br />
+<em>Additional Lyrics by Alan Stevens Hewitt</em><br />
+<em>Based on an original concept by Steven Cheslik-DeMeyer and Tim Maner</em><br />
+<em>Orchestrations by Alan Stevens Hewitt </em></h3>
+<h3>DIRECTED &amp; CHOREOGRAPHED BY KELLY SIENKIEWICZ</h3>
+<h3>ASSISTANT DIRECTED &amp; STAGED MANAGED BY MELANIE MAGRI</h3>
+<h3>MUSIC DIRECTED BY JESS FITZSISTI</h3>
+<p>&nbsp;</p>
+<h3>STARRING&#8230;</h3>
+<h2>MEGAN MORSE as <em>EMMA</em></h2>
+<h2>KELLY SIENKIEWICZ as <em>BRIDGET</em></h2>
+<h2>EMILY JENKINS as <em>ALICE</em></h2>
+<h2>REGAN ZLOTNICK as <em>LIZZIE </em></h2>
+<h2>MELANIE MAGRI as <em>SWING</em></h2>
+<h3><em><strong>Rage! Sex! Betrayal! Bloody murder! In the heat of late summer 1892, Andrew Borden and his wife are found murdered in their house. The main suspect? Andrew’s youngest daughter from a previous marriage: Lizzie Borden. This all-woman musical sets American mythology to a searing rock score – complete with riffs on the historical record – to explore the heady and heated days leading up to the historical murder and Lizzie’s controversial acquittal of all charges.</strong></em></h3>
+<p>&nbsp;</p>
+<h3>SHOW DATES &amp; TIMES</h3>
+<h4>FRIDAY, NOVEMBER 6 @ 7:00 PM</h4>
+<h4>SATURDAY, NOVEMBER 7 @ 7:00 PM</h4>
+<h4>SUNDAY, NOVEMBER 8 @ 3:00 PM</h4>
+<h4>FRIDAY, NOVEMBER 13 @ 7:00 PM</h4>
+<h4>SATURDAY, NOVEMBER 14 @ 7:00 PM</h4>
+<h4>SUNDAY, NOVEMBER 15 @ 3:00 PM</h4>
+<p>&nbsp;</p>
+<p><em><strong>L</strong></em><em><strong>IZZIE is presented by arrangement with Concord Theatricals.</strong></em><br />
+<em><strong>www.concordtheatricals.com</strong></em></p>","<p>Rage! Sex! Betrayal! Bloody murder! In the heat of late summer 1892, Andrew Borden and his wife are found murdered in their house. The main suspect? Andrew’s youngest daughter from a previous marriage: Lizzie Borden. This all-woman musical sets American mythology to a searing rock score – complete with riffs on the historical record – to explore the heady and heated days leading up to the historical murder and Lizzie’s controversial acquittal of all charges.</p>","{""url"":""https://steamer10theatre.org/wp-content/uploads/2026/09/FST-COPY-4-LIZZIE-1080-x-1080-px.png"",""id"":93772,""extension"":""png"",""width"":1080,""height"":1080}",[],false,false,,,2026-09-29 10:18:21,2026-09-29 14:18:21,true,true,,,"[""tc""]"
+2026-09-30T15:38:46Z,steamer10theatre.org,https://www.steamer10theatre.org/wp-json/tribe/events/v1/events,1,93791,steamer10theatre.org?id=93791,LIZZIE (The Musical),2026-11-08 15:00:00,2026-11-08 20:00:00,2026-11-08 17:30:00,2026-11-08 22:30:00,America/New_York,false,false,publish,https://steamer10theatre.org/event/lizzie-the-musical-5/,,,&#x24;25.00 – &#x24;30.00,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":"""",""values"":[""25"",""30""]}",[],[],"{""id"":101,""global_id"":""steamer10theatre.org?id=101"",""venue"":""Steamer N.10 Theatre"",""address"":""500 Western Ave"",""city"":""Albany"",""country"":""United States"",""state"":""NY"",""zip"":""12203"",""website"":""https://steamer10theatre.org"",""phone"":""(518) 438-5503"",""url"":""https://steamer10theatre.org/venue/steamer-n-10-theatre/"",""show_map"":true,""show_map_link"":false}","[{""id"":261,""global_id"":""steamer10theatre.org?id=261"",""organizer"":""Eleah Jayne"",""url"":""https://steamer10theatre.org/organizer/eliah-peal/"",""phone"":""518-860-9827"",""email"":""eleahjayne@steamer10theatre.org""}]","<pre><strong><em><span style=""color: #800000;"">Lizzie Borden took an ax</span></em></strong>
+<strong><em><span style=""color: #800000;"">And gave her mother forty whacks,</span></em></strong>
+<strong><em><span style=""color: #800000;"">And when she saw what she had done,</span></em></strong>
+<strong><em><span style=""color: #800000;"">She gave her father forty-one.</span></em></strong></pre>
+<h3><em>Steamer No.10 Theatre&#8217;s Eclectic Performance Series for Adult Audiences</em></h3>
+<h3><em>presents the CAPITAL REGION PREMIERE OF</em></h3>
+<h1>LIZZIE (The Musical)</h1>
+<h3><em>Music by Steven Cheslik-DeMeyer and Alan Stevens Hewitt</em><br />
+<em>Lyrics by Steven Cheslik-DeMeyer and Tim Maner</em><br />
+<em>Book by Tim Maner</em><br />
+<em>Additional Music by Tim Maner</em><br />
+<em>Additional Lyrics by Alan Stevens Hewitt</em><br />
+<em>Based on an original concept by Steven Cheslik-DeMeyer and Tim Maner</em><br />
+<em>Orchestrations by Alan Stevens Hewitt </em></h3>
+<h3>DIRECTED &amp; CHOREOGRAPHED BY KELLY SIENKIEWICZ</h3>
+<h3>ASSISTANT DIRECTED &amp; STAGED MANAGED BY MELANIE MAGRI</h3>
+<h3>MUSIC DIRECTED BY JESS FITZSISTI</h3>
+<p>&nbsp;</p>
+<h3>STARRING&#8230;</h3>
+<h2>MEGAN MORSE as <em>EMMA</em></h2>
+<h2>KELLY SIENKIEWICZ as <em>BRIDGET</em></h2>
+<h2>EMILY JENKINS as <em>ALICE</em></h2>
+<h2>REGAN ZLOTNICK as <em>LIZZIE </em></h2>
+<h2>MELANIE MAGRI as <em>SWING</em></h2>
+<h3><em><strong>Rage! Sex! Betrayal! Bloody murder! In the heat of late summer 1892, Andrew Borden and his wife are found murdered in their house. The main suspect? Andrew’s youngest daughter from a previous marriage: Lizzie Borden. This all-woman musical sets American mythology to a searing rock score – complete with riffs on the historical record – to explore the heady and heated days leading up to the historical murder and Lizzie’s controversial acquittal of all charges.</strong></em></h3>
+<p>&nbsp;</p>
+<h3>SHOW DATES &amp; TIMES</h3>
+<h4>FRIDAY, NOVEMBER 6 @ 7:00 PM</h4>
+<h4>SATURDAY, NOVEMBER 7 @ 7:00 PM</h4>
+<h4>SUNDAY, NOVEMBER 8 @ 3:00 PM</h4>
+<h4>FRIDAY, NOVEMBER 13 @ 7:00 PM</h4>
+<h4>SATURDAY, NOVEMBER 14 @ 7:00 PM</h4>
+<h4>SUNDAY, NOVEMBER 15 @ 3:00 PM</h4>
+<p>&nbsp;</p>
+<p><em><strong>L</strong></em><em><strong>IZZIE is presented by arrangement with Concord Theatricals.</strong></em><br />
+<em><strong>www.concordtheatricals.com</strong></em></p>","<p>Rage! Sex! Betrayal! Bloody murder! In the heat of late summer 1892, Andrew Borden and his wife are found murdered in their house. The main suspect? Andrew’s youngest daughter from a previous marriage: Lizzie Borden. This all-woman musical sets American mythology to a searing rock score – complete with riffs on the historical record – to explore the heady and heated days leading up to the historical murder and Lizzie’s controversial acquittal of all charges.</p>","{""url"":""https://steamer10theatre.org/wp-content/uploads/2026/09/FST-COPY-4-LIZZIE-1080-x-1080-px.png"",""id"":93772,""extension"":""png"",""width"":1080,""height"":1080}",[],false,false,,,2026-09-29 10:19:02,2026-09-29 14:19:02,true,true,,,"[""tc""]"
+2026-09-30T15:38:46Z,steamer10theatre.org,https://www.steamer10theatre.org/wp-json/tribe/events/v1/events,1,93782,steamer10theatre.org?id=93782,LIZZIE (The Musical),2026-11-13 19:00:00,2026-11-14 00:00:00,2026-11-13 21:30:00,2026-11-14 02:30:00,America/New_York,false,false,publish,https://steamer10theatre.org/event/lizzie-the-musical-3/,,,&#x24;25.00 – &#x24;30.00,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":"""",""values"":[""25"",""30""]}",[],[],"{""id"":101,""global_id"":""steamer10theatre.org?id=101"",""venue"":""Steamer N.10 Theatre"",""address"":""500 Western Ave"",""city"":""Albany"",""country"":""United States"",""state"":""NY"",""zip"":""12203"",""website"":""https://steamer10theatre.org"",""phone"":""(518) 438-5503"",""url"":""https://steamer10theatre.org/venue/steamer-n-10-theatre/"",""show_map"":true,""show_map_link"":false}","[{""id"":261,""global_id"":""steamer10theatre.org?id=261"",""organizer"":""Eleah Jayne"",""url"":""https://steamer10theatre.org/organizer/eliah-peal/"",""phone"":""518-860-9827"",""email"":""eleahjayne@steamer10theatre.org""}]","<pre><strong><em><span style=""color: #800000;"">Lizzie Borden took an ax</span></em></strong>
+<strong><em><span style=""color: #800000;"">And gave her mother forty whacks,</span></em></strong>
+<strong><em><span style=""color: #800000;"">And when she saw what she had done,</span></em></strong>
+<strong><em><span style=""color: #800000;"">She gave her father forty-one.</span></em></strong></pre>
+<h3><em>Steamer No.10 Theatre&#8217;s Eclectic Performance Series for Adult Audiences</em></h3>
+<h3><em>presents the CAPITAL REGION PREMIERE OF</em></h3>
+<h1>LIZZIE (The Musical)</h1>
+<h3><em>Music by Steven Cheslik-DeMeyer and Alan Stevens Hewitt</em><br />
+<em>Lyrics by Steven Cheslik-DeMeyer and Tim Maner</em><br />
+<em>Book by Tim Maner</em><br />
+<em>Additional Music by Tim Maner</em><br />
+<em>Additional Lyrics by Alan Stevens Hewitt</em><br />
+<em>Based on an original concept by Steven Cheslik-DeMeyer and Tim Maner</em><br />
+<em>Orchestrations by Alan Stevens Hewitt </em></h3>
+<h3>DIRECTED &amp; CHOREOGRAPHED BY KELLY SIENKIEWICZ</h3>
+<h3>ASSISTANT DIRECTED &amp; STAGED MANAGED BY MELANIE MAGRI</h3>
+<h3>MUSIC DIRECTED BY JESS FITZSISTI</h3>
+<p>&nbsp;</p>
+<h3>STARRING&#8230;</h3>
+<h2>MEGAN MORSE as <em>EMMA</em></h2>
+<h2>KELLY SIENKIEWICZ as <em>BRIDGET</em></h2>
+<h2>EMILY JENKINS as <em>ALICE</em></h2>
+<h2>REGAN ZLOTNICK as <em>LIZZIE </em></h2>
+<h2>MELANIE MAGRI as <em>SWING</em></h2>
+<h3><em><strong>Rage! Sex! Betrayal! Bloody murder! In the heat of late summer 1892, Andrew Borden and his wife are found murdered in their house. The main suspect? Andrew’s youngest daughter from a previous marriage: Lizzie Borden. This all-woman musical sets American mythology to a searing rock score – complete with riffs on the historical record – to explore the heady and heated days leading up to the historical murder and Lizzie’s controversial acquittal of all charges.</strong></em></h3>
+<p>&nbsp;</p>
+<h3>SHOW DATES &amp; TIMES</h3>
+<h4>FRIDAY, NOVEMBER 6 @ 7:00 PM</h4>
+<h4>SATURDAY, NOVEMBER 7 @ 7:00 PM</h4>
+<h4>SUNDAY, NOVEMBER 8 @ 3:00 PM</h4>
+<h4>FRIDAY, NOVEMBER 13 @ 7:00 PM</h4>
+<h4>SATURDAY, NOVEMBER 14 @ 7:00 PM</h4>
+<h4>SUNDAY, NOVEMBER 15 @ 3:00 PM</h4>
+<p>&nbsp;</p>
+<p><em><strong>L</strong></em><em><strong>IZZIE is presented by arrangement with Concord Theatricals.</strong></em><br />
+<em><strong>www.concordtheatricals.com</strong></em></p>","<p>Rage! Sex! Betrayal! Bloody murder! In the heat of late summer 1892, Andrew Borden and his wife are found murdered in their house. The main suspect? Andrew’s youngest daughter from a previous marriage: Lizzie Borden. This all-woman musical sets American mythology to a searing rock score – complete with riffs on the historical record – to explore the heady and heated days leading up to the historical murder and Lizzie’s controversial acquittal of all charges.</p>","{""url"":""https://steamer10theatre.org/wp-content/uploads/2026/09/FST-COPY-4-LIZZIE-1080-x-1080-px.png"",""id"":93772,""extension"":""png"",""width"":1080,""height"":1080}",[],false,false,,,2026-09-29 10:19:31,2026-09-29 14:19:31,true,true,,,"[""tc""]"
+2026-09-30T15:38:46Z,steamer10theatre.org,https://www.steamer10theatre.org/wp-json/tribe/events/v1/events,1,93787,steamer10theatre.org?id=93787,LIZZIE (The Musical),2026-11-14 19:00:00,2026-11-15 00:00:00,2026-11-14 21:30:00,2026-11-15 02:30:00,America/New_York,false,false,publish,https://steamer10theatre.org/event/lizzie-the-musical-4/,,,&#x24;25.00 – &#x24;30.00,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":"""",""values"":[""25"",""30""]}",[],[],"{""id"":101,""global_id"":""steamer10theatre.org?id=101"",""venue"":""Steamer N.10 Theatre"",""address"":""500 Western Ave"",""city"":""Albany"",""country"":""United States"",""state"":""NY"",""zip"":""12203"",""website"":""https://steamer10theatre.org"",""phone"":""(518) 438-5503"",""url"":""https://steamer10theatre.org/venue/steamer-n-10-theatre/"",""show_map"":true,""show_map_link"":false}","[{""id"":261,""global_id"":""steamer10theatre.org?id=261"",""organizer"":""Eleah Jayne"",""url"":""https://steamer10theatre.org/organizer/eliah-peal/"",""phone"":""518-860-9827"",""email"":""eleahjayne@steamer10theatre.org""}]","<pre><strong><em><span style=""color: #800000;"">Lizzie Borden took an ax</span></em></strong>
+<strong><em><span style=""color: #800000;"">And gave her mother forty whacks,</span></em></strong>
+<strong><em><span style=""color: #800000;"">And when she saw what she had done,</span></em></strong>
+<strong><em><span style=""color: #800000;"">She gave her father forty-one.</span></em></strong></pre>
+<h3><em>Steamer No.10 Theatre&#8217;s Eclectic Performance Series for Adult Audiences</em></h3>
+<h3><em>presents the CAPITAL REGION PREMIERE OF</em></h3>
+<h1>LIZZIE (The Musical)</h1>
+<h3><em>Music by Steven Cheslik-DeMeyer and Alan Stevens Hewitt</em><br />
+<em>Lyrics by Steven Cheslik-DeMeyer and Tim Maner</em><br />
+<em>Book by Tim Maner</em><br />
+<em>Additional Music by Tim Maner</em><br />
+<em>Additional Lyrics by Alan Stevens Hewitt</em><br />
+<em>Based on an original concept by Steven Cheslik-DeMeyer and Tim Maner</em><br />
+<em>Orchestrations by Alan Stevens Hewitt </em></h3>
+<h3>DIRECTED &amp; CHOREOGRAPHED BY KELLY SIENKIEWICZ</h3>
+<h3>ASSISTANT DIRECTED &amp; STAGED MANAGED BY MELANIE MAGRI</h3>
+<h3>MUSIC DIRECTED BY JESS FITZSISTI</h3>
+<p>&nbsp;</p>
+<h3>STARRING&#8230;</h3>
+<h2>MEGAN MORSE as <em>EMMA</em></h2>
+<h2>KELLY SIENKIEWICZ as <em>BRIDGET</em></h2>
+<h2>EMILY JENKINS as <em>ALICE</em></h2>
+<h2>REGAN ZLOTNICK as <em>LIZZIE </em></h2>
+<h2>MELANIE MAGRI as <em>SWING</em></h2>
+<h3><em><strong>Rage! Sex! Betrayal! Bloody murder! In the heat of late summer 1892, Andrew Borden and his wife are found murdered in their house. The main suspect? Andrew’s youngest daughter from a previous marriage: Lizzie Borden. This all-woman musical sets American mythology to a searing rock score – complete with riffs on the historical record – to explore the heady and heated days leading up to the historical murder and Lizzie’s controversial acquittal of all charges.</strong></em></h3>
+<p>&nbsp;</p>
+<h3>SHOW DATES &amp; TIMES</h3>
+<h4>FRIDAY, NOVEMBER 6 @ 7:00 PM</h4>
+<h4>SATURDAY, NOVEMBER 7 @ 7:00 PM</h4>
+<h4>SUNDAY, NOVEMBER 8 @ 3:00 PM</h4>
+<h4>FRIDAY, NOVEMBER 13 @ 7:00 PM</h4>
+<h4>SATURDAY, NOVEMBER 14 @ 7:00 PM</h4>
+<h4>SUNDAY, NOVEMBER 15 @ 3:00 PM</h4>
+<p>&nbsp;</p>
+<p><em><strong>L</strong></em><em><strong>IZZIE is presented by arrangement with Concord Theatricals.</strong></em><br />
+<em><strong>www.concordtheatricals.com</strong></em></p>","<p>Rage! Sex! Betrayal! Bloody murder! In the heat of late summer 1892, Andrew Borden and his wife are found murdered in their house. The main suspect? Andrew’s youngest daughter from a previous marriage: Lizzie Borden. This all-woman musical sets American mythology to a searing rock score – complete with riffs on the historical record – to explore the heady and heated days leading up to the historical murder and Lizzie’s controversial acquittal of all charges.</p>","{""url"":""https://steamer10theatre.org/wp-content/uploads/2026/09/FST-COPY-4-LIZZIE-1080-x-1080-px.png"",""id"":93772,""extension"":""png"",""width"":1080,""height"":1080}",[],false,false,,,2026-09-29 10:20:24,2026-09-29 14:20:24,true,true,,,"[""tc""]"
+2026-09-30T15:38:46Z,steamer10theatre.org,https://www.steamer10theatre.org/wp-json/tribe/events/v1/events,1,93795,steamer10theatre.org?id=93795,LIZZIE (The Musical),2026-11-15 15:00:00,2026-11-15 20:00:00,2026-11-15 17:30:00,2026-11-15 22:30:00,America/New_York,false,false,publish,https://steamer10theatre.org/event/lizzie-the-musical-6/,,,&#x24;25.00 – &#x24;30.00,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":"""",""values"":[""25"",""30""]}",[],[],"{""id"":101,""global_id"":""steamer10theatre.org?id=101"",""venue"":""Steamer N.10 Theatre"",""address"":""500 Western Ave"",""city"":""Albany"",""country"":""United States"",""state"":""NY"",""zip"":""12203"",""website"":""https://steamer10theatre.org"",""phone"":""(518) 438-5503"",""url"":""https://steamer10theatre.org/venue/steamer-n-10-theatre/"",""show_map"":true,""show_map_link"":false}","[{""id"":261,""global_id"":""steamer10theatre.org?id=261"",""organizer"":""Eleah Jayne"",""url"":""https://steamer10theatre.org/organizer/eliah-peal/"",""phone"":""518-860-9827"",""email"":""eleahjayne@steamer10theatre.org""}]","<pre><strong><em><span style=""color: #800000;"">Lizzie Borden took an ax</span></em></strong>
+<strong><em><span style=""color: #800000;"">And gave her mother forty whacks,</span></em></strong>
+<strong><em><span style=""color: #800000;"">And when she saw what she had done,</span></em></strong>
+<strong><em><span style=""color: #800000;"">She gave her father forty-one.</span></em></strong></pre>
+<h3><em>Steamer No.10 Theatre&#8217;s Eclectic Performance Series for Adult Audiences</em></h3>
+<h3><em>presents the CAPITAL REGION PREMIERE OF</em></h3>
+<h1>LIZZIE (The Musical)</h1>
+<h3><em>Music by Steven Cheslik-DeMeyer and Alan Stevens Hewitt</em><br />
+<em>Lyrics by Steven Cheslik-DeMeyer and Tim Maner</em><br />
+<em>Book by Tim Maner</em><br />
+<em>Additional Music by Tim Maner</em><br />
+<em>Additional Lyrics by Alan Stevens Hewitt</em><br />
+<em>Based on an original concept by Steven Cheslik-DeMeyer and Tim Maner</em><br />
+<em>Orchestrations by Alan Stevens Hewitt </em></h3>
+<h3>DIRECTED &amp; CHOREOGRAPHED BY KELLY SIENKIEWICZ</h3>
+<h3>ASSISTANT DIRECTED &amp; STAGED MANAGED BY MELANIE MAGRI</h3>
+<h3>MUSIC DIRECTED BY JESS FITZSISTI</h3>
+<p>&nbsp;</p>
+<h3>STARRING&#8230;</h3>
+<h2>MEGAN MORSE as <em>EMMA</em></h2>
+<h2>KELLY SIENKIEWICZ as <em>BRIDGET</em></h2>
+<h2>EMILY JENKINS as <em>ALICE</em></h2>
+<h2>REGAN ZLOTNICK as <em>LIZZIE </em></h2>
+<h2>MELANIE MAGRI as <em>SWING</em></h2>
+<h3><em><strong>Rage! Sex! Betrayal! Bloody murder! In the heat of late summer 1892, Andrew Borden and his wife are found murdered in their house. The main suspect? Andrew’s youngest daughter from a previous marriage: Lizzie Borden. This all-woman musical sets American mythology to a searing rock score – complete with riffs on the historical record – to explore the heady and heated days leading up to the historical murder and Lizzie’s controversial acquittal of all charges.</strong></em></h3>
+<p>&nbsp;</p>
+<h3>SHOW DATES &amp; TIMES</h3>
+<h4>FRIDAY, NOVEMBER 6 @ 7:00 PM</h4>
+<h4>SATURDAY, NOVEMBER 7 @ 7:00 PM</h4>
+<h4>SUNDAY, NOVEMBER 8 @ 3:00 PM</h4>
+<h4>FRIDAY, NOVEMBER 13 @ 7:00 PM</h4>
+<h4>SATURDAY, NOVEMBER 14 @ 7:00 PM</h4>
+<h4>SUNDAY, NOVEMBER 15 @ 3:00 PM</h4>
+<p>&nbsp;</p>
+<p><em><strong>L</strong></em><em><strong>IZZIE is presented by arrangement with Concord Theatricals.</strong></em><br />
+<em><strong>www.concordtheatricals.com</strong></em></p>","<p>Rage! Sex! Betrayal! Bloody murder! In the heat of late summer 1892, Andrew Borden and his wife are found murdered in their house. The main suspect? Andrew’s youngest daughter from a previous marriage: Lizzie Borden. This all-woman musical sets American mythology to a searing rock score – complete with riffs on the historical record – to explore the heady and heated days leading up to the historical murder and Lizzie’s controversial acquittal of all charges.</p>","{""url"":""https://steamer10theatre.org/wp-content/uploads/2026/09/FST-COPY-4-LIZZIE-1080-x-1080-px.png"",""id"":93772,""extension"":""png"",""width"":1080,""height"":1080}",[],false,false,,,2026-09-29 10:22:56,2026-09-29 14:22:56,true,true,,,"[""tc""]"
+2026-09-30T15:38:46Z,steamer10theatre.org,https://www.steamer10theatre.org/wp-json/tribe/events/v1/events,1,93762,steamer10theatre.org?id=93762,CAST &#8211; Game of Tiaras,2026-12-04 19:00:00,2026-12-05 00:00:00,2026-12-04 21:00:00,2026-12-05 02:00:00,America/New_York,false,false,publish,https://steamer10theatre.org/event/cast-game-of-tiaras/,,,&#x24;20.00 – &#x24;150.00,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":"""",""values"":[""20"",""25"",""150""]}",[],[],"{""id"":101,""global_id"":""steamer10theatre.org?id=101"",""venue"":""Steamer N.10 Theatre"",""address"":""500 Western Ave"",""city"":""Albany"",""country"":""United States"",""state"":""NY"",""zip"":""12203"",""website"":""https://steamer10theatre.org"",""phone"":""(518) 438-5503"",""url"":""https://steamer10theatre.org/venue/steamer-n-10-theatre/"",""show_map"":true,""show_map_link"":false}","[{""id"":102,""global_id"":""steamer10theatre.org?id=102"",""organizer"":""Ric Chesser"",""url"":""https://steamer10theatre.org/organizer/ric-chesser/"",""phone"":""(518) 438-5503"",""email"":""info@steamer10theatre.org""}]","<p style=""margin: 0in; text-align: center; tab-stops: 130.5pt center 3.25in;"" align=""center""><strong><span style=""font-size: 13.5pt;"">From <i>Don Zolidis</i> – author of <i>Brothers Grimm Spectaculathon</i></span></strong></p>
+<p style=""margin: 0in; text-align: center; tab-stops: 130.5pt center 3.25in;"" align=""center""><span style=""font-size: 14.0pt;"">The aging king of a Magical Kingdom (England) decides to split his empire between his three daughters, Cinderella, Belle and the Snow Queen (who in no way resembles a copyrighted character), terrible tragedy ensues. Terrible, hilarious tragedy. Combining the gut-wrenching plot twists of <i>Game of Thrones</i> and the soul-numbing despair of Shakespearean tragedy, this adaptation of <i>King Lear</i> will leave you dying with laughter as the body count mounts. When you play the Game of Tiaras, you win or you die.</span></p>","<p>From Don Zolidis – author of Brothers Grimm Spectaculathon</p>
+<p>The aging king of a Magical Kingdom (England) decides to split his empire between his three daughters, Cinderella, Belle and the Snow Queen (who in no way resembles a copyrighted character), terrible tragedy ensues. Terrible, hilarious tragedy. Combining the gut-wrenching plot twists of Game of Thrones and the soul-numbing despair of Shakespearean tragedy, this adaptation of King Lear will leave you dying with laughter as the body count mounts. When you play the Game of Tiaras, you win or you die.</p>","{""url"":""https://steamer10theatre.org/wp-content/uploads/2026/08/Tiaras-Screen_Shot_2025-scaled.png"",""id"":93689,""extension"":""png"",""width"":1931,""height"":2560}",[],false,false,,,2026-09-21 13:22:57,2026-09-21 17:22:57,true,true,,,"[""tc""]"

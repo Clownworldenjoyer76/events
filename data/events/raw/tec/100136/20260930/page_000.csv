@@ -1,0 +1,26 @@
+﻿tec_run_started_utc,tec_canonical_host,tec_endpoint,tec_page,event.id,event.global_id,event.title,event.start_date,event.utc_start_date,event.end_date,event.utc_end_date,event.timezone,event.all_day,event.featured,event.status,event.url,event.website,event.purchase_link,event.cost,event.cost_details_json,event.categories_json,event.tags_json,event.venue_json,event.organizer_json,event.description,event.excerpt,event.image_json,event.custom_fields_json,event.hide_from_listings,event.is_virtual,event.virtual_url,event.virtual_video_source,event.modified,event.modified_utc,event.show_map,event.show_map_link,event.subevents_json,event.ticketed,event.ticketed_json
+2026-09-30T15:38:46Z,junipergvl.com,https://www.junipergvl.com/wp-json/tribe/events/v1/events,1,2882,www.junipergvl.com?id=2882,Women in Wine Dinner,2026-10-28 18:30:00,2026-10-28 22:30:00,2026-10-28 20:00:00,2026-10-29 00:00:00,America/New_York,false,false,publish,https://www.junipergvl.com/event/women-in-wine-dinner/,https://www.etix.com/ticket/p/62523372/junipers-women-in-wine-dinner-greenville-juniper,,$192.02,"{""currency_symbol"":""$"",""currency_code"":""USD"",""currency_position"":""prefix"",""values"":[""192.02""]}",[],[],"{""id"":1444,""global_id"":""www.junipergvl.com?id=1444"",""venue"":""Juniper"",""address"":""315 S Main St"",""city"":""Greenville"",""country"":""United States"",""state"":""SC"",""zip"":""29601"",""url"":""https://www.junipergvl.com/venue/juniper/"",""show_map"":true,""show_map_link"":true}",[],"<h4><span style=""color: #800000;""><em>This event has been rescheduled to Wednesday, October 28th.</em></span></h4>
+<h3>Women in Wine: An Evening in Secret Cocktail Garden</h3>
+<p>High above downtown Greenville’s Main Street, Juniper’s Secret Cocktail Garden sets the stage for an intimate evening celebrating the women behind some of the wine world’s most distinctive and celebrated bottles.</p>
+<p><strong><a href=""https://www.etix.com/ticket/p/62523372/junipers-women-in-wine-dinner-greenville-juniper"" target=""_blank"" rel=""noopener"">Get Tickets</a></strong></p>
+<p>Surrounded by lush greenery, warm candlelight, and the glow of downtown Greenville, guests will gather around the table for an evening dedicated to <strong>women-owned and women-made wineries</strong>, paired with a menu created to highlight the character and story behind each wine.</p>
+<p>From crisp Sauvignon Blanc to rich Cabernet Sauvignon and bold Shiraz, each pour has been thoughtfully selected to showcase the craftsmanship and vision of women in the wine industry. The evening unfolds course by course, inviting guests to experience these wines alongside an elevated menu designed specifically for the occasion.</p>
+<p>Guests will enjoy a thoughtfully curated <strong>four-course dinner followed by dessert</strong>, including:</p>
+<p><strong>First Course</strong><br />
+<em>Emmolo Sauvignon Blanc</em><br />
+PEI mussels, Thai green curry, kaffir lime, Fresno chilis, shrimp toast</p>
+<p><strong>Second Course</strong><br />
+<em>Flowers Chardonnay</em><br />
+Pumpkin agnolotti, stracciatella, brown butter, hazelnut, black truffle</p>
+<p><strong>Third Course</strong><br />
+<em>Charles Krug Cabernet Sauvignon</em><br />
+Gnocchi alla Romana, braised oyster mushrooms, Swiss chard, Parmigiano Reggiano</p>
+<p><strong>Fourth Course</strong><br />
+<em>Ferrari Siena Red Blend</em><br />
+Duck, duck, goose — duck two ways, foie gras, Brussels sprouts, sweet potato hash, pomegranate gastrique</p>
+<p><strong>Dessert</strong><br />
+<em>Mollydooker Shiraz</em><br />
+Dark chocolate genoise, blueberry mousse, pecan crumble, Shiraz sorbet</p>
+<p>More than a dinner, <strong>Women in Wine</strong> is an opportunity to raise a glass to the women shaping the world of wine — from the vineyards and cellars to the bottle in your glass.</p>
+<p><strong>Seats are limited. Reserve your place for an unforgettable evening of exceptional food, remarkable wines, and a celebration of women in wine, all beneath the open sky in Juniper’s Secret Cocktail Garden.</strong></p>
+<p><em><strong>Please notify</strong></em> <strong><a href=""mailto:Baileigh.Wilson@acmarriott.com"">Baileigh.Wilson@acmarriott.com</a></strong> <em><strong>of any dietary restrictions or accommodations needed at the time of booking.</strong></em></p>",,"{""url"":""https://www.junipergvl.com/wp-content/uploads/2026/04/sunset.jpg"",""id"":2832,""extension"":""jpg"",""width"":1714,""height"":1461}",[],false,,,,2026-09-21 11:20:39,2026-09-21 15:20:39,true,true,,,

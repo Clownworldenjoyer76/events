@@ -1,0 +1,302 @@
+﻿tec_run_started_utc,tec_canonical_host,tec_endpoint,tec_page,event.id,event.global_id,event.title,event.start_date,event.utc_start_date,event.end_date,event.utc_end_date,event.timezone,event.all_day,event.featured,event.status,event.url,event.website,event.purchase_link,event.cost,event.cost_details_json,event.categories_json,event.tags_json,event.venue_json,event.organizer_json,event.description,event.excerpt,event.image_json,event.custom_fields_json,event.hide_from_listings,event.is_virtual,event.virtual_url,event.virtual_video_source,event.modified,event.modified_utc,event.show_map,event.show_map_link,event.subevents_json,event.ticketed,event.ticketed_json
+2026-09-30T15:38:46Z,allentownfairpa.org,http://www.allentownfairpa.org/wp-json/tribe/events/v1/events,1,10950,www.allentownfair.com?id=10950,Allentown Antique Book and Paper Show,2026-10-03 09:00:00,2026-10-03 09:00:00,2026-10-03 17:00:00,2026-10-03 17:00:00,UTC+0,false,false,publish,https://www.allentownfair.com/event/allentown-antique-book-and-paper-show-5/,allentownpapershow.com,,,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":""prefix"",""values"":[]}","[{""id"":33,""name"":""Agri~Plex"",""slug"":""agri-plex-events"",""parent"":0}]",[],"{""id"":3501,""global_id"":""www.allentownfair.com?id=3501"",""venue"":""Agri~Plex"",""address"":""1998 Liberty Street"",""city"":""Allentown"",""country"":""United States"",""province"":""PA"",""state"":""PA"",""zip"":""18104"",""url"":""https://www.allentownfair.com/venue/agriplex-expo-center/"",""show_map"":true,""show_map_link"":true}",[],"<p>610-573-4969<br />
+allentownpapershow@gmail.com</p>",,false,[],false,,,,2026-05-15 15:38:22,2026-05-15 15:38:22,false,false,,,
+2026-09-30T15:38:46Z,allentownfairpa.org,http://www.allentownfairpa.org/wp-json/tribe/events/v1/events,1,10951,www.allentownfair.com?id=10951,Allentown Antique Book and Paper Show,2026-10-04 09:00:00,2026-10-04 09:00:00,2026-10-04 15:00:00,2026-10-04 15:00:00,UTC+0,false,false,publish,https://www.allentownfair.com/event/allentown-antique-book-and-paper-show-6/,allentownpapershow.com,,,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":""prefix"",""values"":[]}","[{""id"":33,""name"":""Agri~Plex"",""slug"":""agri-plex-events"",""parent"":0}]",[],"{""id"":3501,""global_id"":""www.allentownfair.com?id=3501"",""venue"":""Agri~Plex"",""address"":""1998 Liberty Street"",""city"":""Allentown"",""country"":""United States"",""province"":""PA"",""state"":""PA"",""zip"":""18104"",""url"":""https://www.allentownfair.com/venue/agriplex-expo-center/"",""show_map"":true,""show_map_link"":true}",[],"<p>610-573-4969<br />
+allentownpapershow@gmail.com</p>",,false,[],false,,,,2026-05-15 15:38:22,2026-05-15 15:38:22,false,false,,,
+2026-09-30T15:38:46Z,allentownfairpa.org,http://www.allentownfairpa.org/wp-json/tribe/events/v1/events,1,10952,www.allentownfair.com?id=10952,Antique &amp; Modern Arms Show,2026-10-10 09:00:00,2026-10-10 09:00:00,2026-10-10 16:00:00,2026-10-10 16:00:00,UTC+0,false,false,publish,https://www.allentownfair.com/event/antique-modern-arms-show-15/,allentownshow.net,,,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":""prefix"",""values"":[]}","[{""id"":33,""name"":""Agri~Plex"",""slug"":""agri-plex-events"",""parent"":0}]",[],"{""id"":3501,""global_id"":""www.allentownfair.com?id=3501"",""venue"":""Agri~Plex"",""address"":""1998 Liberty Street"",""city"":""Allentown"",""country"":""United States"",""province"":""PA"",""state"":""PA"",""zip"":""18104"",""url"":""https://www.allentownfair.com/venue/agriplex-expo-center/"",""show_map"":true,""show_map_link"":true}",[],<p>610-438-9006</p>,,false,[],false,,,,2026-05-15 15:38:22,2026-05-15 15:38:22,false,false,,,
+2026-09-30T15:38:46Z,allentownfairpa.org,http://www.allentownfairpa.org/wp-json/tribe/events/v1/events,1,10953,www.allentownfair.com?id=10953,Antique &amp; Modern Arms Show,2026-10-11 09:00:00,2026-10-11 09:00:00,2026-10-11 13:00:00,2026-10-11 13:00:00,UTC+0,false,false,publish,https://www.allentownfair.com/event/antique-modern-arms-show-16/,allentownshow.net,,,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":""prefix"",""values"":[]}","[{""id"":33,""name"":""Agri~Plex"",""slug"":""agri-plex-events"",""parent"":0}]",[],"{""id"":3501,""global_id"":""www.allentownfair.com?id=3501"",""venue"":""Agri~Plex"",""address"":""1998 Liberty Street"",""city"":""Allentown"",""country"":""United States"",""province"":""PA"",""state"":""PA"",""zip"":""18104"",""url"":""https://www.allentownfair.com/venue/agriplex-expo-center/"",""show_map"":true,""show_map_link"":true}",[],<p>610-438-9006</p>,,false,[],false,,,,2026-05-15 15:38:23,2026-05-15 15:38:23,false,false,,,
+2026-09-30T15:38:46Z,allentownfairpa.org,http://www.allentownfairpa.org/wp-json/tribe/events/v1/events,1,11138,www.allentownfair.com?id=11138,Morning Call Prime Expo,2026-10-15 08:30:00,2026-10-15 08:30:00,2026-10-15 16:00:00,2026-10-15 16:00:00,UTC+0,false,false,publish,https://www.allentownfair.com/event/morning-call-prime-expo/,https://www.primeexpolehighvalley.com/,,,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":""prefix"",""values"":[]}","[{""id"":33,""name"":""Agri~Plex"",""slug"":""agri-plex-events"",""parent"":0}]",[],"{""id"":3501,""global_id"":""www.allentownfair.com?id=3501"",""venue"":""Agri~Plex"",""address"":""1998 Liberty Street"",""city"":""Allentown"",""country"":""United States"",""province"":""PA"",""state"":""PA"",""zip"":""18104"",""url"":""https://www.allentownfair.com/venue/agriplex-expo-center/"",""show_map"":true,""show_map_link"":true}",[],,,false,[],false,,,,2026-06-11 14:20:12,2026-06-11 14:20:12,false,false,,,
+2026-09-30T15:38:46Z,allentownfairpa.org,http://www.allentownfairpa.org/wp-json/tribe/events/v1/events,1,11139,www.allentownfair.com?id=11139,Lehigh Valley Wicked Oddities,2026-10-17 10:00:00,2026-10-17 10:00:00,2026-10-17 17:00:00,2026-10-17 17:00:00,UTC+0,false,false,publish,https://www.allentownfair.com/event/lehigh-valley-wicked-oddities/,https://www.facebook.com/groups/524109692957095/,,,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":""prefix"",""values"":[]}","[{""id"":33,""name"":""Agri~Plex"",""slug"":""agri-plex-events"",""parent"":0}]",[],"{""id"":3501,""global_id"":""www.allentownfair.com?id=3501"",""venue"":""Agri~Plex"",""address"":""1998 Liberty Street"",""city"":""Allentown"",""country"":""United States"",""province"":""PA"",""state"":""PA"",""zip"":""18104"",""url"":""https://www.allentownfair.com/venue/agriplex-expo-center/"",""show_map"":true,""show_map_link"":true}",[],<p>(610) 442-8868</p>,,false,[],false,,,,2026-06-11 14:20:12,2026-06-11 14:20:12,false,false,,,
+2026-09-30T15:38:46Z,allentownfairpa.org,http://www.allentownfairpa.org/wp-json/tribe/events/v1/events,1,11140,www.allentownfair.com?id=11140,Eastern PA Fall Home Show,2026-10-24 10:00:00,2026-10-24 10:00:00,2026-10-24 17:00:00,2026-10-24 17:00:00,UTC+0,false,false,publish,https://www.allentownfair.com/event/eastern-pa-fall-home-show-3/,jenksproductions.com,,,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":""prefix"",""values"":[]}","[{""id"":33,""name"":""Agri~Plex"",""slug"":""agri-plex-events"",""parent"":0}]",[],"{""id"":3501,""global_id"":""www.allentownfair.com?id=3501"",""venue"":""Agri~Plex"",""address"":""1998 Liberty Street"",""city"":""Allentown"",""country"":""United States"",""province"":""PA"",""state"":""PA"",""zip"":""18104"",""url"":""https://www.allentownfair.com/venue/agriplex-expo-center/"",""show_map"":true,""show_map_link"":true}",[],"<p>860-365-5678<br />
+charlee@jenksproductions.com </p>",,false,[],false,,,,2026-06-11 14:20:12,2026-06-11 14:20:12,false,false,,,
+2026-09-30T15:38:46Z,allentownfairpa.org,http://www.allentownfairpa.org/wp-json/tribe/events/v1/events,1,11141,www.allentownfair.com?id=11141,Eastern PA Fall Home Show,2026-10-25 10:00:00,2026-10-25 10:00:00,2026-10-25 16:00:00,2026-10-25 16:00:00,UTC+0,false,false,publish,https://www.allentownfair.com/event/eastern-pa-fall-home-show-4/,jenksproductions.com,,,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":""prefix"",""values"":[]}","[{""id"":33,""name"":""Agri~Plex"",""slug"":""agri-plex-events"",""parent"":0}]",[],"{""id"":3501,""global_id"":""www.allentownfair.com?id=3501"",""venue"":""Agri~Plex"",""address"":""1998 Liberty Street"",""city"":""Allentown"",""country"":""United States"",""province"":""PA"",""state"":""PA"",""zip"":""18104"",""url"":""https://www.allentownfair.com/venue/agriplex-expo-center/"",""show_map"":true,""show_map_link"":true}",[],"<p>860-365-5678<br />
+charlee@jenksproductions.com </p>",,false,[],false,,,,2026-06-11 14:20:12,2026-06-11 14:20:12,false,false,,,
+2026-09-30T15:38:46Z,allentownfairpa.org,http://www.allentownfairpa.org/wp-json/tribe/events/v1/events,1,10954,www.allentownfair.com?id=10954,Field and Stream Sportsman Show,2026-10-31 09:00:00,2026-10-31 09:00:00,2026-10-31 18:00:00,2026-10-31 18:00:00,UTC+0,false,false,publish,https://www.allentownfair.com/event/field-and-stream-sportsman-show/,fieldnstream.net,,,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":""prefix"",""values"":[]}","[{""id"":33,""name"":""Agri~Plex"",""slug"":""agri-plex-events"",""parent"":0}]",[],"{""id"":3501,""global_id"":""www.allentownfair.com?id=3501"",""venue"":""Agri~Plex"",""address"":""1998 Liberty Street"",""city"":""Allentown"",""country"":""United States"",""province"":""PA"",""state"":""PA"",""zip"":""18104"",""url"":""https://www.allentownfair.com/venue/agriplex-expo-center/"",""show_map"":true,""show_map_link"":true}",[],"<p>813-295-1556<br />
+tom@fieldstrem.net</p>",,false,[],false,,,,2026-05-15 15:38:23,2026-05-15 15:38:23,false,false,,,
+2026-09-30T15:38:46Z,allentownfairpa.org,http://www.allentownfairpa.org/wp-json/tribe/events/v1/events,1,10955,www.allentownfair.com?id=10955,Field and Stream Sportsman Show,2026-11-01 10:00:00,2026-11-01 10:00:00,2026-11-01 16:00:00,2026-11-01 16:00:00,UTC+0,false,false,publish,https://www.allentownfair.com/event/field-and-stream-sportsman-show-2/,fieldnstream.net,,,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":""prefix"",""values"":[]}","[{""id"":33,""name"":""Agri~Plex"",""slug"":""agri-plex-events"",""parent"":0}]",[],"{""id"":3501,""global_id"":""www.allentownfair.com?id=3501"",""venue"":""Agri~Plex"",""address"":""1998 Liberty Street"",""city"":""Allentown"",""country"":""United States"",""province"":""PA"",""state"":""PA"",""zip"":""18104"",""url"":""https://www.allentownfair.com/venue/agriplex-expo-center/"",""show_map"":true,""show_map_link"":true}",[],"<p>813-295-1556<br />
+tom@fieldstrem.net</p>",,false,[],false,,,,2026-05-15 15:38:38,2026-05-15 15:38:38,false,false,,,
+2026-09-30T15:38:46Z,allentownfairpa.org,http://www.allentownfairpa.org/wp-json/tribe/events/v1/events,1,10956,www.allentownfair.com?id=10956,Antique Toy Show,2026-11-07 09:00:00,2026-11-07 09:00:00,2026-11-07 14:00:00,2026-11-07 14:00:00,UTC+0,false,false,publish,https://www.allentownfair.com/event/antique-toy-show-2/,,,,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":""prefix"",""values"":[]}","[{""id"":33,""name"":""Agri~Plex"",""slug"":""agri-plex-events"",""parent"":0}]",[],"{""id"":3501,""global_id"":""www.allentownfair.com?id=3501"",""venue"":""Agri~Plex"",""address"":""1998 Liberty Street"",""city"":""Allentown"",""country"":""United States"",""province"":""PA"",""state"":""PA"",""zip"":""18104"",""url"":""https://www.allentownfair.com/venue/agriplex-expo-center/"",""show_map"":true,""show_map_link"":true}",[],"<p>484-553-1263<br />
+jsauerzopf@msn.com</p>",,false,[],false,,,,2026-05-15 15:38:38,2026-05-15 15:38:38,false,false,,,
+2026-09-30T15:38:46Z,allentownfairpa.org,http://www.allentownfairpa.org/wp-json/tribe/events/v1/events,1,10957,www.allentownfair.com?id=10957,Pennsylvania Bridal &amp; Wedding Expo,2026-11-08 13:30:00,2026-11-08 13:30:00,2026-11-08 17:00:00,2026-11-08 17:00:00,UTC+0,false,false,publish,https://www.allentownfair.com/event/pennsylvania-bridal-wedding-expo-2/,,,,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":""prefix"",""values"":[]}","[{""id"":33,""name"":""Agri~Plex"",""slug"":""agri-plex-events"",""parent"":0}]",[],"{""id"":3501,""global_id"":""www.allentownfair.com?id=3501"",""venue"":""Agri~Plex"",""address"":""1998 Liberty Street"",""city"":""Allentown"",""country"":""United States"",""province"":""PA"",""state"":""PA"",""zip"":""18104"",""url"":""https://www.allentownfair.com/venue/agriplex-expo-center/"",""show_map"":true,""show_map_link"":true}",[],"<div  class=""tribe-events-schedule tribe-clearfix"" >
+	<p class=""tribe-events-schedule__datetime"">
+		<span class=""tribe-events-schedule__date tribe-events-schedule__date--start"">
+					</span>
+
+					<span class=""tribe-events-schedule__separator tribe-events-schedule__separator--date"">
+				 @ 			</span>
+			<span class=""tribe-events-schedule__time tribe-events-schedule__time--start"">
+							</span>
+		
+			</p>
+</div>
+
+
+
+
+<p>The Bridal &amp; Wedding Expo showcases an amazing selection of wedding professionals ready to help couples find the perfect gown, reception venue, invitations, photographer, music, menu, honeymoon destination, and much more.</p>
+<p>888-433-3976<br />info@acsshows.com</p>
+<p>&nbsp;</p>
+<p>Website:</p>
+<p><blockquote class=""wp-embedded-content"" data-secret=""kNajbYOmFS""><a href=""https://bridalshowspa-af.com/free-passes/"">Free Passes</a></blockquote><iframe class=""wp-embedded-content"" sandbox=""allow-scripts"" security=""restricted"" style=""position: absolute; visibility: hidden;"" title=""“Free Passes” — BAF F26 - Pennsylvania Bridal &amp; Wedding Expo"" src=""https://bridalshowspa-af.com/free-passes/embed/#?secret=GctTlzJ6RQ#?secret=kNajbYOmFS"" data-secret=""kNajbYOmFS"" width=""600"" height=""338"" frameborder=""0"" marginwidth=""0"" marginheight=""0"" scrolling=""no""></iframe></p>
+
+	<div  class=""tribe-block tribe-block__events-link"" >
+		<div class=""tribe-events tribe-common"">
+			<div class=""tribe-events-c-subscribe-dropdown__container"">
+				<div class=""tribe-events-c-subscribe-dropdown"">
+					<div class=""tribe-common-c-btn-border tribe-events-c-subscribe-dropdown__button"">
+						<svg
+	 class=""tribe-common-c-svgicon tribe-common-c-svgicon--cal-export tribe-events-c-subscribe-dropdown__export-icon"" 	aria-hidden=""true""
+	viewBox=""0 0 23 17""
+	xmlns=""http://www.w3.org/2000/svg""
+>
+	<path fill-rule=""evenodd"" clip-rule=""evenodd"" d=""M.128.896V16.13c0 .211.145.383.323.383h15.354c.179 0 .323-.172.323-.383V.896c0-.212-.144-.383-.323-.383H.451C.273.513.128.684.128.896Zm16 6.742h-.901V4.679H1.009v10.729h14.218v-3.336h.901V7.638ZM1.01 1.614h14.218v2.058H1.009V1.614Z"" />
+	<path d=""M20.5 9.846H8.312M18.524 6.953l2.89 2.909-2.855 2.855"" stroke-width=""1.2"" stroke-linecap=""round"" stroke-linejoin=""round""/>
+</svg>
+						<button
+							class=""tribe-events-c-subscribe-dropdown__button-text""
+							aria-expanded=""false""
+							aria-controls=""tribe-events-subscribe-dropdown-content""
+							aria-label=""View links to add events to your calendar""
+						>
+							Add to calendar						</button>
+						<svg
+	 class=""tribe-common-c-svgicon tribe-common-c-svgicon--caret-down tribe-events-c-subscribe-dropdown__button-icon"" 	aria-hidden=""true""
+	viewBox=""0 0 10 7""
+	xmlns=""http://www.w3.org/2000/svg""
+>
+	<path fill-rule=""evenodd"" clip-rule=""evenodd"" d=""M1.008.609L5 4.6 8.992.61l.958.958L5 6.517.05 1.566l.958-.958z"" class=""tribe-common-c-svgicon__svg-fill""/>
+</svg>
+					</div>
+					<div id=""tribe-events-subscribe-dropdown-content"" class=""tribe-events-c-subscribe-dropdown__content"">
+						<ul class=""tribe-events-c-subscribe-dropdown__list"">
+															<li class=""tribe-events-c-subscribe-dropdown__list-item tribe-events-c-subscribe-dropdown__list-item--gcal"">
+									<a
+										href=""""
+										class=""tribe-events-c-subscribe-dropdown__list-item-link""
+										target=""_blank""
+										rel=""noopener noreferrer nofollow noindex""
+									>
+										Google Calendar									</a>
+								</li>
+															<li class=""tribe-events-c-subscribe-dropdown__list-item tribe-events-c-subscribe-dropdown__list-item--ical"">
+									<a
+										href=""""
+										class=""tribe-events-c-subscribe-dropdown__list-item-link""
+										target=""_blank""
+										rel=""noopener noreferrer nofollow noindex""
+									>
+										iCalendar									</a>
+								</li>
+															<li class=""tribe-events-c-subscribe-dropdown__list-item tribe-events-c-subscribe-dropdown__list-item--outlook-365"">
+									<a
+										href=""""
+										class=""tribe-events-c-subscribe-dropdown__list-item-link""
+										target=""_blank""
+										rel=""noopener noreferrer nofollow noindex""
+									>
+										Outlook 365									</a>
+								</li>
+															<li class=""tribe-events-c-subscribe-dropdown__list-item tribe-events-c-subscribe-dropdown__list-item--outlook-live"">
+									<a
+										href=""""
+										class=""tribe-events-c-subscribe-dropdown__list-item-link""
+										target=""_blank""
+										rel=""noopener noreferrer nofollow noindex""
+									>
+										Outlook Live									</a>
+								</li>
+													</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+<div  class=""tribe-events-single-section tribe-events-event-meta primary tribe-clearfix"" >
+	
+	
+<div class=""tribe-events-meta-group tribe-events-meta-group-details"">
+	<h3 class=""tribe-events-single-section-title"">
+					Details		
+	</h3>
+	<ul class=""tribe-events-meta-list"">
+
+		
+			<li class=""tribe-events-meta-item"">
+				<span class=""tribe-events-meta-label"">Date:</span>
+				<span class=""tribe-events-meta-value"">
+					<abbr class=""tribe-events-abbr tribe-events-start-date published dtstart"" title="""">  </abbr>
+				</span>
+			</li>
+
+			<li class=""tribe-events-meta-item"">
+				<span class=""tribe-events-meta-label"">Time:</span>
+				<span class=""tribe-events-meta-value"">
+					<div class=""tribe-events-abbr tribe-events-start-time published dtstart"" title="""">
+																	</div>
+				</span>
+			</li>
+
+		
+		
+		
+		
+		
+		
+			</ul>
+</div>
+	
+	</div>
+
+
+<div  class=""tribe-block tribe-block__venue tribe-clearfix"" >
+	
+		
+	</div>",,false,[],false,,,,2026-06-12 13:28:40,2026-06-12 13:28:40,false,false,,,
+2026-09-30T15:38:46Z,allentownfairpa.org,http://www.allentownfairpa.org/wp-json/tribe/events/v1/events,1,10958,www.allentownfair.com?id=10958,First Frost Train Meet,2026-11-14 09:00:00,2026-11-14 09:00:00,2026-11-14 16:00:00,2026-11-14 16:00:00,UTC+0,false,false,publish,https://www.allentownfair.com/event/first-frost-train-meet-3/,allentowntrainmeet.com,,,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":""prefix"",""values"":[]}","[{""id"":33,""name"":""Agri~Plex"",""slug"":""agri-plex-events"",""parent"":0}]",[],"{""id"":3501,""global_id"":""www.allentownfair.com?id=3501"",""venue"":""Agri~Plex"",""address"":""1998 Liberty Street"",""city"":""Allentown"",""country"":""United States"",""province"":""PA"",""state"":""PA"",""zip"":""18104"",""url"":""https://www.allentownfair.com/venue/agriplex-expo-center/"",""show_map"":true,""show_map_link"":true}",[],"<p>610-428-6242<br />
+lbtrolley@aol.com</p>",,false,[],false,,,,2026-05-15 15:38:38,2026-05-15 15:38:38,false,false,,,
+2026-09-30T15:38:46Z,allentownfairpa.org,http://www.allentownfairpa.org/wp-json/tribe/events/v1/events,1,10959,www.allentownfair.com?id=10959,First Frost Train Meet,2026-11-15 09:00:00,2026-11-15 09:00:00,2026-11-15 15:00:00,2026-11-15 15:00:00,UTC+0,false,false,publish,https://www.allentownfair.com/event/first-frost-train-meet-4/,allentowntrainmeet.com,,,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":""prefix"",""values"":[]}","[{""id"":33,""name"":""Agri~Plex"",""slug"":""agri-plex-events"",""parent"":0}]",[],"{""id"":3501,""global_id"":""www.allentownfair.com?id=3501"",""venue"":""Agri~Plex"",""address"":""1998 Liberty Street"",""city"":""Allentown"",""country"":""United States"",""province"":""PA"",""state"":""PA"",""zip"":""18104"",""url"":""https://www.allentownfair.com/venue/agriplex-expo-center/"",""show_map"":true,""show_map_link"":true}",[],"<p>610-428-6242<br />
+lbtrolley@aol.com</p>",,false,[],false,,,,2026-05-15 15:38:38,2026-05-15 15:38:38,false,false,,,
+2026-09-30T15:38:46Z,allentownfairpa.org,http://www.allentownfairpa.org/wp-json/tribe/events/v1/events,1,10960,www.allentownfair.com?id=10960,2026 Lehigh County Senior Expo,2026-11-18 10:00:00,2026-11-18 10:00:00,2026-11-18 13:00:00,2026-11-18 13:00:00,UTC+0,false,false,publish,https://www.allentownfair.com/event/2026-lehigh-county-senior-expo/,,,,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":""prefix"",""values"":[]}","[{""id"":33,""name"":""Agri~Plex"",""slug"":""agri-plex-events"",""parent"":0}]",[],"{""id"":3501,""global_id"":""www.allentownfair.com?id=3501"",""venue"":""Agri~Plex"",""address"":""1998 Liberty Street"",""city"":""Allentown"",""country"":""United States"",""province"":""PA"",""state"":""PA"",""zip"":""18104"",""url"":""https://www.allentownfair.com/venue/agriplex-expo-center/"",""show_map"":true,""show_map_link"":true}",[],"<p>248-524-4868<br />
+admin@seniorexpousa.com</p>",,false,[],false,,,,2026-05-15 15:38:53,2026-05-15 15:38:53,false,false,,,
+2026-09-30T15:38:46Z,allentownfairpa.org,http://www.allentownfairpa.org/wp-json/tribe/events/v1/events,1,11142,www.allentownfair.com?id=11142,Super Gigantic Garage Sale,2026-11-21 08:00:00,2026-11-21 08:00:00,2026-11-21 17:00:00,2026-11-21 17:00:00,UTC+0,false,false,publish,https://www.allentownfair.com/event/super-gigantic-garage-sale-5/,supergiganticgaragesale.com,,,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":""prefix"",""values"":[]}","[{""id"":33,""name"":""Agri~Plex"",""slug"":""agri-plex-events"",""parent"":0}]",[],"{""id"":3501,""global_id"":""www.allentownfair.com?id=3501"",""venue"":""Agri~Plex"",""address"":""1998 Liberty Street"",""city"":""Allentown"",""country"":""United States"",""province"":""PA"",""state"":""PA"",""zip"":""18104"",""url"":""https://www.allentownfair.com/venue/agriplex-expo-center/"",""show_map"":true,""show_map_link"":true}",[],"<p>407-854-2111<br />
+info@bmgevents.com</p>",,false,[],false,,,,2026-06-11 14:20:12,2026-06-11 14:20:12,false,false,,,
+2026-09-30T15:38:46Z,allentownfairpa.org,http://www.allentownfairpa.org/wp-json/tribe/events/v1/events,1,11143,www.allentownfair.com?id=11143,Super Gigantic Garage Sale,2026-11-22 10:00:00,2026-11-22 10:00:00,2026-11-22 16:00:00,2026-11-22 16:00:00,UTC+0,false,false,publish,https://www.allentownfair.com/event/super-gigantic-garage-sale-6/,supergiganticgaragesale.com,,,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":""prefix"",""values"":[]}","[{""id"":33,""name"":""Agri~Plex"",""slug"":""agri-plex-events"",""parent"":0}]",[],"{""id"":3501,""global_id"":""www.allentownfair.com?id=3501"",""venue"":""Agri~Plex"",""address"":""1998 Liberty Street"",""city"":""Allentown"",""country"":""United States"",""province"":""PA"",""state"":""PA"",""zip"":""18104"",""url"":""https://www.allentownfair.com/venue/agriplex-expo-center/"",""show_map"":true,""show_map_link"":true}",[],"<p>407-854-2111<br />
+info@bmgevents.com</p>",,false,[],false,,,,2026-06-11 14:20:13,2026-06-11 14:20:13,false,false,,,
+2026-09-30T15:38:46Z,allentownfairpa.org,http://www.allentownfairpa.org/wp-json/tribe/events/v1/events,1,11833,www.allentownfair.com?id=11833,Vintage Clothing &amp; Collectibles Extravaganza,2026-11-28 12:00:00,2026-11-28 12:00:00,2026-11-28 17:00:00,2026-11-28 17:00:00,UTC+0,false,false,publish,https://www.allentownfair.com/event/vintage-clothing-collectibles-extravaganza/,,,,"{""currency_symbol"":""$"",""currency_code"":""USD"",""currency_position"":""prefix"",""values"":[]}","[{""id"":33,""name"":""Agri~Plex"",""slug"":""agri-plex-events"",""parent"":0}]",[],"{""id"":3501,""global_id"":""www.allentownfair.com?id=3501"",""venue"":""Agri~Plex"",""address"":""1998 Liberty Street"",""city"":""Allentown"",""country"":""United States"",""province"":""PA"",""state"":""PA"",""zip"":""18104"",""url"":""https://www.allentownfair.com/venue/agriplex-expo-center/"",""show_map"":true,""show_map_link"":true}",[],"<div  class=""tribe-events-schedule tribe-clearfix"" >
+	<p class=""tribe-events-schedule__datetime"">
+		<span class=""tribe-events-schedule__date tribe-events-schedule__date--start"">
+					</span>
+
+					<span class=""tribe-events-schedule__separator tribe-events-schedule__separator--date"">
+				 @ 			</span>
+			<span class=""tribe-events-schedule__time tribe-events-schedule__time--start"">
+							</span>
+		
+			</p>
+</div>
+
+
+
+<p class=""wp-block-paragraph""><a href=""https://www.bethlehemvintagemarket.com"">https://www.bethlehemvintagemarket.com</a><br><a href=""mailto:BethlehemVintageMarket@gmail.com"">BethlehemVintageMarket@gmail.com</a></p>
+
+
+
+<p class=""wp-block-paragraph"">This is your go-to for killer vintage finds right here in the Lehigh Valley. We’re all about giving cool stuff a second life, supporting local entrepreneurs, and building a community that loves vintage treasures as much as we do. Think: one-of-a-kind collectibles, vintage clothing, and so much more.</p>
+
+
+
+<p class=""wp-block-paragraph"">There&#8217;s something for everyone here. Come hang and bring a friend &#8211; or make a new one!</p>
+
+
+
+<p class=""wp-block-paragraph""></p>
+
+
+<div  class=""tribe-block tribe-block__event-price"" >
+		</div>
+
+
+
+
+<div  class=""tribe-block tribe-block__venue tribe-clearfix tribe-block__venue--has-map"" >
+	
+		
+<div class=""tribe-block__venue__map"">
+	
+<iframe
+  title=""Google maps iframe displaying the address to Agri~Plex""
+  aria-label=""Venue location map""
+  width=""310px""
+  height=""256px""
+  frameborder=""0"" style=""border:0""
+  src=""https://www.google.com/maps/embed/v1/place?key=AIzaSyDNsicAsP6-VuGtAb1O9riI3oc_NOb7IOU&#038;q=1998+Liberty+Street+Allentown+PA+PA+18104+United+States+&#038;zoom=15"" allowfullscreen>
+</iframe>
+</div>
+
+	</div>
+
+
+
+
+	<div  class=""tribe-block tribe-block__events-link"" >
+		<div class=""tribe-events tribe-common"">
+			<div class=""tribe-events-c-subscribe-dropdown__container"">
+				<div class=""tribe-events-c-subscribe-dropdown"">
+					<div class=""tribe-common-c-btn-border tribe-events-c-subscribe-dropdown__button"">
+						<svg
+	 class=""tribe-common-c-svgicon tribe-common-c-svgicon--cal-export tribe-events-c-subscribe-dropdown__export-icon"" 	aria-hidden=""true""
+	viewBox=""0 0 23 17""
+	xmlns=""http://www.w3.org/2000/svg""
+>
+	<path fill-rule=""evenodd"" clip-rule=""evenodd"" d=""M.128.896V16.13c0 .211.145.383.323.383h15.354c.179 0 .323-.172.323-.383V.896c0-.212-.144-.383-.323-.383H.451C.273.513.128.684.128.896Zm16 6.742h-.901V4.679H1.009v10.729h14.218v-3.336h.901V7.638ZM1.01 1.614h14.218v2.058H1.009V1.614Z"" />
+	<path d=""M20.5 9.846H8.312M18.524 6.953l2.89 2.909-2.855 2.855"" stroke-width=""1.2"" stroke-linecap=""round"" stroke-linejoin=""round""/>
+</svg>
+						<button
+							class=""tribe-events-c-subscribe-dropdown__button-text""
+							aria-expanded=""false""
+							aria-controls=""tribe-events-subscribe-dropdown-content""
+							aria-label=""View links to add events to your calendar""
+						>
+							Add to calendar						</button>
+						<svg
+	 class=""tribe-common-c-svgicon tribe-common-c-svgicon--caret-down tribe-events-c-subscribe-dropdown__button-icon"" 	aria-hidden=""true""
+	viewBox=""0 0 10 7""
+	xmlns=""http://www.w3.org/2000/svg""
+>
+	<path fill-rule=""evenodd"" clip-rule=""evenodd"" d=""M1.008.609L5 4.6 8.992.61l.958.958L5 6.517.05 1.566l.958-.958z"" class=""tribe-common-c-svgicon__svg-fill""/>
+</svg>
+					</div>
+					<div id=""tribe-events-subscribe-dropdown-content"" class=""tribe-events-c-subscribe-dropdown__content"">
+						<ul class=""tribe-events-c-subscribe-dropdown__list"">
+															<li class=""tribe-events-c-subscribe-dropdown__list-item tribe-events-c-subscribe-dropdown__list-item--gcal"">
+									<a
+										href=""""
+										class=""tribe-events-c-subscribe-dropdown__list-item-link""
+										target=""_blank""
+										rel=""noopener noreferrer nofollow noindex""
+									>
+										Google Calendar									</a>
+								</li>
+															<li class=""tribe-events-c-subscribe-dropdown__list-item tribe-events-c-subscribe-dropdown__list-item--ical"">
+									<a
+										href=""""
+										class=""tribe-events-c-subscribe-dropdown__list-item-link""
+										target=""_blank""
+										rel=""noopener noreferrer nofollow noindex""
+									>
+										iCalendar									</a>
+								</li>
+															<li class=""tribe-events-c-subscribe-dropdown__list-item tribe-events-c-subscribe-dropdown__list-item--outlook-365"">
+									<a
+										href=""""
+										class=""tribe-events-c-subscribe-dropdown__list-item-link""
+										target=""_blank""
+										rel=""noopener noreferrer nofollow noindex""
+									>
+										Outlook 365									</a>
+								</li>
+															<li class=""tribe-events-c-subscribe-dropdown__list-item tribe-events-c-subscribe-dropdown__list-item--outlook-live"">
+									<a
+										href=""""
+										class=""tribe-events-c-subscribe-dropdown__list-item-link""
+										target=""_blank""
+										rel=""noopener noreferrer nofollow noindex""
+									>
+										Outlook Live									</a>
+								</li>
+													</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>",,false,[],false,,,,2026-09-11 14:44:20,2026-09-11 14:44:20,false,false,,,
+2026-09-30T15:38:46Z,allentownfairpa.org,http://www.allentownfairpa.org/wp-json/tribe/events/v1/events,1,10961,www.allentownfair.com?id=10961,Antique &amp; Modern Arms Show,2026-12-05 09:00:00,2026-12-05 09:00:00,2026-12-05 16:00:00,2026-12-05 16:00:00,UTC+0,false,false,publish,https://www.allentownfair.com/event/antique-modern-arms-show-17/,allentownshow.net,,,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":""prefix"",""values"":[]}","[{""id"":33,""name"":""Agri~Plex"",""slug"":""agri-plex-events"",""parent"":0}]",[],"{""id"":3501,""global_id"":""www.allentownfair.com?id=3501"",""venue"":""Agri~Plex"",""address"":""1998 Liberty Street"",""city"":""Allentown"",""country"":""United States"",""province"":""PA"",""state"":""PA"",""zip"":""18104"",""url"":""https://www.allentownfair.com/venue/agriplex-expo-center/"",""show_map"":true,""show_map_link"":true}",[],<p>610-438-9006</p>,,false,[],false,,,,2026-05-15 15:38:53,2026-05-15 15:38:53,false,false,,,
+2026-09-30T15:38:46Z,allentownfairpa.org,http://www.allentownfairpa.org/wp-json/tribe/events/v1/events,1,10962,www.allentownfair.com?id=10962,Antique &amp; Modern Arms Show,2026-12-06 09:00:00,2026-12-06 09:00:00,2026-12-06 13:00:00,2026-12-06 13:00:00,UTC+0,false,false,publish,https://www.allentownfair.com/event/antique-modern-arms-show-18/,allentownshow.net,,,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":""prefix"",""values"":[]}","[{""id"":33,""name"":""Agri~Plex"",""slug"":""agri-plex-events"",""parent"":0}]",[],"{""id"":3501,""global_id"":""www.allentownfair.com?id=3501"",""venue"":""Agri~Plex"",""address"":""1998 Liberty Street"",""city"":""Allentown"",""country"":""United States"",""province"":""PA"",""state"":""PA"",""zip"":""18104"",""url"":""https://www.allentownfair.com/venue/agriplex-expo-center/"",""show_map"":true,""show_map_link"":true}",[],<p>610-438-9006</p>,,false,[],false,,,,2026-05-15 15:38:53,2026-05-15 15:38:53,false,false,,,
+2026-09-30T15:38:46Z,allentownfairpa.org,http://www.allentownfairpa.org/wp-json/tribe/events/v1/events,1,10963,www.allentownfair.com?id=10963,Star of Bethlehem Dog Show,2026-12-09 08:00:00,2026-12-09 08:00:00,2026-12-09 19:00:00,2026-12-09 19:00:00,UTC+0,false,false,publish,https://www.allentownfair.com/event/star-of-bethlehem-dog-show-6/,,,,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":""prefix"",""values"":[]}","[{""id"":33,""name"":""Agri~Plex"",""slug"":""agri-plex-events"",""parent"":0}]",[],"{""id"":3501,""global_id"":""www.allentownfair.com?id=3501"",""venue"":""Agri~Plex"",""address"":""1998 Liberty Street"",""city"":""Allentown"",""country"":""United States"",""province"":""PA"",""state"":""PA"",""zip"":""18104"",""url"":""https://www.allentownfair.com/venue/agriplex-expo-center/"",""show_map"":true,""show_map_link"":true}",[],<p>908-713-6205 or 610-217-6434</p>,,false,[],false,,,,2026-05-15 15:38:53,2026-05-15 15:38:53,false,false,,,
+2026-09-30T15:38:46Z,allentownfairpa.org,http://www.allentownfairpa.org/wp-json/tribe/events/v1/events,1,10964,www.allentownfair.com?id=10964,Star of Bethlehem Dog Show,2026-12-10 08:00:00,2026-12-10 08:00:00,2026-12-10 19:00:00,2026-12-10 19:00:00,UTC+0,false,false,publish,https://www.allentownfair.com/event/star-of-bethlehem-dog-show-7/,,,,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":""prefix"",""values"":[]}","[{""id"":33,""name"":""Agri~Plex"",""slug"":""agri-plex-events"",""parent"":0}]",[],"{""id"":3501,""global_id"":""www.allentownfair.com?id=3501"",""venue"":""Agri~Plex"",""address"":""1998 Liberty Street"",""city"":""Allentown"",""country"":""United States"",""province"":""PA"",""state"":""PA"",""zip"":""18104"",""url"":""https://www.allentownfair.com/venue/agriplex-expo-center/"",""show_map"":true,""show_map_link"":true}",[],<p>908-713-6205 or 610-217-6434</p>,,false,[],false,,,,2026-05-15 15:38:53,2026-05-15 15:38:53,false,false,,,
+2026-09-30T15:38:46Z,allentownfairpa.org,http://www.allentownfairpa.org/wp-json/tribe/events/v1/events,1,10965,www.allentownfair.com?id=10965,Star of Bethlehem Dog Show,2026-12-11 08:00:00,2026-12-11 08:00:00,2026-12-11 19:00:00,2026-12-11 19:00:00,UTC+0,false,false,publish,https://www.allentownfair.com/event/star-of-bethlehem-dog-show-8/,,,,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":""prefix"",""values"":[]}","[{""id"":33,""name"":""Agri~Plex"",""slug"":""agri-plex-events"",""parent"":0}]",[],"{""id"":3501,""global_id"":""www.allentownfair.com?id=3501"",""venue"":""Agri~Plex"",""address"":""1998 Liberty Street"",""city"":""Allentown"",""country"":""United States"",""province"":""PA"",""state"":""PA"",""zip"":""18104"",""url"":""https://www.allentownfair.com/venue/agriplex-expo-center/"",""show_map"":true,""show_map_link"":true}",[],<p>908-713-6205 or 610-217-6434</p>,,false,[],false,,,,2026-05-15 15:39:08,2026-05-15 15:39:08,false,false,,,
+2026-09-30T15:38:46Z,allentownfairpa.org,http://www.allentownfairpa.org/wp-json/tribe/events/v1/events,1,10966,www.allentownfair.com?id=10966,Star of Bethlehem Dog Show,2026-12-12 08:00:00,2026-12-12 08:00:00,2026-12-12 19:00:00,2026-12-12 19:00:00,UTC+0,false,false,publish,https://www.allentownfair.com/event/star-of-bethlehem-dog-show-9/,,,,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":""prefix"",""values"":[]}","[{""id"":33,""name"":""Agri~Plex"",""slug"":""agri-plex-events"",""parent"":0}]",[],"{""id"":3501,""global_id"":""www.allentownfair.com?id=3501"",""venue"":""Agri~Plex"",""address"":""1998 Liberty Street"",""city"":""Allentown"",""country"":""United States"",""province"":""PA"",""state"":""PA"",""zip"":""18104"",""url"":""https://www.allentownfair.com/venue/agriplex-expo-center/"",""show_map"":true,""show_map_link"":true}",[],<p>908-713-6205 or 610-217-6434</p>,,false,[],false,,,,2026-05-15 15:39:08,2026-05-15 15:39:08,false,false,,,
+2026-09-30T15:38:46Z,allentownfairpa.org,http://www.allentownfairpa.org/wp-json/tribe/events/v1/events,1,10967,www.allentownfair.com?id=10967,Star of Bethlehem Dog Show,2026-12-13 08:00:00,2026-12-13 08:00:00,2026-12-13 19:00:00,2026-12-13 19:00:00,UTC+0,false,false,publish,https://www.allentownfair.com/event/star-of-bethlehem-dog-show-10/,,,,"{""currency_symbol"":"""",""currency_code"":"""",""currency_position"":""prefix"",""values"":[]}","[{""id"":33,""name"":""Agri~Plex"",""slug"":""agri-plex-events"",""parent"":0}]",[],"{""id"":3501,""global_id"":""www.allentownfair.com?id=3501"",""venue"":""Agri~Plex"",""address"":""1998 Liberty Street"",""city"":""Allentown"",""country"":""United States"",""province"":""PA"",""state"":""PA"",""zip"":""18104"",""url"":""https://www.allentownfair.com/venue/agriplex-expo-center/"",""show_map"":true,""show_map_link"":true}",[],<p>908-713-6205 or 610-217-6434</p>,,false,[],false,,,,2026-05-15 15:39:08,2026-05-15 15:39:08,false,false,,,
