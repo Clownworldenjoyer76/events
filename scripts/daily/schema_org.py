@@ -6,29 +6,29 @@ import re
 import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
+from html.parser import HTMLParser
 from pathlib import Path
 from urllib import robotparser
-from urllib.parse import urlparse
+from urllib.parse import urljoin, urlparse
 
 import extruct
 import requests
 
-
 ROOT = Path(__file__).resolve().parents[2]
-
 CITY_FILE = ROOT / "data/location/usa/city_master.csv"
 FOURSQUARE_ROOT = ROOT / "data/venues/raw/foursquare"
 RAW_ROOT = ROOT / "data/events/raw/schema_org"
 
-TIMEOUT = 20
-SITEMAP_MAX = 20
-SITEMAP_URL_MAX = 10000
-EVENT_URL_MAX = 250
-SITEMAP_WORKERS = 8
-PAGE_WORKERS = 12
+TIMEOUT = 10
+MAX_SITEMAPS = 12
+MAX_SITEMAP_URLS = 5000
+MAX_CANDIDATES = 50
+MAX_HOME_EVENT_LINKS = 10
+MAX_EVENT_PAGE_LINKS = 30
+SITE_WORKERS = 16
+PAGE_WORKERS = 8
 FALLBACK_MILES = 40.0
-
-UA = "events-schema-org-collector/1.0"
+UA = "events-schema-org-collector/3.0"
 
 EVENT_TYPES = {
     "Event",
@@ -57,7 +57,7 @@ EVENT_TYPES = {
     "EventSeries",
 }
 
-PATH_HINTS = (
+EVENT_HINTS = (
     "event",
     "events",
     "calendar",
@@ -83,6 +83,7 @@ SITEMAP_HINTS = (
     "tribe",
     "schedule",
     "program",
+    "ticket",
 )
 
 RADIO_MARKERS = (
@@ -218,9 +219,7 @@ def txt(value):
     if isinstance(value, list):
         return " | ".join(
             dict.fromkeys(
-                result
-                for result in (txt(item) for item in value)
-                if result
+                x for x in (txt(v) for v in value) if x
             )
         )
 
@@ -286,20 +285,24 @@ def cities():
     for row in rows:
         city_id = txt(row.get("city_id"))
         city = txt(row.get("city")).casefold()
-        state_code = txt(row.get("state_code")).casefold()
-        state = txt(row.get("state")).casefold()
+
+        states = {
+            txt(row.get("state_code")).casefold(),
+            txt(row.get("state")).casefold(),
+        } - {""}
+
         country = txt(row.get("country_code")).casefold()
 
-        if country in (
+        if country in {
             "usa",
             "united states",
             "united states of america",
-        ):
+        }:
             country = "us"
 
-        for state_value in {state_code, state} - {""}:
-            lookup[(city, state_value, country)] = city_id
-            lookup[(city, state_value, "")] = city_id
+        for state in states:
+            lookup[(city, state, country)] = city_id
+            lookup[(city, state, "")] = city_id
 
         try:
             points.append(
@@ -337,17 +340,19 @@ def miles(lat1, lon1, lat2, lon2):
 
 
 def category_values(place):
-    categories = place.get("categories") or []
-
     names = set()
     ids = set()
 
-    for category in categories:
+    for category in place.get("categories") or []:
         if not isinstance(category, dict):
             continue
 
-        category_id = txt(category.get("fsq_category_id"))
-        category_name = txt(category.get("name")).casefold()
+        category_id = txt(
+            category.get("fsq_category_id")
+        )
+        category_name = txt(
+            category.get("name")
+        ).casefold()
 
         if category_id:
             ids.add(category_id)
@@ -361,17 +366,19 @@ def category_values(place):
 def event_seed_categories(place):
     names, ids = category_values(place)
 
-    matched = set()
-
-    for category_id in ids:
-        if category_id in EVENT_SEED_CATEGORY_IDS:
-            matched.add(category_id)
-
-    for category_name in names:
-        if category_name in EVENT_SEED_CATEGORY_NAMES:
-            matched.add(category_name)
-
-    return sorted(matched)
+    return sorted(
+        {
+            value
+            for value in ids
+            if value in EVENT_SEED_CATEGORY_IDS
+        }
+        |
+        {
+            value
+            for value in names
+            if value in EVENT_SEED_CATEGORY_NAMES
+        }
+    )
 
 
 def fsq_seeds():
@@ -396,81 +403,203 @@ def fsq_seeds():
 
         try:
             payload = json.loads(
-                files[0].read_text(encoding="utf-8")
+                files[0].read_text(
+                    encoding="utf-8"
+                )
             )
         except Exception:
             continue
 
-        city = payload.get("city") or {}
-        city_id = txt(city.get("city_id"))
+        city_id = txt(
+            (payload.get("city") or {}).get(
+                "city_id"
+            )
+        )
 
         for search in payload.get("searches") or []:
-            response = search.get("response") or {}
+            results = (
+                search.get("response") or {}
+            ).get("results") or []
 
-            for place in response.get("results") or []:
+            for place in results:
                 if not isinstance(place, dict):
                     continue
 
-                website = txt(place.get("website"))
-                site_origin = origin(website)
+                site = origin(
+                    txt(place.get("website"))
+                )
 
-                if not site_origin:
+                if not site:
                     continue
 
-                matched_categories = event_seed_categories(place)
+                matched = event_seed_categories(
+                    place
+                )
 
-                if not matched_categories:
+                if not matched:
                     continue
 
                 names, _ = category_values(place)
 
-                if names and names.issubset(GENERIC_CATEGORY_NAMES):
+                if (
+                    names
+                    and names.issubset(
+                        GENERIC_CATEGORY_NAMES
+                    )
+                ):
                     continue
 
-                site_host = host(site_origin)
+                site_host = host(site)
 
                 group = groups.setdefault(
                     site_host,
                     {
                         "host": site_host,
-                        "origin": site_origin,
+                        "origin": site,
                         "city_ids": set(),
                         "categories": set(),
                     },
                 )
 
                 if city_id:
-                    group["city_ids"].add(city_id)
+                    group["city_ids"].add(
+                        city_id
+                    )
 
-                group["categories"].update(matched_categories)
+                group["categories"].update(
+                    matched
+                )
 
     return list(groups.values())
 
 
-def sitemap_roots(site_origin):
-    output = []
+class LinkParser(HTMLParser):
+    def __init__(self):
+        super().__init__(
+            convert_charrefs=True
+        )
+        self.links = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag.casefold() != "a":
+            return
+
+        href = dict(attrs).get("href")
+
+        if href:
+            self.links.append(href)
+
+
+def event_links(html, base, limit):
+    parser = LinkParser()
 
     try:
-        response = req(
-            site_origin.rstrip("/") + "/robots.txt"
+        parser.feed(html)
+    except Exception:
+        return []
+
+    found = {}
+
+    for href in parser.links:
+        url = urljoin(base, href)
+
+        if not same_host(url, base):
+            continue
+
+        parsed = urlparse(url)
+
+        if parsed.scheme not in (
+            "http",
+            "https",
+        ):
+            continue
+
+        clean = parsed._replace(
+            fragment=""
+        ).geturl()
+
+        path = (
+            parsed.path
+            + "?"
+            + parsed.query
+        ).casefold()
+
+        score = sum(
+            1
+            for hint in EVENT_HINTS
+            if hint in path
         )
 
-        for line in response.text.splitlines():
-            if ":" not in line:
-                continue
+        if score:
+            found[clean] = max(
+                found.get(clean, 0),
+                score,
+            )
 
-            key, value = line.split(":", 1)
+    ordered = sorted(
+        found.items(),
+        key=lambda item: (
+            -item[1],
+            item[0],
+        ),
+    )
 
-            if key.strip().casefold() != "sitemap":
-                continue
+    return [
+        url
+        for url, _ in ordered[:limit]
+    ]
 
-            sitemap_url = value.strip()
 
-            if sitemap_url and sitemap_url not in output:
-                output.append(sitemap_url)
+def parse_map(data):
+    root = ET.fromstring(data)
 
-    except Exception:
-        pass
+    kind = root.tag.rsplit(
+        "}",
+        1,
+    )[-1].casefold()
+
+    return [
+        (
+            "sitemap"
+            if kind == "sitemapindex"
+            else "url",
+            element.text.strip(),
+        )
+        for element in root.iter()
+        if (
+            element.tag.rsplit(
+                "}",
+                1,
+            )[-1].casefold()
+            == "loc"
+            and element.text
+        )
+    ]
+
+
+def sitemap_roots(
+    site,
+    robots_text,
+):
+    urls = []
+
+    for line in robots_text.splitlines():
+        if ":" not in line:
+            continue
+
+        key, value = line.split(
+            ":",
+            1,
+        )
+
+        if (
+            key.strip().casefold()
+            == "sitemap"
+            and value.strip()
+        ):
+            urls.append(
+                value.strip()
+            )
 
     for path in (
         "/wp-sitemap.xml",
@@ -478,89 +607,98 @@ def sitemap_roots(site_origin):
         "/sitemap_index.xml",
         "/sitemap-index.xml",
     ):
-        sitemap_url = site_origin.rstrip("/") + path
-
-        if sitemap_url not in output:
-            output.append(sitemap_url)
-
-    return output
-
-
-def parse_map(data):
-    root = ET.fromstring(data)
-
-    kind = root.tag.rsplit("}", 1)[-1].casefold()
-
-    output = []
-
-    for element in root.iter():
-        if element.tag.rsplit("}", 1)[-1].casefold() != "loc":
-            continue
-
-        if not element.text:
-            continue
-
-        output.append(
-            (
-                "sitemap"
-                if kind == "sitemapindex"
-                else "url",
-                element.text.strip(),
-            )
+        urls.append(
+            site.rstrip("/")
+            + path
         )
 
-    return output
+    return list(
+        dict.fromkeys(urls)
+    )
 
 
-def sitemap_urls(site):
-    queue = sitemap_roots(site["origin"])
+def discover(site):
+    robot = None
+    robots_text = ""
+    sitemap_count = 0
+    sitemap_urls_seen = 0
+    candidates = set()
+
+    try:
+        response = req(
+            site["origin"].rstrip("/")
+            + "/robots.txt"
+        )
+
+        robots_text = response.text
+
+        robot = robotparser.RobotFileParser()
+        robot.parse(
+            robots_text.splitlines()
+        )
+    except Exception:
+        pass
+
+    queue = sitemap_roots(
+        site["origin"],
+        robots_text,
+    )
+
     seen = set()
-    urls = set()
 
-    sitemap_files = 0
-    seen_urls = 0
+    while (
+        queue
+        and sitemap_count < MAX_SITEMAPS
+    ):
+        sitemap = queue.pop(0)
 
-    while queue and sitemap_files < SITEMAP_MAX:
-        sitemap_url = queue.pop(0)
-
-        if sitemap_url in seen:
-            continue
-
-        if not same_host(
-            sitemap_url,
-            site["host"],
+        if (
+            sitemap in seen
+            or not same_host(
+                sitemap,
+                site["host"],
+            )
         ):
             continue
 
-        seen.add(sitemap_url)
+        seen.add(sitemap)
 
         try:
             entries = parse_map(
-                req(sitemap_url).content
+                req(sitemap).content
             )
         except Exception:
             continue
 
-        sitemap_files += 1
+        sitemap_count += 1
 
-        sitemap_is_event_oriented = any(
-            hint in sitemap_url.casefold()
+        sitemap_hint = any(
+            hint in sitemap.casefold()
             for hint in SITEMAP_HINTS
         )
 
         for kind, url in entries:
             if kind == "sitemap":
-                if url not in seen:
+                if any(
+                    hint in url.casefold()
+                    for hint in SITEMAP_HINTS
+                ):
                     queue.append(url)
 
                 continue
 
-            if seen_urls >= SITEMAP_URL_MAX:
+            sitemap_urls_seen += 1
+
+            if (
+                sitemap_urls_seen
+                > MAX_SITEMAP_URLS
+            ):
                 break
 
-            seen_urls += 1
-
-            if not same_host(url, site["host"]):
+            if not same_host(
+                url,
+                site["host"],
+            ):
                 continue
 
             parsed = urlparse(url)
@@ -571,51 +709,89 @@ def sitemap_urls(site):
                 + parsed.query
             ).casefold()
 
-            score = sum(
-                2
-                for hint in PATH_HINTS
-                if hint in path
+            if (
+                sitemap_hint
+                or any(
+                    hint in path
+                    for hint in EVENT_HINTS
+                )
+            ):
+                candidates.add(url)
+
+        if (
+            sitemap_urls_seen
+            > MAX_SITEMAP_URLS
+        ):
+            break
+
+    if not candidates:
+        try:
+            response = req(
+                site["origin"]
             )
 
-            if sitemap_is_event_oriented:
-                score += 5
+            candidates.update(
+                event_links(
+                    response.text,
+                    response.url,
+                    MAX_HOME_EVENT_LINKS,
+                )
+            )
 
-            if re.search(
-                r"/20\d{2}(?:/|-)\d{1,2}(?:/|-)\d{1,2}",
-                path,
-            ):
-                score += 2
+            homepage = response.text
 
-            if score:
-                urls.add((score, url))
+        except Exception:
+            homepage = ""
 
-    ordered = [
-        url
-        for _, url in sorted(
-            urls,
-            key=lambda item: (
-                -item[0],
-                item[1],
-            ),
-        )
-    ]
+        if homepage:
+            landing = list(candidates)
+
+            for page in landing:
+                if (
+                    len(candidates)
+                    >= MAX_CANDIDATES
+                ):
+                    break
+
+                try:
+                    response = req(page)
+                except Exception:
+                    continue
+
+                candidates.update(
+                    event_links(
+                        response.text,
+                        response.url,
+                        MAX_EVENT_PAGE_LINKS,
+                    )
+                )
 
     return (
-        ordered[:EVENT_URL_MAX],
-        sitemap_files,
-        seen_urls,
+        sorted(candidates)[
+            :MAX_CANDIDATES
+        ],
+        robot,
+        sitemap_count,
+        sitemap_urls_seen,
     )
 
 
 def types(value):
     if isinstance(value, str):
-        return [value.rsplit("/", 1)[-1]]
+        return [
+            value.rsplit(
+                "/",
+                1,
+            )[-1]
+        ]
 
     if isinstance(value, list):
         output = []
 
         for item in value:
-            output.extend(types(item))
+            output.extend(
+                types(item)
+            )
 
         return output
 
@@ -627,7 +803,10 @@ def walk(value):
         yield value
 
         for child in value.values():
-            if isinstance(child, (dict, list)):
+            if isinstance(
+                child,
+                (dict, list),
+            ):
                 yield from walk(child)
 
     elif isinstance(value, list):
@@ -639,121 +818,248 @@ def is_event(value):
     if not isinstance(value, dict):
         return False
 
-    event_types = types(value.get("@type"))
-
     return any(
         event_type in EVENT_TYPES
-        or event_type.endswith("Event")
-        for event_type in event_types
+        or event_type.endswith(
+            "Event"
+        )
+        for event_type in types(
+            value.get("@type")
+        )
     )
 
 
-def loc_info(event):
-    values = event.get("location")
+def event_key(event, url):
+    event_url = txt(
+        event.get("url")
+    )
 
-    if not isinstance(values, list):
+    if event_url:
+        return (
+            "url",
+            event_url.casefold(),
+        )
+
+    return (
+        "composite",
+        txt(
+            event.get("name")
+        ).casefold(),
+        txt(
+            event.get("startDate")
+        ).casefold(),
+        url.casefold(),
+    )
+
+
+def extract_events(
+    html,
+    url,
+):
+    try:
+        extracted = extruct.extract(
+            html,
+            base_url=url,
+            syntaxes=["json-ld"],
+            uniform=True,
+        )
+    except Exception:
+        return []
+
+    output = []
+    seen = set()
+
+    for block in extracted.get(
+        "json-ld",
+        [],
+    ):
+        for event in walk(block):
+            if not is_event(event):
+                continue
+
+            key = event_key(
+                event,
+                url,
+            )
+
+            if key in seen:
+                continue
+
+            seen.add(key)
+            output.append(event)
+
+    return output
+
+
+def location_info(event):
+    values = event.get(
+        "location"
+    )
+
+    if not isinstance(
+        values,
+        list,
+    ):
         values = [values]
 
     names = []
-    cities_ = []
+    cities = []
     regions = []
     countries = []
     streets = []
     postals = []
-    coordinates = []
-    location_types = []
-    virtual_urls = []
+    coords = []
+    types_ = []
+    virtual = []
 
     for location in values:
-        if not isinstance(location, dict):
+        if not isinstance(
+            location,
+            dict,
+        ):
             continue
 
-        location_type_values = types(
-            location.get("@type")
+        types_.extend(
+            types(
+                location.get(
+                    "@type"
+                )
+            )
         )
 
-        location_types.extend(
-            location_type_values
+        name = txt(
+            location.get("name")
         )
-
-        name = txt(location.get("name"))
-        location_url = txt(location.get("url"))
 
         if name:
             names.append(name)
 
+        location_types = types(
+            location.get("@type")
+        )
+
         if (
             "VirtualLocation"
-            in location_type_values
-            and location_url
+            in location_types
+            and txt(
+                location.get("url")
+            )
         ):
-            virtual_urls.append(location_url)
-
-        address = location.get("address")
-
-        if isinstance(address, dict):
-            fields = (
-                ("streetAddress", streets),
-                ("addressLocality", cities_),
-                ("addressRegion", regions),
-                ("postalCode", postals),
-                ("addressCountry", countries),
+            virtual.append(
+                txt(
+                    location.get("url")
+                )
             )
 
-            for key, target in fields:
-                value = txt(address.get(key))
+        address = location.get(
+            "address"
+        )
+
+        if isinstance(
+            address,
+            dict,
+        ):
+            for key, target in (
+                (
+                    "streetAddress",
+                    streets,
+                ),
+                (
+                    "addressLocality",
+                    cities,
+                ),
+                (
+                    "addressRegion",
+                    regions,
+                ),
+                (
+                    "postalCode",
+                    postals,
+                ),
+                (
+                    "addressCountry",
+                    countries,
+                ),
+            ):
+                value = txt(
+                    address.get(key)
+                )
 
                 if value:
                     target.append(value)
 
-        geo = location.get("geo")
+        geo = location.get(
+            "geo"
+        )
 
-        if isinstance(geo, dict):
-            latitude = txt(geo.get("latitude"))
-            longitude = txt(geo.get("longitude"))
+        if isinstance(
+            geo,
+            dict,
+        ):
+            lat = txt(
+                geo.get("latitude")
+            )
+            lon = txt(
+                geo.get("longitude")
+            )
 
-            if latitude or longitude:
-                coordinates.append(
-                    f"{latitude},{longitude}"
+            if lat or lon:
+                coords.append(
+                    f"{lat},{lon}"
                 )
 
     info = {
-        "name": "|".join(dict.fromkeys(names)),
-        "city": "|".join(dict.fromkeys(cities_)),
-        "region": "|".join(dict.fromkeys(regions)),
-        "country": "|".join(dict.fromkeys(countries)),
-        "street": "|".join(dict.fromkeys(streets)),
-        "postal": "|".join(dict.fromkeys(postals)),
+        "name": "|".join(
+            dict.fromkeys(names)
+        ),
+        "city": "|".join(
+            dict.fromkeys(cities)
+        ),
+        "region": "|".join(
+            dict.fromkeys(regions)
+        ),
+        "country": "|".join(
+            dict.fromkeys(countries)
+        ),
+        "street": "|".join(
+            dict.fromkeys(streets)
+        ),
+        "postal": "|".join(
+            dict.fromkeys(postals)
+        ),
         "coords": "|".join(
-            dict.fromkeys(coordinates)
+            dict.fromkeys(coords)
         ),
         "types": "|".join(
-            dict.fromkeys(location_types)
+            dict.fromkeys(types_)
         ),
         "virtual_url": "|".join(
-            dict.fromkeys(virtual_urls)
+            dict.fromkeys(virtual)
         ),
     }
 
     info["physical"] = bool(
         streets
-        or cities_
+        or cities
         or regions
         or postals
-        or coordinates
+        or coords
     ) or any(
-        location_type in {
+        value in {
             "Place",
             "MusicVenue",
             "StadiumOrArena",
             "CivicStructure",
         }
-        for location_type in location_types
+        for value in types_
     )
 
     info["virtual"] = bool(
-        virtual_urls
-    ) or "VirtualLocation" in location_types
+        virtual
+    ) or (
+        "VirtualLocation"
+        in types_
+    )
 
     return info
 
@@ -763,23 +1069,23 @@ def coord(info):
         return None
 
     try:
-        latitude, longitude = (
+        lat, lon = map(
+            float,
             info["coords"]
             .split("|", 1)[0]
-            .split(",", 1)
+            .split(",", 1),
         )
-
-        latitude = float(latitude)
-        longitude = float(longitude)
-
-    except (ValueError, TypeError):
+    except (
+        ValueError,
+        TypeError,
+    ):
         return None
 
     if (
-        -90 <= latitude <= 90
-        and -180 <= longitude <= 180
+        -90 <= lat <= 90
+        and -180 <= lon <= 180
     ):
-        return latitude, longitude
+        return lat, lon
 
     return None
 
@@ -790,33 +1096,56 @@ def map_city(
     lookup,
     points,
 ):
-    city = info["city"].split("|", 1)[0].casefold()
-    state = info["region"].split("|", 1)[0].casefold()
-    country = info["country"].split("|", 1)[0].casefold()
+    city = info["city"].split(
+        "|",
+        1,
+    )[0].casefold()
 
-    if country in (
+    state = info["region"].split(
+        "|",
+        1,
+    )[0].casefold()
+
+    country = info["country"].split(
+        "|",
+        1,
+    )[0].casefold()
+
+    if country in {
         "usa",
         "united states",
         "united states of america",
-    ):
+    }:
         country = "us"
 
     if city and state:
         city_id = (
             lookup.get(
-                (city, state, country)
+                (
+                    city,
+                    state,
+                    country,
+                )
             )
             or lookup.get(
-                (city, state, "")
+                (
+                    city,
+                    state,
+                    "",
+                )
             )
         )
 
         if city_id:
-            return city_id, "mapped_exact", 0
+            return (
+                city_id,
+                "mapped_exact",
+                0,
+            )
 
     coordinates = coord(info)
 
-    if coordinates:
+    if coordinates and points:
         nearest = min(
             (
                 (
@@ -829,13 +1158,12 @@ def map_city(
                     point[0],
                 )
                 for point in points
-            ),
-            default=None,
+            )
         )
 
         if (
-            nearest
-            and nearest[0] <= FALLBACK_MILES
+            nearest[0]
+            <= FALLBACK_MILES
         ):
             return (
                 nearest[1],
@@ -843,7 +1171,7 @@ def map_city(
                 nearest[0],
             )
 
-    seed_values = {
+    seeds = {
         value
         for value in seed_ids
         if value
@@ -851,53 +1179,48 @@ def map_city(
 
     if (
         info["physical"]
-        and len(seed_values) == 1
+        and len(seeds) == 1
         and not city
         and not coordinates
     ):
         return (
-            next(iter(seed_values)),
+            next(iter(seeds)),
             "mapped_seed_site",
             None,
         )
 
-    return None, "unmapped", None
-
-
-def event_key(event, url):
-    event_url = txt(event.get("url"))
-
-    if event_url:
-        return (
-            "url",
-            event_url.casefold(),
-        )
-
     return (
-        "composite",
-        txt(event.get("name")).casefold(),
-        txt(event.get("startDate")).casefold(),
-        url.casefold(),
+        None,
+        "unmapped",
+        None,
     )
 
 
-def virtual_only(event, location):
-    attendance_mode = txt(
-        event.get("eventAttendanceMode")
+def virtual_only(
+    event,
+    info,
+):
+    mode = txt(
+        event.get(
+            "eventAttendanceMode"
+        )
     ).casefold()
 
     return (
-        not location["physical"]
+        not info["physical"]
         and (
             "onlineeventattendancemode"
-            in attendance_mode
-            or location["virtual"]
+            in mode
+            or info["virtual"]
         )
     )
 
 
-def radio(event, location):
-    if location["physical"]:
+def radio(
+    event,
+    info,
+):
+    if info["physical"]:
         return False
 
     text = " ".join(
@@ -916,13 +1239,21 @@ def radio(event, location):
 
 
 def json_cell(value):
-    if value in (None, "", [], {}):
+    if value in (
+        None,
+        "",
+        [],
+        {},
+    ):
         return ""
 
     return json.dumps(
         value,
         ensure_ascii=False,
-        separators=(",", ":"),
+        separators=(
+            ",",
+            ":",
+        ),
     )
 
 
@@ -931,8 +1262,15 @@ def fetch_page(item):
 
     if robot:
         try:
-            if not robot.can_fetch(UA, url):
-                return url, None, "robots"
+            if not robot.can_fetch(
+                UA,
+                url,
+            ):
+                return (
+                    url,
+                    None,
+                    "robots",
+                )
         except Exception:
             pass
 
@@ -941,7 +1279,10 @@ def fetch_page(item):
 
         content_type = (
             response.headers
-            .get("Content-Type", "")
+            .get(
+                "Content-Type",
+                "",
+            )
             .casefold()
         )
 
@@ -950,9 +1291,17 @@ def fetch_page(item):
             and "html" not in content_type
             and "xhtml" not in content_type
         ):
-            return url, None, "non_html"
+            return (
+                url,
+                None,
+                "non_html",
+            )
 
-        return url, response.text, ""
+        return (
+            url,
+            response.text,
+            "",
+        )
 
     except Exception as exc:
         return (
@@ -962,230 +1311,317 @@ def fetch_page(item):
         )
 
 
+FIELDS = [
+    "schema_org_run_started_utc",
+    "schema_org_seed_host",
+    "schema_org_seed_city_id",
+    "schema_org_seed_categories",
+    "schema_org_source_url",
+    "schema_org_event_type",
+    "schema_org_city_mapping",
+    "schema_org_city_mapping_distance_miles",
+    "event_name",
+    "event_start_date",
+    "event_end_date",
+    "event_url",
+    "event_status",
+    "event_attendance_mode",
+    "event_description",
+    "event_location_json",
+    "event_offers_json",
+    "event_organizer_json",
+    "event_performer_json",
+    "event_image_json",
+    "event_keywords",
+    "event_json",
+]
+
+
+def process_event(
+    event,
+    site,
+    lookup,
+    points,
+    run_text,
+    rows,
+    seen,
+    stats,
+    source_url,
+):
+    info = location_info(event)
+
+    if virtual_only(
+        event,
+        info,
+    ):
+        stats[
+            "virtual_filtered"
+        ] += 1
+        return
+
+    if radio(
+        event,
+        info,
+    ):
+        stats[
+            "radio_filtered"
+        ] += 1
+        return
+
+    if (
+        not txt(event.get("name"))
+        or not txt(
+            event.get(
+                "startDate"
+            )
+        )
+    ):
+        return
+
+    key = event_key(
+        event,
+        source_url,
+    )
+
+    if key in seen:
+        return
+
+    seen.add(key)
+
+    (
+        city_id,
+        mapping,
+        distance,
+    ) = map_city(
+        info,
+        site["city_ids"],
+        lookup,
+        points,
+    )
+
+    if not city_id:
+        stats[
+            "unmapped"
+        ] += 1
+        return
+
+    row = {
+        "schema_org_run_started_utc": run_text,
+        "schema_org_seed_host": site["host"],
+        "schema_org_seed_city_id": "|".join(
+            sorted(
+                site["city_ids"]
+            )
+        ),
+        "schema_org_seed_categories": "|".join(
+            sorted(
+                site["categories"]
+            )
+        ),
+        "schema_org_source_url": source_url,
+        "schema_org_event_type": "|".join(
+            types(
+                event.get("@type")
+            )
+        ),
+        "schema_org_city_mapping": mapping,
+        "schema_org_city_mapping_distance_miles": (
+            ""
+            if distance is None
+            else f"{distance:.3f}"
+        ),
+        "event_name": txt(
+            event.get("name")
+        ),
+        "event_start_date": txt(
+            event.get(
+                "startDate"
+            )
+        ),
+        "event_end_date": txt(
+            event.get(
+                "endDate"
+            )
+        ),
+        "event_url": (
+            txt(
+                event.get("url")
+            )
+            or source_url
+        ),
+        "event_status": txt(
+            event.get(
+                "eventStatus"
+            )
+        ),
+        "event_attendance_mode": txt(
+            event.get(
+                "eventAttendanceMode"
+            )
+        ),
+        "event_description": txt(
+            event.get(
+                "description"
+            )
+        ),
+        "event_location_json": json_cell(
+            event.get(
+                "location"
+            )
+        ),
+        "event_offers_json": json_cell(
+            event.get(
+                "offers"
+            )
+        ),
+        "event_organizer_json": json_cell(
+            event.get(
+                "organizer"
+            )
+        ),
+        "event_performer_json": json_cell(
+            event.get(
+                "performer"
+            )
+        ),
+        "event_image_json": json_cell(
+            event.get(
+                "image"
+            )
+        ),
+        "event_keywords": txt(
+            event.get(
+                "keywords"
+            )
+        ),
+        "event_json": json_cell(
+            event
+        ),
+    }
+
+    rows.setdefault(
+        city_id,
+        []
+    ).append(row)
+
+    stats[
+        "events_written"
+    ] += 1
+
+
 def process(
     site,
     lookup,
     points,
     run_text,
 ):
-    urls, sitemap_files, sitemap_seen = (
-        sitemap_urls(site)
-    )
-
-    robot = None
-
-    try:
-        response = req(
-            site["origin"].rstrip("/")
-            + "/robots.txt"
+    stats = {
+        key: 0
+        for key in (
+            "sitemaps",
+            "sitemap_urls_seen",
+            "candidate_urls",
+            "pages_fetched",
+            "pages_with_events",
+            "event_objects",
+            "events_written",
+            "virtual_filtered",
+            "radio_filtered",
+            "unmapped",
+            "robots_blocked",
+            "page_errors",
         )
+    }
 
-        robot = robotparser.RobotFileParser()
-        robot.parse(
-            response.text.splitlines()
-        )
+    (
+        candidates,
+        robot,
+        sitemap_count,
+        sitemap_urls_seen,
+    ) = discover(site)
 
-    except Exception:
-        pass
+    stats[
+        "sitemaps"
+    ] = sitemap_count
+
+    stats[
+        "sitemap_urls_seen"
+    ] = sitemap_urls_seen
+
+    stats[
+        "candidate_urls"
+    ] = len(candidates)
 
     rows = {}
     seen = set()
 
-    stats = {
-        "sitemap_files": sitemap_files,
-        "sitemap_urls_seen": sitemap_seen,
-        "candidate_urls": len(urls),
-        "pages_fetched": 0,
-        "pages_with_events": 0,
-        "event_objects": 0,
-        "events_written": 0,
-        "virtual_filtered": 0,
-        "radio_filtered": 0,
-        "unmapped": 0,
-        "robots_blocked": 0,
-        "page_errors": 0,
-    }
-
     with ThreadPoolExecutor(
         max_workers=PAGE_WORKERS
     ) as executor:
-
         futures = [
             executor.submit(
                 fetch_page,
-                (url, robot),
+                (
+                    url,
+                    robot,
+                ),
             )
-            for url in urls
+            for url in candidates
         ]
 
-        for future in as_completed(futures):
-            url, html, error = future.result()
+        for future in as_completed(
+            futures
+        ):
+            (
+                url,
+                html,
+                error,
+            ) = future.result()
 
             if error == "robots":
-                stats["robots_blocked"] += 1
+                stats[
+                    "robots_blocked"
+                ] += 1
                 continue
 
             if html is None:
-                stats["page_errors"] += 1
+                stats[
+                    "page_errors"
+                ] += 1
                 continue
 
-            stats["pages_fetched"] += 1
+            stats[
+                "pages_fetched"
+            ] += 1
 
-            try:
-                extracted = extruct.extract(
-                    html,
-                    base_url=url,
-                    syntaxes=["json-ld"],
-                    uniform=True,
-                )
-
-                events = []
-                page_seen = set()
-
-                for block in (
-                    extracted.get("json-ld", [])
-                ):
-                    for event in walk(block):
-                        if not is_event(event):
-                            continue
-
-                        key = event_key(
-                            event,
-                            url,
-                        )
-
-                        if key in page_seen:
-                            continue
-
-                        page_seen.add(key)
-                        events.append(event)
-
-            except Exception:
-                stats["page_errors"] += 1
-                continue
+            events = extract_events(
+                html,
+                url,
+            )
 
             if not events:
                 continue
 
-            stats["pages_with_events"] += 1
-            stats["event_objects"] += len(events)
+            stats[
+                "pages_with_events"
+            ] += 1
+
+            stats[
+                "event_objects"
+            ] += len(events)
 
             for event in events:
-                location = loc_info(event)
-
-                if virtual_only(
+                process_event(
                     event,
-                    location,
-                ):
-                    stats["virtual_filtered"] += 1
-                    continue
-
-                if radio(
-                    event,
-                    location,
-                ):
-                    stats["radio_filtered"] += 1
-                    continue
-
-                if not txt(event.get("name")):
-                    continue
-
-                if not txt(event.get("startDate")):
-                    continue
-
-                key = event_key(
-                    event,
+                    site,
+                    lookup,
+                    points,
+                    run_text,
+                    rows,
+                    seen,
+                    stats,
                     url,
                 )
-
-                if key in seen:
-                    continue
-
-                seen.add(key)
-
-                city_id, mapping_method, distance = (
-                    map_city(
-                        location,
-                        site["city_ids"],
-                        lookup,
-                        points,
-                    )
-                )
-
-                if not city_id:
-                    stats["unmapped"] += 1
-                    continue
-
-                row = {
-                    "schema_org_run_started_utc": run_text,
-                    "schema_org_seed_host": site["host"],
-                    "schema_org_seed_city_id": "|".join(
-                        sorted(site["city_ids"])
-                    ),
-                    "schema_org_seed_categories": "|".join(
-                        sorted(site["categories"])
-                    ),
-                    "schema_org_source_url": url,
-                    "schema_org_event_type": "|".join(
-                        types(event.get("@type"))
-                    ),
-                    "schema_org_city_mapping": mapping_method,
-                    "schema_org_city_mapping_distance_miles": (
-                        ""
-                        if distance is None
-                        else f"{distance:.3f}"
-                    ),
-                    "event_name": txt(
-                        event.get("name")
-                    ),
-                    "event_start_date": txt(
-                        event.get("startDate")
-                    ),
-                    "event_end_date": txt(
-                        event.get("endDate")
-                    ),
-                    "event_url": (
-                        txt(event.get("url"))
-                        or url
-                    ),
-                    "event_status": txt(
-                        event.get("eventStatus")
-                    ),
-                    "event_attendance_mode": txt(
-                        event.get(
-                            "eventAttendanceMode"
-                        )
-                    ),
-                    "event_description": txt(
-                        event.get("description")
-                    ),
-                    "event_location_json": json_cell(
-                        event.get("location")
-                    ),
-                    "event_offers_json": json_cell(
-                        event.get("offers")
-                    ),
-                    "event_organizer_json": json_cell(
-                        event.get("organizer")
-                    ),
-                    "event_performer_json": json_cell(
-                        event.get("performer")
-                    ),
-                    "event_image_json": json_cell(
-                        event.get("image")
-                    ),
-                    "event_keywords": txt(
-                        event.get("keywords")
-                    ),
-                    "event_json": json_cell(event),
-                }
-
-                rows.setdefault(
-                    city_id,
-                    [],
-                ).append(row)
-
-                stats["events_written"] += 1
 
     return rows, stats
 
@@ -1194,42 +1630,26 @@ def write_files(
     run_date,
     rows_by_city,
 ):
-    fields = [
-        "schema_org_run_started_utc",
-        "schema_org_seed_host",
-        "schema_org_seed_city_id",
-        "schema_org_seed_categories",
-        "schema_org_source_url",
-        "schema_org_event_type",
-        "schema_org_city_mapping",
-        "schema_org_city_mapping_distance_miles",
-        "event_name",
-        "event_start_date",
-        "event_end_date",
-        "event_url",
-        "event_status",
-        "event_attendance_mode",
-        "event_description",
-        "event_location_json",
-        "event_offers_json",
-        "event_organizer_json",
-        "event_performer_json",
-        "event_image_json",
-        "event_keywords",
-        "event_json",
-    ]
-
     files = 0
     rows = 0
 
-    for city_id, city_rows in sorted(
+    for (
+        city_id,
+        city_rows,
+    ) in sorted(
         rows_by_city.items()
     ):
         city_rows.sort(
             key=lambda item: (
-                item["event_start_date"],
-                item["event_name"],
-                item["event_url"],
+                item[
+                    "event_start_date"
+                ],
+                item[
+                    "event_name"
+                ],
+                item[
+                    "event_url"
+                ],
             )
         )
 
@@ -1246,7 +1666,11 @@ def write_files(
                 RAW_ROOT
                 / city_id
                 / run_date
-                / f"page_{offset // 1000:03d}.csv"
+                / (
+                    f"page_"
+                    f"{offset // 1000:03d}"
+                    f".csv"
+                )
             )
 
             path.parent.mkdir(
@@ -1261,11 +1685,13 @@ def write_files(
             ) as handle:
                 writer = csv.DictWriter(
                     handle,
-                    fieldnames=fields,
+                    fieldnames=FIELDS,
                 )
 
                 writer.writeheader()
-                writer.writerows(chunk)
+                writer.writerows(
+                    chunk
+                )
 
             files += 1
             rows += len(chunk)
@@ -1273,34 +1699,36 @@ def write_files(
     return files, rows
 
 
-def clear_run(run_date):
+def clear_run(
+    run_date,
+):
     if not RAW_ROOT.exists():
         return
 
-    for city_directory in RAW_ROOT.iterdir():
-        if not city_directory.is_dir():
-            continue
-
-        run_directory = (
-            city_directory / run_date
+    for citydir in RAW_ROOT.iterdir():
+        run_dir = (
+            citydir
+            / run_date
         )
 
-        if not run_directory.exists():
+        if not run_dir.is_dir():
             continue
 
-        for path in run_directory.glob(
+        for path in run_dir.glob(
             "page_*.csv"
         ):
             path.unlink()
 
         try:
-            run_directory.rmdir()
+            run_dir.rmdir()
         except OSError:
             pass
 
 
 def main():
-    started = datetime.now(timezone.utc)
+    started = datetime.now(
+        timezone.utc
+    )
 
     run_date = started.strftime(
         "%Y%m%d"
@@ -1315,31 +1743,42 @@ def main():
         sites = fsq_seeds()
 
     except Exception as exc:
-        print("SCHEMA.ORG: FAILED")
         print(
-            f"ERROR: {type(exc).__name__}: {exc}"
+            "SCHEMA.ORG: FAILED"
+        )
+        print(
+            f"ERROR: "
+            f"{type(exc).__name__}: "
+            f"{exc}"
         )
         return 2
 
     if not sites:
-        print("SCHEMA.ORG: FAILED")
         print(
-            "ERROR: no category-qualified "
-            "Foursquare website seeds"
+            "SCHEMA.ORG: FAILED"
+        )
+        print(
+            "ERROR: no "
+            "category-qualified "
+            "Foursquare website "
+            "seeds"
         )
         return 2
 
-    clear_run(run_date)
+    clear_run(
+        run_date
+    )
 
     print(
-        f"WEBSITE SEEDS: {len(sites)}",
+        f"WEBSITE SEEDS: "
+        f"{len(sites)}",
         flush=True,
     )
 
     totals = {
         key: 0
         for key in (
-            "sitemap_files",
+            "sitemaps",
             "sitemap_urls_seen",
             "candidate_urls",
             "pages_fetched",
@@ -1357,9 +1796,8 @@ def main():
     all_rows = {}
 
     with ThreadPoolExecutor(
-        max_workers=SITEMAP_WORKERS
+        max_workers=SITE_WORKERS
     ) as executor:
-
         futures = {
             executor.submit(
                 process,
@@ -1373,18 +1811,27 @@ def main():
 
         completed = 0
 
-        for future in as_completed(futures):
+        for future in as_completed(
+            futures
+        ):
             completed += 1
-            site_host = futures[future]
+
+            site_host = futures[
+                future
+            ]
 
             try:
-                rows, stats = future.result()
+                (
+                    rows,
+                    stats,
+                ) = future.result()
 
             except Exception as exc:
                 print(
-                    "SITE ERROR "
+                    f"SITE ERROR "
                     f"{site_host}: "
-                    f"{type(exc).__name__}: {exc}",
+                    f"{type(exc).__name__}: "
+                    f"{exc}",
                     flush=True,
                 )
                 continue
@@ -1392,18 +1839,28 @@ def main():
             for key in totals:
                 totals[key] += stats[key]
 
-            for city_id, rows_for_city in rows.items():
+            for (
+                city_id,
+                city_rows,
+            ) in rows.items():
                 all_rows.setdefault(
                     city_id,
-                    [],
-                ).extend(rows_for_city)
+                    []
+                ).extend(
+                    city_rows
+                )
 
             print(
-                f"SITES {completed}/{len(sites)} "
+                f"SITES "
+                f"{completed}/"
+                f"{len(sites)} "
                 f"{site_host}: "
-                f"candidates={stats['candidate_urls']} "
-                f"events={stats['event_objects']} "
-                f"written={stats['events_written']}",
+                f"candidates="
+                f"{stats['candidate_urls']} "
+                f"events="
+                f"{stats['event_objects']} "
+                f"written="
+                f"{stats['events_written']}",
                 flush=True,
             )
 
@@ -1413,14 +1870,19 @@ def main():
     )
 
     print("")
-    print("SCHEMA.ORG: PASS")
-    print(f"RUN DATE: {run_date}")
     print(
-        f"WEBSITE SEEDS: {len(sites)}"
+        "SCHEMA.ORG: PASS"
     )
     print(
-        f"SITEMAP FILES: "
-        f"{totals['sitemap_files']}"
+        f"RUN DATE: {run_date}"
+    )
+    print(
+        f"WEBSITE SEEDS: "
+        f"{len(sites)}"
+    )
+    print(
+        f"SITEMAPS INSPECTED: "
+        f"{totals['sitemaps']}"
     )
     print(
         f"SITEMAP URLS SEEN: "
@@ -1463,23 +1925,28 @@ def main():
         f"{totals['page_errors']}"
     )
     print(
-        f"EVENTS WRITTEN: {rows}"
+        f"EVENTS WRITTEN: "
+        f"{rows}"
     )
     print(
         f"CITIES WRITTEN: "
         f"{len(all_rows)}"
     )
     print(
-        f"CSV FILES: {files}"
+        f"CSV FILES: "
+        f"{files}"
     )
     print(
         "OUTPUT: "
         "data/events/raw/schema_org/"
-        "<city_id>/<YYYYMMDD>/page_###.csv"
+        "<city_id>/<YYYYMMDD>/"
+        "page_###.csv"
     )
 
     return 0
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    raise SystemExit(
+        main()
+    )
