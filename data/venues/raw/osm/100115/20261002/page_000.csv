@@ -1,0 +1,2 @@
+run_timestamp,city_id,city,state_code,osm_type,osm_id,name,amenity,latitude,longitude,website,phone,opening_hours,happy_hours,happy_hours_kitchen,live_music,karaoke,music_genre,microbrewery,brewery,outdoor_seating,cuisine,address_housenumber,address_street,address_city,address_state,address_postcode,source,source_date,check_date,tags_json
+2026-10-02T15:01:21Z,100115,Williston,ND,node,11399376678,The Range,bar,48.1705347,-103.6702557,,,,,,,,,,,,,,,,,,,,,"{""amenity"":""bar"",""name"":""The Range""}"
